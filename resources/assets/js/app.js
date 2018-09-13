@@ -17,7 +17,7 @@ require('datatables.net-buttons/js/dataTables.buttons');
 require('datatables.net-responsive/js/dataTables.responsive');
 window.Raphael = require('raphael/raphael');
 require('morris.js.so/morris');
-require('./_mentah/dataMorris');
+// require('./_mentah/dataMorris');
 require('./_mentah/app');
 require('./_mentah/custom');
 
