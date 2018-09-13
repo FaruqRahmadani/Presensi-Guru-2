@@ -28217,7 +28217,7 @@ Popper.Defaults = Defaults;
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(4);
-module.exports = __webpack_require__(20);
+module.exports = __webpack_require__(19);
 
 
 /***/ }),
@@ -28244,8 +28244,8 @@ __webpack_require__(14);
 window.Raphael = __webpack_require__(15);
 __webpack_require__(16);
 // require('./_mentah/dataMorris');
+__webpack_require__(17);
 __webpack_require__(18);
-__webpack_require__(19);
 
 /***/ }),
 /* 5 */
@@ -49280,8 +49280,7 @@ Licensed under the BSD-2-Clause License.
 
 
 /***/ }),
-/* 17 */,
-/* 18 */
+/* 17 */
 /***/ (function(module, exports) {
 
 /*!
@@ -50139,13 +50138,13 @@ Licensed under the BSD-2-Clause License.
 })(window, document, window.jQuery);
 
 /***/ }),
-/* 19 */
+/* 18 */
 /***/ (function(module, exports) {
 
 
 
 /***/ }),
-/* 20 */
+/* 19 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
