@@ -17,7 +17,10 @@ require('datatables.net-buttons/js/dataTables.buttons');
 require('datatables.net-responsive/js/dataTables.responsive');
 window.Raphael = require('raphael/raphael');
 require('morris.js.so/morris');
-// require('./_mentah/dataMorris');
+require('bootstrap-colorpicker/dist/js/bootstrap-colorpicker');
+require('select2/dist/js/select2.full');
 require('./_mentah/app');
+require('./_mentah/_select-2');
+require('./_mentah/_color-picker');
 require('./_mentah/custom');
 
