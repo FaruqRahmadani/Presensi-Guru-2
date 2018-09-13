@@ -200,6 +200,47 @@
                </div>
             </div>
          </div>
+         <div class="content-wrapper">
+              <!-- DATATABLE DEMO 1-->
+               <div class="container-fluid">
+               <div class="row">
+                  <div class="col-lg-6">
+                     <div class="card card-default">
+                        <div class="card-header">Line</div>
+                        <div class="card-body">
+                           <div id="morris-line"></div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="card card-default">
+                        <div class="card-header">Area</div>
+                        <div class="card-body">
+                           <div id="morris-area"></div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="row">
+                  <div class="col-lg-6">
+                     <div class="card card-default">
+                        <div class="card-header">Bar</div>
+                        <div class="card-body">
+                           <div id="morris-bar"></div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="card card-default">
+                        <div class="card-header">Donut</div>
+                        <div class="card-body">
+                           <div id="morris-donut"></div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
       </section>
       <!-- Page footer-->
       <footer class="footer-container">
