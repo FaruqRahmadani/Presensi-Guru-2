@@ -59,13 +59,26 @@
                                  </center>  
                               </div>
                            </div>
-                           <div class="list-group-item list-group-item-action">
-                              <div class="media-body">
-                                 <center>
-                                    <a href=""><em class="fa fa-lock"></em> Log out</a>
-                                 </center>
+                           <a href="#" class="list-group-item list-group-item-action">
+                              <div class="media">
+                                 <div class="align-self-start mr-2">
+                                    <em class="fa fa-edit text-success"></em>
+                                 </div>
+                                 <div class="media-body">
+                                    <p class="m-0">Edit Profil</p>
+                                 </div>
                               </div>
-                           </div>
+                           </a>
+                           <a href="#" class="list-group-item list-group-item-action">
+                              <div class="media">
+                                 <div class="align-self-start mr-2">
+                                    <em class="fa fa-power-off text-danger"></em>
+                                 </div>
+                                 <div class="media-body">
+                                    <p class="m-0">Log Out</p>
+                                 </div>
+                              </div>
+                           </a>
                         </div>
                      </div>
                   </div>
