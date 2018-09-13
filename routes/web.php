@@ -12,5 +12,16 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('Layouts.master');
+});
+
+// Template
+Route::get('/template/chart', function () {
+    return view('Template.chart');
+});
+Route::get('/template/data', function () {
+    return view('Template.data');
+});
+Route::get('/template/form', function () {
+    return view('Template.form');
 });
