@@ -14,7 +14,7 @@ screenfull = require('screenfull');
 require('datatables.net/js/jquery.dataTables');
 require('datatables.net-bs4/js/dataTables.bootstrap4');
 require('datatables.net-buttons/js/dataTables.buttons');
-require('datatables.net-responsive/js/dataTables.responsive');
+// require('datatables.net-responsive/js/dataTables.responsive');
 window.Raphael = require('raphael/raphael');
 require('morris.js.so/morris');
 require('bootstrap-colorpicker/dist/js/bootstrap-colorpicker');
