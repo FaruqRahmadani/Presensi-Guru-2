@@ -28217,7 +28217,7 @@ Popper.Defaults = Defaults;
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(4);
-module.exports = __webpack_require__(23);
+module.exports = __webpack_require__(22);
 
 
 /***/ }),
@@ -28241,14 +28241,14 @@ __webpack_require__(1);
 __webpack_require__(12);
 __webpack_require__(13);
 // require('datatables.net-responsive/js/dataTables.responsive');
-window.Raphael = __webpack_require__(15);
+window.Raphael = __webpack_require__(14);
+__webpack_require__(15);
 __webpack_require__(16);
 __webpack_require__(17);
 __webpack_require__(18);
 __webpack_require__(19);
 __webpack_require__(20);
 __webpack_require__(21);
-__webpack_require__(22);
 
 /***/ }),
 /* 5 */
@@ -37430,8 +37430,7 @@ return Buttons;
 
 
 /***/ }),
-/* 14 */,
-/* 15 */
+/* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // ┌───────────────────────────────────────────────────────────────────────────────────────────────────────┐ \\
@@ -45789,7 +45788,7 @@ return /******/ (function(modules) { // webpackBootstrap
 ;
 
 /***/ }),
-/* 16 */
+/* 15 */
 /***/ (function(module, exports) {
 
 /* @license
@@ -47908,7 +47907,7 @@ Licensed under the BSD-2-Clause License.
 
 
 /***/ }),
-/* 17 */
+/* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -49239,7 +49238,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
 
 
 /***/ }),
-/* 18 */
+/* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;var require;var require;/*!
@@ -55705,7 +55704,7 @@ S2.define('jquery.select2',[
 
 
 /***/ }),
-/* 19 */
+/* 18 */
 /***/ (function(module, exports) {
 
 (function (window, document, $, undefined) {
@@ -56314,7 +56313,7 @@ S2.define('jquery.select2',[
 })(window, document, window.jQuery);
 
 /***/ }),
-/* 20 */
+/* 19 */
 /***/ (function(module, exports) {
 
 // Select2
@@ -56341,7 +56340,7 @@ S2.define('jquery.select2',[
 })(window, document, window.jQuery);
 
 /***/ }),
-/* 21 */
+/* 20 */
 /***/ (function(module, exports) {
 
 // Color picker
@@ -56372,13 +56371,13 @@ S2.define('jquery.select2',[
 })(window, document, window.jQuery);
 
 /***/ }),
-/* 22 */
+/* 21 */
 /***/ (function(module, exports) {
 
 
 
 /***/ }),
-/* 23 */
+/* 22 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
