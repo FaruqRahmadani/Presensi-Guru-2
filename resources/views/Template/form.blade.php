@@ -1,4 +1,4 @@
-@extends('Layouts/master')
+@extends('layouts/master')
 @section('content-heading','Template Form')
 @section('content')
 <div class="container-fluid">

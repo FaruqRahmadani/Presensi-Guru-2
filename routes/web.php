@@ -17,11 +17,11 @@ Route::get('/', function () {
 
 // Template
 Route::get('/template/chart', function () {
-    return view('Template.chart');
+    return view('template.chart');
 });
 Route::get('/template/data', function () {
-    return view('Template.data');
+    return view('template.data');
 });
 Route::get('/template/form', function () {
-    return view('Template.form');
+    return view('template.form');
 });
