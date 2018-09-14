@@ -125,7 +125,7 @@
                         </ul>
                      </li>
                      <li class="">
-                        <a href="/data-presensi/data" title="Data Presensi" data-toggle="collapse">
+                        <a href="/data-presensi/data" title="Data Presensi">
                            <em class="fa fa-book"></em>
                            <span>Data Presensi</span>
                         </a>
@@ -161,9 +161,8 @@
                @yield('content')
             </div>
          </section>
-         <!-- Page footer-->
          <footer class="footer-container">
-            <span>&copy; 2018 - Angle</span>
+            <span>&copy; 2018 - Dinas Pendidikan <strong>Kab. Banjar</strong></span>
          </footer>
       </div>
       <script src="{{ asset('js/app.js') }}"></script>
