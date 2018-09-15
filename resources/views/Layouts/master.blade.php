@@ -96,12 +96,14 @@
                      </li>
                      <li class="">
                         <a href="/dashboard" title="Dashboard">
+                           <div class="float-right mr-2"><em class="]"></em>&nbsp;</div>
                            <em class="icon-home"></em>
                            <span>Dashboard</span>
                         </a>
                      </li>
                      <li class="">
                         <a href="#menuMaster" title="Master Data" data-toggle="collapse">
+                           <div class="float-right mr-2"><em class="fa fa-angle-down"></em></div>
                            <em class="icon-layers"></em>
                            <span>Master</span>
                         </a>
@@ -114,6 +116,7 @@
                      </li>
                      <li class="">
                         <a href="#menuDataSekolah" title="Data Sekolah" data-toggle="collapse">
+                           <div class="float-right mr-2"><em class="fa fa-angle-down"></em></div>
                           <em class="fa fa-university"></em>
                           <span>Data Sekolah</span>
                         </a>
@@ -126,6 +129,7 @@
                      </li>
                      <li class="">
                         <a href="/data-presensi/data" title="Data Presensi">
+                           <div class="float-right mr-2"><em class="]"></em>&nbsp;</div>
                            <em class="fa fa-book"></em>
                            <span>Data Presensi</span>
                         </a>
@@ -136,6 +140,7 @@
                      </li>
                      <li class="">
                         <a href="#menu_template" title="Template" data-toggle="collapse">
+                           <div class="float-right mr-2 ml-2"><em class="fa fa-angle-down"></em></div>
                            <em class="icon-layers"></em>
                            <span>Halaman Template</span>
                         </a>
