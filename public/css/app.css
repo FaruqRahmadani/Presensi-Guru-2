@@ -25064,3 +25064,14 @@ fieldset .form-group {
   }
 }
 
+@media (min-width: 768px) {
+  .card {
+    padding: 15px;
+  }
+}
+
+.tabel-custom {
+  /*width: 1px;*/
+  white-space: nowrap;
+}
+
