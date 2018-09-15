@@ -25,3 +25,11 @@ Route::get('/template/data', function () {
 Route::get('/template/form', function () {
     return view('template.form');
 });
+
+// halaman data admin
+Route::get('/data-admin/data', function () {
+    return view('dataAdmin.data');
+});
+Route::get('/data-admin/tambah', function () {
+    return view('dataAdmin.tambah');
+});
