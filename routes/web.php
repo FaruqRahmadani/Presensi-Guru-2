@@ -25,3 +25,7 @@ Route::get('/template/data', function () {
 Route::get('/template/form', function () {
     return view('template.form');
 });
+
+Route::get('/data-presensi/data', function () {
+    return view('dataPresensi.data');
+});
