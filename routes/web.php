@@ -25,3 +25,11 @@ Route::get('/template/data', function () {
 Route::get('/template/form', function () {
     return view('template.form');
 });
+
+// halaman pegawai
+Route::get('/pegawai/data', function () {
+    return view('pegawai.data');
+});
+Route::get('/pegawai/tambah', function () {
+    return view('pegawai.tambah');
+});
