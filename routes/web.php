@@ -25,3 +25,10 @@ Route::get('/template/data', function () {
 Route::get('/template/form', function () {
     return view('template.form');
 });
+// jenjang sekolah 
+Route::get('/jenjang-sekolah/data', function () {
+    return view('jenjangSekolah.data');
+});
+Route::get('/jenjang-sekolah/tambah', function () {
+    return view('jenjangSekolah.tambah');
+});
