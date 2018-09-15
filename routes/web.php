@@ -25,3 +25,11 @@ Route::get('/template/data', function () {
 Route::get('/template/form', function () {
     return view('template.form');
 });
+
+// halam data sekolah
+Route::get('/sekolah/data', function () {
+    return view('sekolah.data');
+});
+Route::get('/sekolah/tambah', function () {
+    return view('sekolah.tambah');
+});
