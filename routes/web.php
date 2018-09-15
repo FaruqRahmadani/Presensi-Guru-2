@@ -25,3 +25,11 @@ Route::get('/template/data', function () {
 Route::get('/template/form', function () {
     return view('template.form');
 });
+
+// kategori presensi
+Route::get('/kategori-presensi/data', function () {
+    return view('kategoriPresensi.data');
+});
+Route::get('/kategori-presensi/tambah', function () {
+    return view('kategoriPresensi.tambah');
+});
