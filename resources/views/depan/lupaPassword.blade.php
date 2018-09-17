@@ -1,1 +1,4 @@
-@extends('layouts/master')
+@extends('layouts/masterDepan')
+@section('content')
+	
+@endsection
