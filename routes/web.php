@@ -38,3 +38,8 @@ Route::get('/lupa-password', function () {
 Route::get('/dashboard', function () {
     return view('dashboard.dashboard');
 });
+
+// halaman depan
+Route::get('/depan', function () {
+    return view('template.templateDepan');
+});
