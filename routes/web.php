@@ -32,6 +32,7 @@ Route::get('/data-admin/data', function () {
 });
 Route::get('/data-admin/tambah', function () {
     return view('dataAdmin.tambah');
+});
 // halaman login
 Route::get('/login', function () {
     return view('depan.login');
