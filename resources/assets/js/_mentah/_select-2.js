@@ -18,6 +18,12 @@
         $('#select2-2').select2({
             theme: 'bootstrap4'
         });
+        $('#select2-3').select2({
+            theme: 'bootstrap4'
+        });
+        $('#select2-4').select2({
+            theme: 'bootstrap4'
+        });
 
     }
 
