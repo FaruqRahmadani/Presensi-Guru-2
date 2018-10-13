@@ -53,3 +53,10 @@ Route::get('/dashboard', function () {
 Route::get('/depan', function () {
     return view('template.templateDepan');
 });
+// halaman pegawai
+Route::get('/pegawai/data', function () {
+    return view('pegawai.data');
+});
+Route::get('/pegawai/tambah', function () {
+    return view('pegawai.tambah');
+});
