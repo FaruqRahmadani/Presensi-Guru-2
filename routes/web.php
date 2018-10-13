@@ -74,3 +74,10 @@ Route::get('/admin-sekolah/data', function () {
 Route::get('/admin-sekolah/tambah', function () {
     return view('adminSekolah.tambah');
 });
+// halam data sekolah
+Route::get('/sekolah/data', function () {
+    return view('sekolah.data');
+});
+Route::get('/sekolah/tambah', function () {
+    return view('sekolah.tambah');
+});
