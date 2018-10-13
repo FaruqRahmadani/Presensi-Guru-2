@@ -81,3 +81,10 @@ Route::get('/sekolah/data', function () {
 Route::get('/sekolah/tambah', function () {
     return view('sekolah.tambah');
 });
+// kategori presensi
+Route::get('/kategori-presensi/data', function () {
+    return view('kategoriPresensi.data');
+});
+Route::get('/kategori-presensi/tambah', function () {
+    return view('kategoriPresensi.tambah');
+});
