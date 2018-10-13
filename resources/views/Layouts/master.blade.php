@@ -134,6 +134,13 @@
                            <span>Data Presensi</span>
                         </a>
                      </li>
+                     <li class="">
+                        <a href="/data-admin/data" title="Data Admin">
+                           <div class="float-right mr-2"><em class="]"></em>&nbsp;</div>
+                           <em class="fa fa-users"></em>
+                           <span>Data Admin</span>
+                        </a>
+                     </li>
                      <!-- Dihapus Saat sudah kelar semua-->
                      <li class="nav-heading ">
                         <span>Template Page</span>
