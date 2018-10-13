@@ -36,23 +36,12 @@ Route::get('/data-admin/data', function () {
 Route::get('/data-admin/tambah', function () {
     return view('dataAdmin.tambah');
 });
-// halaman login
-Route::get('/login', function () {
-    return view('depan.login');
-});
-Route::get('/lupa-password', function () {
-    return view('depan.lupaPassword');
-});
 
 // halaman dashboard
 Route::get('/dashboard', function () {
     return view('dashboard.dashboard');
 });
 
-// halaman depan
-Route::get('/depan', function () {
-    return view('template.templateDepan');
-});
 // halaman pegawai
 Route::get('/pegawai/data', function () {
     return view('pegawai.data');
@@ -95,3 +84,7 @@ Route::get('/jenjang-sekolah/data', function () {
 Route::get('/jenjang-sekolah/tambah', function () {
     return view('jenjangSekolah.tambah');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
