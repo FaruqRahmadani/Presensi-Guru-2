@@ -26,6 +26,9 @@ Route::get('/template/form', function () {
     return view('template.form');
 });
 
+Route::get('/data-presensi/data', function () {
+    return view('dataPresensi.data');
+});
 // halaman data admin
 Route::get('/data-admin/data', function () {
     return view('dataAdmin.data');
