@@ -88,3 +88,10 @@ Route::get('/kategori-presensi/data', function () {
 Route::get('/kategori-presensi/tambah', function () {
     return view('kategoriPresensi.tambah');
 });
+// jenjang sekolah
+Route::get('/jenjang-sekolah/data', function () {
+    return view('jenjangSekolah.data');
+});
+Route::get('/jenjang-sekolah/tambah', function () {
+    return view('jenjangSekolah.tambah');
+});
