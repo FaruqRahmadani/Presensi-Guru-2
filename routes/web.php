@@ -60,3 +60,10 @@ Route::get('/pegawai/data', function () {
 Route::get('/pegawai/tambah', function () {
     return view('pegawai.tambah');
 });
+// halaman status sekolah
+Route::get('/status-sekolah/data', function () {
+    return view('statusSekolah.data');
+});
+Route::get('/status-sekolah/tambah', function () {
+    return view('statusSekolah.tambah');
+});
