@@ -11,78 +11,80 @@
 |
 */
 
-Route::get('/', function () {
+Route::Group(['middleware' => ['AuthMiddleware']], function(){
+  Route::get('/', function () {
     return view('Layouts.master');
-});
+  });
 
-// Template
-Route::get('/template/chart', function () {
+  // Template
+  Route::get('/template/chart', function () {
     return view('template.chart');
-});
-Route::get('/template/data', function () {
+  });
+  Route::get('/template/data', function () {
     return view('template.data');
-});
-Route::get('/template/form', function () {
+  });
+  Route::get('/template/form', function () {
     return view('template.form');
-});
+  });
 
-Route::get('/data-presensi/data', function () {
+  Route::get('/data-presensi/data', function () {
     return view('dataPresensi.data');
-});
-// halaman data admin
-Route::get('/data-admin/data', function () {
+  });
+  // halaman data admin
+  Route::get('/data-admin/data', function () {
     return view('dataAdmin.data');
-});
-Route::get('/data-admin/tambah', function () {
+  });
+  Route::get('/data-admin/tambah', function () {
     return view('dataAdmin.tambah');
-});
+  });
 
-// halaman dashboard
-Route::get('/dashboard', function () {
+  // halaman dashboard
+  Route::get('/dashboard', function () {
     return view('dashboard.dashboard');
-});
+  });
 
-// halaman pegawai
-Route::get('/pegawai/data', function () {
+  // halaman pegawai
+  Route::get('/pegawai/data', function () {
     return view('pegawai.data');
-});
-Route::get('/pegawai/tambah', function () {
+  });
+  Route::get('/pegawai/tambah', function () {
     return view('pegawai.tambah');
-});
-// halaman status sekolah
-Route::get('/status-sekolah/data', function () {
+  });
+  // halaman status sekolah
+  Route::get('/status-sekolah/data', function () {
     return view('statusSekolah.data');
-});
-Route::get('/status-sekolah/tambah', function () {
+  });
+  Route::get('/status-sekolah/tambah', function () {
     return view('statusSekolah.tambah');
-});
-// halaman data sekolah .
-Route::get('/admin-sekolah/data', function () {
+  });
+  // halaman data sekolah .
+  Route::get('/admin-sekolah/data', function () {
     return view('adminSekolah.data');
-});
-Route::get('/admin-sekolah/tambah', function () {
+  });
+  Route::get('/admin-sekolah/tambah', function () {
     return view('adminSekolah.tambah');
-});
-// halam data sekolah
-Route::get('/sekolah/data', function () {
+  });
+  // halam data sekolah
+  Route::get('/sekolah/data', function () {
     return view('sekolah.data');
-});
-Route::get('/sekolah/tambah', function () {
+  });
+  Route::get('/sekolah/tambah', function () {
     return view('sekolah.tambah');
-});
-// kategori presensi
-Route::get('/kategori-presensi/data', function () {
+  });
+  // kategori presensi
+  Route::get('/kategori-presensi/data', function () {
     return view('kategoriPresensi.data');
-});
-Route::get('/kategori-presensi/tambah', function () {
+  });
+  Route::get('/kategori-presensi/tambah', function () {
     return view('kategoriPresensi.tambah');
-});
-// jenjang sekolah
-Route::get('/jenjang-sekolah/data', function () {
+  });
+  // jenjang sekolah
+  Route::get('/jenjang-sekolah/data', function () {
     return view('jenjangSekolah.data');
-});
-Route::get('/jenjang-sekolah/tambah', function () {
+  });
+  Route::get('/jenjang-sekolah/tambah', function () {
     return view('jenjangSekolah.tambah');
+  });
 });
 
 Auth::routes();
