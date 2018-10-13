@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePasswordResetsTable extends Migration
+class CreateKategoriAbsensTable extends Migration
 {
   /**
   * Run the migrations.
@@ -13,12 +13,11 @@ class CreatePasswordResetsTable extends Migration
   */
   public function up()
   {
-    Schema::create('password_resets', function (Blueprint $table) {
+    Schema::create('kategori_absens', function (Blueprint $table) {
       $table->increments('id');
-      $table->string('email',100);
-      $table->string('token');
-      $table->integer('user_id');
-      $table->tinyInteger('status')->default(1);
+      $table->string('kode');
+      $table->string('keterangan');
+      $table->string('kode_warna');
       $table->timestamps();
     });
   }
@@ -30,6 +29,6 @@ class CreatePasswordResetsTable extends Migration
   */
   public function down()
   {
-    Schema::dropIfExists('password_resets');
+    Schema::dropIfExists('kategori_absens');
   }
 }
