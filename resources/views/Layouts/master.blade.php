@@ -55,7 +55,7 @@
                                           <img class="img-thumbnail rounded-circle" src="{{ asset('img/user/02.jpg') }}" alt="Avatar" width="60" height="60">
                                        </div>
                                     </div>
-                                    {{-- <p class="m-0">{{Auth::User()->nama}}</p> --}}
+                                    <p class="m-0">{{Auth::User()->nama}}</p>
                                     <p class="m-0 text-muted text-sm">{{Auth::User()->TipeText}}</p>
                                     </center>
                                  </div>
