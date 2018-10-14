@@ -9,12 +9,12 @@
         </div>
       </div>
       <div class="card-body">
-        <form action="{!!route('jenjangTambahSubmit')!!}" class="form-horizontal" method="post">
+        <form action="{!!route('jenjangEditSubmit', ['id' => $jenjang->UUID])!!}" class="form-horizontal" method="post">
           @csrf
           <div class="form-group row">
             <label class="col-xl-2 col-form-label text-bold">Nama Jenjang</label>
             <div class="col-xl-10">
-              <input class="form-control" type="text" placeholder="Nama Jenjang" name="nama">
+              <input class="form-control" type="text" placeholder="Nama Jenjang" name="nama" value="{{$jenjang->nama}}">
             </div>
           </div>
           <div class="form-group row">

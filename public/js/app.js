@@ -28953,6 +28953,7 @@ __webpack_require__(50);
 __webpack_require__(51);
 __webpack_require__(52);
 __webpack_require__(53);
+__webpack_require__(83);
 
 /***/ }),
 /* 13 */
@@ -75337,7 +75338,43 @@ S2.define('jquery.select2',[
 /* 51 */
 /***/ (function(module, exports) {
 
-
+$('.btn-delete').click(function () {
+  var url = $(this).attr('data-url');
+  var id = $(this).attr('data');
+  var status = $(this).attr('status');
+  if (!status) {
+    swal({
+      title: "Hapus",
+      text: "Yakin Ingin Hapus Data?",
+      icon: "warning",
+      buttons: ["Batal", "Hapus"]
+    }).then(function (hapus) {
+      if (hapus) {
+        swal({
+          title: "Berhasil",
+          text: "Data Akan dihapus",
+          icon: "success",
+          timer: 2500
+        });
+        window.location = url + '/' + id;
+      } else {
+        swal({
+          title: "Batal",
+          text: "Data Batal dihapus",
+          icon: "info",
+          timer: 2500
+        });
+      }
+    });
+  } else {
+    swal({
+      title: "Hapus",
+      text: status,
+      icon: "warning",
+      buttons: "OK"
+    });
+  }
+});
 
 /***/ }),
 /* 52 */
@@ -75677,6 +75714,31 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 }(typeof self === "undefined" ? typeof global === "undefined" ? this : global : self));
 
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4), __webpack_require__(21)))
+
+/***/ }),
+/* 83 */
+/***/ (function(module, exports) {
+
+$('#datatable').DataTable({
+  'paging': true,
+  'ordering': true,
+  'info': true,
+  responsive: true,
+  oLanguage: {
+    sSearch: '<em class="fas fa-search"></em>',
+    sEmptyTable: "Tidak ada data yang tersedia pada tabel ini",
+    sProcessing: "Sedang memproses...",
+    sLengthMenu: "Tampilkan _MENU_ entri",
+    sZeroRecords: "Tidak ditemukan data yang sesuai",
+    sInfo: "Menampilkan _START_ sampai _END_ dari _TOTAL_ entri",
+    sInfoEmpty: "Menampilkan 0 sampai 0 dari 0 entri",
+    sInfoFiltered: "(disaring dari _MAX_ entri keseluruhan)",
+    oPaginate: {
+      sNext: '<em class="fa fa-caret-right"></em>',
+      sPrevious: '<em class="fa fa-caret-left"></em>'
+    }
+  }
+});
 
 /***/ })
 /******/ ]);
