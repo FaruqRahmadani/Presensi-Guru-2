@@ -42,7 +42,7 @@
                   </li>
                   <li class="nav-item dropdown dropdown-list">
                      <a class="nav-link dropdown-toggle dropdown-toggle-nocaret" href="#" data-toggle="dropdown">
-                        <em class="icon-user"></em> User
+                        <em class="icon-user"></em> {{Auth::User()->nama}}
                      </a>
                      <div class="dropdown-menu dropdown-menu-right animated flipInX">
                         <div class="dropdown-item">
@@ -55,8 +55,8 @@
                                           <img class="img-thumbnail rounded-circle" src="{{ asset('img/user/02.jpg') }}" alt="Avatar" width="60" height="60">
                                        </div>
                                     </div>
-                                    <p class="m-0">Nama Admin</p>
-                                    <p class="m-0 text-muted text-sm">Level/Jabatan</p>
+                                    {{-- <p class="m-0">{{Auth::User()->nama}}</p> --}}
+                                    <p class="m-0 text-muted text-sm">{{Auth::User()->TipeText}}</p>
                                     </center>
                                  </div>
                               </div>
