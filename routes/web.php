@@ -81,9 +81,8 @@ Route::Group(['middleware' => ['AuthMiddleware']], function(){
   // jenjang sekolah
   Route::group(['prefix' => 'jenjang', 'as' => 'jenjang'], function () {
     Route::get('', 'JenjangController@data')->name('Data');
-    Route::get('/jenjang-sekolah/tambah', function () {
-      return view('jenjangSekolah.tambah');
-    });
+    Route::get('tambah', 'JenjangController@tambahForm')->name('TambahForm');
+    Route::post('tambah', 'JenjangController@tambahSubmit')->name('TambahSubmit');
   });
 });
 

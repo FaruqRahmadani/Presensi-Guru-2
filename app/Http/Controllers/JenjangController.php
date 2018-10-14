@@ -11,4 +11,8 @@ class JenjangController extends Controller
     $jenjang = $jenjang->all();
     return view('jenjangSekolah.data', compact('jenjang'));
   }
+
+  public function tambahForm(){
+    return view('jenjangSekolah.tambah');
+  }
 }
