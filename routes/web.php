@@ -79,11 +79,13 @@ Route::Group(['middleware' => ['AuthMiddleware']], function(){
     return view('kategoriPresensi.tambah');
   });
   // jenjang sekolah
-  Route::get('/jenjang-sekolah/data', function () {
-    return view('jenjangSekolah.data');
-  });
-  Route::get('/jenjang-sekolah/tambah', function () {
-    return view('jenjangSekolah.tambah');
+  Route::group(['prefix' => 'jenjang', 'as' => 'jenjang'], function () {
+    Route::get('', function () {
+      return view('jenjangSekolah.data');
+    })->name('Data');
+    Route::get('/jenjang-sekolah/tambah', function () {
+      return view('jenjangSekolah.tambah');
+    });
   });
 });
 
