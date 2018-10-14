@@ -72,4 +72,11 @@
         </main>
     </div>
 </body>
+<script src="{{ asset('js/app.js') }}"></script>
+@if (session('alert'))
+  <script>notif('{{session('tipe')}}', '{{session('judul')}}', '{{session('pesan')}}')</script>
+@endif
+@if ($errors->count())
+  <script>notif('error', 'Ada Kesalahan', '{{$errors->first()}}')</script>
+@endif
 </html>

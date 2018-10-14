@@ -1,7 +1,8 @@
 window.notif = function(tipe, judul, pesan){
-  swal({
-    title   : judul,
-    text    : pesan,
-    icon    : tipe,
-  })
+  alert(pesan+" minta tolong sweetalertnya broh wkwk")
+  // swal({
+  //   title   : judul,
+  //   text    : pesan,
+  //   icon    : tipe,
+  // })
 }

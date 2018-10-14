@@ -15,13 +15,13 @@
                 <label for="username" class="col-sm-4 col-form-label text-md-right">{{ __('Username') }}</label>
 
                 <div class="col-md-6">
-                  <input id="username" type="username" class="form-control{{ $errors->has('username') ? ' is-invalid' : '' }}" name="username" value="{{ old('username') }}" required autofocus>
+                  <input id="username" type="username" class="form-control" name="username" value="{{ old('username') }}" required autofocus>
 
-                  @if ($errors->has('username'))
+                  {{-- @if ($errors->has('username'))
                     <span class="invalid-feedback" role="alert">
                       <strong>{{ $errors->first('username') }}</strong>
                     </span>
-                  @endif
+                  @endif --}}
                 </div>
               </div>
 
@@ -29,13 +29,13 @@
                 <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
 
                 <div class="col-md-6">
-                  <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
+                  <input id="password" type="password" class="form-control" name="password" required>
 
-                  @if ($errors->has('password'))
+                  {{-- @if ($errors->has('password'))
                     <span class="invalid-feedback" role="alert">
                       <strong>{{ $errors->first('password') }}</strong>
                     </span>
-                  @endif
+                  @endif --}}
                 </div>
               </div>
 
