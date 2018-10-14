@@ -16,4 +16,5 @@ require('./_mentah/app');
 require('./_mentah/_select-2');
 require('./_mentah/_color-picker');
 require('./_mentah/custom');
-require('./custom');
+require('sweetalert/dist/sweetalert.min');
+require('./_mentah/_alert');
