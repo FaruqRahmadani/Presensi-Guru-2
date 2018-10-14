@@ -70,7 +70,7 @@
                                     </div>
                                  </div>
                               </a>
-                              <a href="#" class="list-group-item list-group-item-action" id="logout">
+                              <a class="list-group-item list-group-item-action" id="logout">
                                  <div class="media">
                                     <div class="align-self-start mr-2">
                                        <em class="fa fa-power-off text-danger"></em>
@@ -93,7 +93,7 @@
                   <!-- START sidebar nav-->
                   <ul class="sidebar-nav">
                      <li class="nav-heading ">
-                        <span">Menu Navigasi</span>
+                        <span>Menu Navigasi</span>
                      </li>
                      <li class="">
                         <a href="/dashboard" title="Dashboard">
