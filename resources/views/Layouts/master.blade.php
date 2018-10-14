@@ -110,7 +110,7 @@
               </a>
               <ul class="sidebar-nav sidebar-subnav collapse" id="menuMaster">
                 <li class="sidebar-subnav-header">Master Data</li>
-                <li class=""><a href="/jenjang-sekolah/data"><span>Jenjang</span></a></li>
+                <li class=""><a href="{!!route('jenjangData')!!}"><span>Jenjang</span></a></li>
                 <li class=""><a href="/status-sekolah/data"><span>Status Sekolah</span></a></li>
                 <li class=""><a href="/kategori-presensi/data">Kategori Presensi</a></li>
               </ul>
