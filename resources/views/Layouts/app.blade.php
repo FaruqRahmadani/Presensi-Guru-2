@@ -11,9 +11,8 @@
         <link rel="icon" type="image/png" href="{{ asset('img/logo/lg2.png') }}">
     </head>
     <body>
-        <main class="py-5">
             @yield('content')
-        </main>
+        {{-- </main> --}}
     </body>
 
     <script src="{{ asset('js/app.js') }}"></script>
