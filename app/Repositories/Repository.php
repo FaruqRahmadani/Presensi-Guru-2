@@ -2,6 +2,8 @@
 
 namespace App\Repositories;
 
+use Illuminate\Contracts\Encryption\DecryptException;
+
 abstract class Repository implements RepositoryInterface
 {
   protected $model;
@@ -35,6 +37,11 @@ abstract class Repository implements RepositoryInterface
   */
   public function get($id)
   {
+    try {
+      $id = decrypt($id);
+    } catch (DecryptException $e) {
+      //
+    }
     return $this->model::findOrFail($id);
   }
 
