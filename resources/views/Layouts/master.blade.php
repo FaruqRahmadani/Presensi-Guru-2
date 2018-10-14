@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="{{ app()->getLocale() }}">
    <head>
+      <meta name="csrf-token" content="{{ csrf_token() }}">
       <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -69,7 +70,7 @@
                                     </div>
                                  </div>
                               </a>
-                              <a href="#" class="list-group-item list-group-item-action">
+                              <a href="#" class="list-group-item list-group-item-action" id="logout">
                                  <div class="media">
                                     <div class="align-self-start mr-2">
                                        <em class="fa fa-power-off text-danger"></em>
