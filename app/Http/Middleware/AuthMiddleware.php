@@ -19,6 +19,6 @@ class AuthMiddleware
     if (Auth::User()) {
       return $next($request);
     }
-    return abort(404);
+    return redirect()->route('login');
   }
 }
