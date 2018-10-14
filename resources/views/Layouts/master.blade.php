@@ -70,7 +70,7 @@
                                     </div>
                                  </div>
                               </a>
-                              <a href="#" class="list-group-item list-group-item-action">
+                              <a href="#" class="list-group-item list-group-item-action" id="logout">
                                  <div class="media">
                                     <div class="align-self-start mr-2">
                                        <em class="fa fa-power-off text-danger"></em>
