@@ -20,17 +20,17 @@
               </tr>
             </thead>
             <tbody>
-              @for ($i = 0; $i < 3; $i++)
+              @foreach ($jenjang as $dataJenjang)
                 <tr>
-                  <td>{{$i+1}}</td>
-                  <td>ini kolom jenjang sekolah</td>
-                  <td align="center">{{$i+10}}</td>
+                  <td>{{$loop->iteration}}</td>
+                  <td>{{$dataJenjang->nama}}</td>
+                  <td align="center">{{$dataJenjang->Sekolah->count()}}</td>
                   <td>
                     <a href="#" class="btn btn-labeled btn-primary btn-xs"><span class="btn-label"><i class="fa fa-edit"></i></span>Edit</a>
                     <a href="#" class="btn btn-labeled btn-danger btn-xs"><span class="btn-label"><i class="fa fa-trash"></i></span>Hapus</a>
                   </td>
                 </tr>
-              @endfor
+              @endforeach
             </tbody>
           </table>
         </div>
