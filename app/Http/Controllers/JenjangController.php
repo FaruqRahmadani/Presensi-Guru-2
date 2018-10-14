@@ -30,4 +30,9 @@ class JenjangController extends Controller
     $jenjang->update($id, $request->all());
     return redirect()->route('jenjangData')->with(['alert' => true, 'tipe' => 'success', 'judul' => 'Berhasil', 'pesan' => 'Data Berhasil Diubah']);
   }
+
+  public function hapus(JenjangRepository $jenjang, $id){
+    $jenjang->delete($id);
+    return redirect()->route('jenjangData')->with(['alert' => true, 'tipe' => 'success', 'judul' => 'Berhasil', 'pesan' => 'Data Berhasil Dihapus']);
+  }
 }
