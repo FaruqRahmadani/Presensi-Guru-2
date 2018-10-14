@@ -180,6 +180,9 @@
     </footer>
   </div>
   <script src="{{ asset('js/app.js') }}"></script>
+  @if (session('alert'))
+    <script>notif('{{session('tipe')}}', '{{session('judul')}}', '{{session('pesan')}}')</script>
+  @endif
   @yield('js-content')
 </body>
 </html>
