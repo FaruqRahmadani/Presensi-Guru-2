@@ -41,19 +41,19 @@
 @section('js-content')
   <script>
   $('#datatable1').DataTable({
-    'paging': true, // Table pagination
-    'ordering': true, // Column ordering
-    'info': true, // Bottom left status text
+    'paging': true,
+    'ordering': true,
+    'info': true,
     responsive: true,
-    // Text translation options
-    // Note the required keywords between underscores (e.g _MENU_)
     oLanguage: {
       sSearch: '<em class="fas fa-search"></em>',
-      sLengthMenu: '_MENU_ records per page',
-      info: 'Showing page _PAGE_ of _PAGES_',
-      zeroRecords: 'Nothing found - sorry',
-      infoEmpty: 'No records available',
-      infoFiltered: '(filtered from _MAX_ total records)',
+      sEmptyTable:   "Tidak ada data yang tersedia pada tabel ini",
+      sProcessing:   "Sedang memproses...",
+      sLengthMenu:   "Tampilkan _MENU_ entri",
+      sZeroRecords:  "Tidak ditemukan data yang sesuai",
+      sInfo:         "Menampilkan _START_ sampai _END_ dari _TOTAL_ entri",
+      sInfoEmpty:    "Menampilkan 0 sampai 0 dari 0 entri",
+      sInfoFiltered: "(disaring dari _MAX_ entri keseluruhan)",
       oPaginate: {
         sNext: '<em class="fa fa-caret-right"></em>',
         sPrevious: '<em class="fa fa-caret-left"></em>'
