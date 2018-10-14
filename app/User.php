@@ -31,4 +31,18 @@ class User extends Authenticatable
   public function setPasswordAttribute($value){
     if ($value) $this->attributes['password'] = bcrypt($value);
   }
+
+  public function getTipeTextAttribute(){
+    switch ($this->tipe) {
+      case 1:
+        return "Super Admin";
+        break;
+      case 2:
+        return "Admin Sekolah";
+        break;
+      default:
+        return "Kode Level User Tidak Diketahui";
+        break;
+    }
+  }
 }
