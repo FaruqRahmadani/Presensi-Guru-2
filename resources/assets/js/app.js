@@ -1,12 +1,6 @@
+require('./bootstrap');
+import swal from 'sweetalert'
 require('modernizr/modernizr.custom');
-window.Popper = require('popper.js').default;
-
-try {
-    window.$ = window.jQuery = require('jquery');
-
-    require('bootstrap');
-} catch (e) {}
-
 window.Storages = require('js-storage/js.storage');
 require('jquery.easing');
 require('animo/animo');
@@ -23,4 +17,4 @@ require('./_mentah/app');
 require('./_mentah/_select-2');
 require('./_mentah/_color-picker');
 require('./_mentah/custom');
-
+require('./custom');
