@@ -84,6 +84,11 @@ abstract class Repository implements RepositoryInterface
   */
   public function delete($id)
   {
+    try {
+      $id = decrypt($id);
+    } catch (DecryptException $e) {
+      //
+    }
     $model = $this->get($id);
     $model->delete();
   }
