@@ -63,8 +63,13 @@ abstract class Repository implements RepositoryInterface
   * @param int $id
   * @return void
   */
-  public function update(array $data, $id)
+  public function update($id, array $data)
   {
+    try {
+      $id = decrypt($id);
+    } catch (DecryptException $e) {
+      //
+    }
     $model = $this->get($id);
     $model->update($data);
 
