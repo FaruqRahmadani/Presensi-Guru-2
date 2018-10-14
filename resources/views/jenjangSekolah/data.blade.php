@@ -26,7 +26,7 @@
                   <td>{{$dataJenjang->nama}}</td>
                   <td align="center">{{$dataJenjang->Sekolah->count()}}</td>
                   <td>
-                    <a href="#" class="btn btn-labeled btn-primary btn-xs"><span class="btn-label"><i class="fa fa-edit"></i></span>Edit</a>
+                    <a href="{!!route('jenjangEditForm', ['id' => $dataJenjang->UUID])!!}" class="btn btn-labeled btn-primary btn-xs"><span class="btn-label"><i class="fa fa-edit"></i></span>Edit</a>
                     <a href="#" class="btn btn-labeled btn-danger btn-xs"><span class="btn-label"><i class="fa fa-trash"></i></span>Hapus</a>
                   </td>
                 </tr>

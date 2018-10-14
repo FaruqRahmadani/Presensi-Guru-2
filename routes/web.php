@@ -83,6 +83,8 @@ Route::Group(['middleware' => ['AuthMiddleware']], function(){
     Route::get('', 'JenjangController@data')->name('Data');
     Route::get('tambah', 'JenjangController@tambahForm')->name('TambahForm');
     Route::post('tambah', 'JenjangController@tambahSubmit')->name('TambahSubmit');
+    Route::get('{id}/edit', 'JenjangController@editForm')->name('EditForm');
+    Route::post('{id}/edit', 'JenjangController@editSubmit')->name('EditSubmit');
   });
 });
 

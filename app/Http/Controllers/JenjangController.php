@@ -20,4 +20,9 @@ class JenjangController extends Controller
     $jenjang->store($request->all());
     return redirect()->route('jenjangData')->with(['alert' => true, 'tipe' => 'success', 'judul' => 'Berhasil', 'pesan' => 'Data Berhasil Ditambahkan']);
   }
+
+  public function editForm(JenjangRepository $jenjang, $id){
+    $jenjang = $jenjang->get($id);
+    return view('jenjangSekolah.edit', compact('jenjang'));
+  }
 }
