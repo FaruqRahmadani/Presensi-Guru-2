@@ -3,7 +3,6 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use HCrypt;
 
 class Jenjang extends Model
 {
@@ -14,6 +13,6 @@ class Jenjang extends Model
   }
 
   public function getUUIDAttribute(){
-    return HCrypt::Encrypt($this->id);
+    return encrypt($this->id);
   }
 }
