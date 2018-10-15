@@ -18,3 +18,4 @@ require('./_mentah/_color-picker');
 require('./_mentah/custom');
 require('sweetalert/dist/sweetalert.min');
 require('./_mentah/_alert');
+require('./_mentah/_datatable');

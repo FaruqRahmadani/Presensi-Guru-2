@@ -79,11 +79,13 @@ Route::Group(['middleware' => ['AuthMiddleware']], function(){
     return view('kategoriPresensi.tambah');
   });
   // jenjang sekolah
-  Route::get('/jenjang-sekolah/data', function () {
-    return view('jenjangSekolah.data');
-  });
-  Route::get('/jenjang-sekolah/tambah', function () {
-    return view('jenjangSekolah.tambah');
+  Route::group(['prefix' => 'jenjang', 'as' => 'jenjang'], function () {
+    Route::get('', 'JenjangController@data')->name('Data');
+    Route::get('tambah', 'JenjangController@tambahForm')->name('TambahForm');
+    Route::post('tambah', 'JenjangController@tambahSubmit')->name('TambahSubmit');
+    Route::get('{id}/edit', 'JenjangController@editForm')->name('EditForm');
+    Route::post('{id}/edit', 'JenjangController@editSubmit')->name('EditSubmit');
+    Route::get('hapus/{id?}', 'JenjangController@hapus')->name('Hapus');
   });
 });
 

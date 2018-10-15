@@ -4,6 +4,13 @@
 	}
 }
 .tabel-custom {
-  /*width: 1px;*/
   white-space: nowrap;
+	th{
+		text-align: center;
+	}
+	tr{
+		td:first-child,:last-child{
+				text-align: center;
+		}
+	}
 }

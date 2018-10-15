@@ -25517,8 +25517,16 @@ button,
 }
 
 .tabel-custom {
-  /*width: 1px;*/
   white-space: nowrap;
+}
+
+.tabel-custom th {
+  text-align: center;
+}
+
+.tabel-custom tr td:first-child,
+.tabel-custom tr :last-child {
+  text-align: center;
 }
 
 .login-block {
