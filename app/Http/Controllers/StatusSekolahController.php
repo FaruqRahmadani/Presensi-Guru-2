@@ -15,4 +15,9 @@ class StatusSekolahController extends Controller
   public function tambahForm(){
     return view('statusSekolah.tambah');
   }
+
+  public function tambahSubmit(StatusRepository $status, Request $request){
+    $status->store($request->all());
+    return redirect()->route('statusSekolahData')->with(['alert' => true, 'tipe' => 'success', 'judul' => 'Berhasil', 'pesan' => 'Data Berhasil Ditambahkan']);
+  }
 }

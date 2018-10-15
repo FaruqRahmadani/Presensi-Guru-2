@@ -9,11 +9,12 @@
         </div>
       </div>
       <div class="card-body">
-        <form action="" class="form-horizontal">
+        <form action="{!!route('statusSekolahTambahSubmit')!!}" class="form-horizontal" method="post">
+          @csrf
           <div class="form-group row">
             <label class="col-xl-2 col-form-label text-bold">Status Sekolah</label>
             <div class="col-xl-10">
-              <input class="form-control" type="text" placeholder="Nama Status Sekolah">
+              <input class="form-control" type="text" name="nama" placeholder="Nama Status Sekolah">
             </div>
           </div>
           <div class="form-group row">
