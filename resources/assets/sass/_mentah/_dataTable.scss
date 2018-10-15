@@ -1,0 +1,22 @@
+.table{
+  white-space: nowrap;
+  tr{
+    td{
+      vertical-align: middle !important;
+    }
+    td:first-child{
+      text-align: center;
+    }
+    td:last-child{
+      white-space: nowrap;
+      text-align: center;
+      .btn{
+        margin-left: 0px;
+        margin-right: 0px;
+      }
+    }
+    th{
+      text-align: center;
+    }
+  }
+}

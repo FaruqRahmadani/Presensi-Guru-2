@@ -1,6 +1,3 @@
-// Color picker
-// -----------------------------------
-
 (function(window, document, $, undefined) {
     'use strict';
 
