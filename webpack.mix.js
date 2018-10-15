@@ -7,7 +7,7 @@ mix
      proxy:'localhost:8000',
      scrollRestoreTechnique:'cookie',
      files: [
-       'resources/views/**/*.blade.php'
+       'resources/**'
      ],
      scrollElements: ['.scroller']
    });

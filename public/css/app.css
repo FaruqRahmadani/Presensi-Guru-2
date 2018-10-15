@@ -10507,6 +10507,9 @@ select.is-valid ~ .select2-container--bootstrap4 .select2-selection {
  */
 
 :root {
+  --angel-blue: #23B7E7;
+  --peach: #FFB88C;
+  --light-peach: #FEB58A;
   --blue: #007bff;
   --indigo: #6610f2;
   --purple: #7266ba;
@@ -25094,5 +25097,129 @@ fieldset .form-group {
 
 .table tr th {
   text-align: center;
+}
+
+.login-block {
+  background: var(--angel-blue);
+  background: -webkit-gradient(linear, left top, left bottom, from(var(--peach)), to(var(--angel-blue)));
+  background: linear-gradient(to bottom, var(--peach), var(--angel-blue));
+  float: left;
+  width: 100%;
+  height: inherit;
+}
+
+.banner-sec {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5))), url(/img/front-img.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/img/front-img.jpg);
+  background-size: cover;
+  min-height: 500px;
+  padding: 0;
+}
+
+@media (min-width: 768px) {
+  .banner-sec {
+    border-radius: 0 10px 10px 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .banner-sec {
+    display: none;
+  }
+}
+
+.container {
+  background: #fff;
+}
+
+@media (min-width: 768px) {
+  .container {
+    border-radius: 10px;
+  }
+}
+
+.container-login {
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .container-login {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+  }
+}
+
+@media (max-width: 768px) {
+  .container-login {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    min-height: 100%;
+  }
+}
+
+.login-sec {
+  padding: 50px 30px;
+  position: relative;
+}
+
+.login-sec h2 {
+  margin-bottom: 30px;
+  font-weight: 800;
+  font-size: 30px;
+  color: var(--angel-blue);
+}
+
+.login-sec h2:after {
+  content: " ";
+  width: 100px;
+  height: 5px;
+  background: var(--light-peach);
+  display: block;
+  margin-top: 20px;
+  border-radius: 3px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.login-sec .link-text {
+  position: absolute;
+  width: 80%;
+  bottom: 50px;
+  font-size: 13px;
+  text-align: left;
+}
+
+.banner-text {
+  width: 70%;
+  position: absolute;
+  bottom: 40px;
+  padding-left: 20px;
+}
+
+.banner-text h2 {
+  color: #fff;
+  font-weight: 600;
+}
+
+.banner-text h2:after {
+  content: " ";
+  width: 100px;
+  height: 5px;
+  background: var(--light-peach);
+  display: block;
+  margin-top: 20px;
+  border-radius: 3px;
+}
+
+.banner-text p {
+  color: #fff;
 }
 

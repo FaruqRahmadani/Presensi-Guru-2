@@ -1,0 +1,109 @@
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+
+.login-block {
+	background: var(--angel-blue);
+	background: -webkit-linear-gradient(to bottom, var(--peach), var(--angel-blue));
+  background: linear-gradient(to bottom, var(--peach), var(--angel-blue)); 
+  float:left;
+	width: 100%;
+	height: inherit;
+}
+
+.banner-sec {
+	background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/img/front-img.jpg);
+	background-size: cover;
+	min-height: 500px;
+	@media (min-width:$breakpoint-md) {
+		border-radius: 0 10px 10px 0;
+	}
+	@media (max-width:$breakpoint-md) {
+		display:none;
+	}
+	padding: 0;
+}
+
+.container {
+	background: #fff;
+	@media (min-width:$breakpoint-md) {
+		border-radius: 10px;
+	}
+	@media (max-width:$breakpoint-md) {
+		
+	}
+	// box-shadow:15px 20px 0px rgba(0,0,0,0.1);
+}
+
+.container-login{
+		margin:0;
+		@media (min-width:$breakpoint-md) {
+			position: absolute;
+	    top: 50%;
+	    left: 50%;
+	    margin-right: -50%;
+	    transform: translate(-50%, -50%);
+		}
+		@media (max-width:$breakpoint-md) {
+			position: absolute;
+	    top: 50%;
+	    left: 50%;
+	    margin-right: -50%;
+	    transform: translate(-50%, -50%);
+	    // border-radius:10px;
+	    min-height:100%;
+		}
+}
+
+.login-sec{
+	padding: 50px 30px;
+	position: relative;
+	h2 {
+		margin-bottom: 30px;
+		font-weight: 800;
+		font-size: 30px;
+		color: var(--angel-blue);
+	}
+	h2:after {
+		content: " ";
+		width: 100px;
+		height: 5px;
+		background: var(--light-peach);
+		display: block;
+		margin-top: 20px;
+		border-radius: 3px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.link-text{
+		position:absolute; 
+		width:80%; 
+		bottom:50px; 
+		font-size:13px; 
+		text-align:left;
+	}
+}
+
+.banner-text{
+	width: 70%;
+	position: absolute;
+	bottom: 40px;
+	padding-left: 20px;
+	h2{
+		color: #fff;
+		font-weight: 600;
+	}
+	h2:after{
+		content: " ";
+		width: 100px;
+		height: 5px;
+		background: var(--light-peach);
+		display: block;
+		margin-top: 20px;
+		border-radius: 3px;
+	}
+	p{
+		color: #fff;
+	}
+}
