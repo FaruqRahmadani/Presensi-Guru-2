@@ -12,7 +12,7 @@
             <div class="table-responsive">
                 <table width="100%" class="table table-striped table-bordered tabel-custom my-4 w-100" id="datatable1">
                     <thead>
-                        <tr class="text-center">
+                        <tr>
                             <th>#</th>
                             <th>NIP</th>
                             <th>NUPTK</th>
@@ -29,7 +29,7 @@
                     <tbody>
                         @for ($i = 0; $i < 3; $i++)
                         <tr>
-                            <td align="center">{{$i+1}}</td>
+                            <td>{{$i+1}}</td>
                             <td align="center">NIP</td>
                             <td align="center">NUPTK</td>
                             <td>Nama</td>
@@ -39,7 +39,7 @@
                             <td>E-mail</td>
                             <td>Sekolah Induk</td>
                             <td align="center">ID Sidik Jari</td>
-                            <td align="center">
+                            <td>
                                 <a href="#" class="btn btn-labeled btn-primary btn-xs"><span class="btn-label"><i class="fa fa-edit"></i></span>Edit</a>
                                 <a href="#" class="btn btn-labeled btn-danger btn-xs"><span class="btn-label"><i class="fa fa-trash"></i></span>Hapus</a>
                             </td>
