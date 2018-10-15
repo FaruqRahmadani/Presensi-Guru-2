@@ -5,7 +5,7 @@
     <div class="card card-default">
       <div class="card-header">
         <div class="card-title">
-          <a href="/status-sekolah/tambah" class="btn btn-labeled btn-info btn-md"><span class="btn-label"><i class="fa fa-plus"></i></span><b>Tambah Data</b></a>
+          <a href="{!!route('statusSekolahTambahForm')!!}" class="btn btn-labeled btn-info btn-md"><span class="btn-label"><i class="fa fa-plus"></i></span><b>Tambah Data</b></a>
         </div>
       </div>
       <div class="card-body">

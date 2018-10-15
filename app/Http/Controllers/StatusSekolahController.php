@@ -11,4 +11,8 @@ class StatusSekolahController extends Controller
     $status = $status->all();
     return view('statusSekolah.data', compact('status'));
   }
+
+  public function tambahForm(){
+    return view('statusSekolah.tambah');
+  }
 }

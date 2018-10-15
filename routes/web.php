@@ -52,9 +52,7 @@ Route::Group(['middleware' => ['AuthMiddleware']], function(){
   });
   Route::group(['prefix' => 'status-sekolah', 'as' => 'statusSekolah'], function () {
     Route::get('', 'StatusSekolahController@data')->name('Data');
-    Route::get('/status-sekolah/tambah', function () {
-      return view('statusSekolah.tambah');
-    });
+    Route::get('tambah', 'StatusSekolahController@tambahForm')->name('TambahForm');
   });
   // halaman data sekolah .
   Route::get('/admin-sekolah/data', function () {
