@@ -54,6 +54,8 @@ Route::Group(['middleware' => ['AuthMiddleware']], function(){
     Route::get('', 'StatusSekolahController@data')->name('Data');
     Route::get('tambah', 'StatusSekolahController@tambahForm')->name('TambahForm');
     Route::post('tambah', 'StatusSekolahController@tambahSubmit')->name('TambahSubmit');
+    Route::get('{id}/edit', 'StatusSekolahController@editForm')->name('EditForm');
+    Route::post('{id}/edit', 'StatusSekolahController@editSubmit')->name('EditSubmit');
   });
   // halaman data sekolah .
   Route::get('/admin-sekolah/data', function () {

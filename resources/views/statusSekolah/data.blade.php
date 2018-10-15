@@ -1,4 +1,4 @@
-@extends('layouts/master')
+@extends('layouts.master')
 @section('content-heading','Data Status Sekolah')
 @section('content')
   <div class="container-fluid">
@@ -26,7 +26,7 @@
                   <td>{{$dataStatus->nama}}</td>
                   <td align="center">{{$dataStatus->Sekolah->count()}}</td>
                   <td>
-                    <a href="#" class="btn btn-labeled btn-primary btn-xs"><span class="btn-label"><i class="fa fa-edit"></i></span>Edit</a>
+                    <a href="{!!route('statusSekolahEditForm', ['id' => $dataStatus->UUID])!!}" class="btn btn-labeled btn-primary btn-xs"><span class="btn-label"><i class="fa fa-edit"></i></span>Edit</a>
                     <a href="#" class="btn btn-labeled btn-danger btn-xs"><span class="btn-label"><i class="fa fa-trash"></i></span>Hapus</a>
                   </td>
                 </tr>

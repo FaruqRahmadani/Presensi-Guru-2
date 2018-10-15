@@ -20,4 +20,9 @@ class StatusSekolahController extends Controller
     $status->store($request->all());
     return redirect()->route('statusSekolahData')->with(['alert' => true, 'tipe' => 'success', 'judul' => 'Berhasil', 'pesan' => 'Data Berhasil Ditambahkan']);
   }
+
+  public function editForm(StatusRepository $status, $id){
+    $status = $status->get($id);
+    return view('statusSekolah.edit', compact('status'));
+  }
 }
