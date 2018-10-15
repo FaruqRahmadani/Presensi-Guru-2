@@ -30,4 +30,9 @@ class StatusSekolahController extends Controller
     $status->update($id, $request->all());
     return redirect()->route('statusSekolahData')->with(['alert' => true, 'tipe' => 'success', 'judul' => 'Berhasil', 'pesan' => 'Data Berhasil Diubah']);
   }
+
+  public function hapus(StatusRepository $status, $id){
+    $status->delete($id);
+    return redirect()->route('statusSekolahData')->with(['alert' => true, 'tipe' => 'success', 'judul' => 'Berhasil', 'pesan' => 'Data Berhasil Dihapus']);
+  }
 }
