@@ -10,9 +10,9 @@
         </div>
         <div class="card-body">
             <div class="table-responsive">
-                <table width="100%" class="table table-striped table-bordered tabel-custom my-4 w-100" id="datatable1">
+                <table width="100%" class="table table-striped table-bordered tabel-custom my-4 w-100" id="datatable">
                     <thead>
-                        <tr class="text-center">
+                        <tr>
                             <th>#</th>
                             <th>Nama</th>
                             <th>E-Mail</th>
@@ -23,7 +23,7 @@
                     <tbody>
                         @for ($i = 0; $i < 3; $i++)
                         <tr>
-                            <td align="center">{{$i+1}}</td>
+                            <td>{{$i+1}}</td>
                             <td>
                                 <div class="inline">
                                     <img class="rounded-circle thumb48" src="{{ asset('img/user/03.jpg') }}" alt="">
@@ -34,7 +34,7 @@
                             </td>
                             <td>E-Mail</td>
                             <td>Username</td>
-                            <td align="center">
+                            <td>
                                 <a href="#" class="btn btn-labeled btn-primary btn-xs"><span class="btn-label"><i class="fa fa-edit"></i></span>Edit</a>
                                 <a href="#" class="btn btn-labeled btn-danger btn-xs"><span class="btn-label"><i class="fa fa-trash"></i></span>Hapus</a>
                             </td>
@@ -46,28 +46,4 @@
         </div>
     </div>
 </div>
-@endsection
-@section('js-content')
-<script>
-$('#datatable1').DataTable({
-'paging': true, // Table pagination
-'ordering': true, // Column ordering
-'info': true, // Bottom left status text
-responsive: true,
-// Text translation options
-// Note the required keywords between underscores (e.g _MENU_)
-oLanguage: {
-sSearch: '<em class="fas fa-search"></em>',
-sLengthMenu: '_MENU_ records per page',
-info: 'Showing page _PAGE_ of _PAGES_',
-zeroRecords: 'Nothing found - sorry',
-infoEmpty: 'No records available',
-infoFiltered: '(filtered from _MAX_ total records)',
-oPaginate: {
-sNext: '<em class="fa fa-caret-right"></em>',
-sPrevious: '<em class="fa fa-caret-left"></em>'
-}
-}
-});
-</script>
 @endsection

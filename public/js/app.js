@@ -29209,8 +29209,8 @@ __webpack_require__(47);
 __webpack_require__(48);
 __webpack_require__(49);
 __webpack_require__(50);
-__webpack_require__(51);
-__webpack_require__(52);
+__webpack_require__(84);
+__webpack_require__(85);
 __webpack_require__(53);
 __webpack_require__(55);
 __webpack_require__(56);
@@ -75374,79 +75374,8 @@ S2.define('jquery.select2',[
 })(window, document, window.jQuery);
 
 /***/ }),
-/* 51 */
-/***/ (function(module, exports) {
-
-// Color picker
-// -----------------------------------
-
-(function (window, document, $, undefined) {
-    'use strict';
-
-    $(initColorPicker);
-
-    function initColorPicker() {
-
-        if (!$.fn.colorpicker) return;
-
-        $('.demo-colorpicker').colorpicker();
-
-        $('#demo_selectors').colorpicker({
-            colorSelectors: {
-                'default': '#777777',
-                'primary': APP_COLORS['primary'],
-                'success': APP_COLORS['success'],
-                'info': APP_COLORS['info'],
-                'warning': APP_COLORS['warning'],
-                'danger': APP_COLORS['danger']
-            }
-        });
-    }
-})(window, document, window.jQuery);
-
-/***/ }),
-/* 52 */
-/***/ (function(module, exports) {
-
-$('.btn-delete').click(function () {
-  var url = $(this).attr('data-url');
-  var id = $(this).attr('data');
-  var status = $(this).attr('status');
-  if (!status) {
-    swal({
-      title: "Hapus",
-      text: "Yakin Ingin Hapus Data?",
-      icon: "warning",
-      buttons: ["Batal", "Hapus"]
-    }).then(function (hapus) {
-      if (hapus) {
-        swal({
-          title: "Berhasil",
-          text: "Data Akan dihapus",
-          icon: "success",
-          timer: 2500
-        });
-        window.location = url + '/' + id;
-      } else {
-        swal({
-          title: "Batal",
-          text: "Data Batal dihapus",
-          icon: "info",
-          timer: 2500
-        });
-      }
-    });
-  } else {
-    swal({
-      title: "Hapus",
-      text: status,
-      icon: "warning",
-      buttons: "OK"
-    });
-  }
-});
-
-/***/ }),
+/* 51 */,
+/* 52 */,
 /* 53 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -75682,6 +75611,43 @@ $("#logout").click(function () {
     }
   });
 });
+$('.btn-delete').click(function () {
+  var url = $(this).attr('data-url');
+  var id = $(this).attr('data');
+  var status = $(this).attr('status');
+  if (!status) {
+    swal({
+      title: "Hapus",
+      text: "Yakin Ingin Hapus Data?",
+      icon: "warning",
+      buttons: ["Batal", "Hapus"]
+    }).then(function (hapus) {
+      if (hapus) {
+        swal({
+          title: "Berhasil",
+          text: "Data Akan dihapus",
+          icon: "success",
+          timer: 2500
+        });
+        window.location = url + '/' + id;
+      } else {
+        swal({
+          title: "Batal",
+          text: "Data Batal dihapus",
+          icon: "info",
+          timer: 2500
+        });
+      }
+    });
+  } else {
+    swal({
+      title: "Hapus",
+      text: status,
+      icon: "warning",
+      buttons: "OK"
+    });
+  }
+});
 
 /***/ }),
 /* 56 */
@@ -75712,7 +75678,67 @@ $('#datatable').DataTable({
 /* 57 */
 /***/ (function(module, exports) {
 
-throw new Error("Module build failed: ModuleBuildError: Module build failed: \n@import '_mentah/custom';\n^\n      File to import not found or unreadable: /Users/faruqrahmadani/Sites/PresensiGuru/resources/assets/sass/_mentah/_custom.scss.\n      in /Users/faruqrahmadani/Sites/PresensiGuru/resources/assets/sass/app.scss (line 18, column 1)\n    at runLoaders (/Users/faruqrahmadani/Sites/PresensiGuru/node_modules/webpack/lib/NormalModule.js:195:19)\n    at /Users/faruqrahmadani/Sites/PresensiGuru/node_modules/loader-runner/lib/LoaderRunner.js:364:11\n    at /Users/faruqrahmadani/Sites/PresensiGuru/node_modules/loader-runner/lib/LoaderRunner.js:230:18\n    at context.callback (/Users/faruqrahmadani/Sites/PresensiGuru/node_modules/loader-runner/lib/LoaderRunner.js:111:13)\n    at Object.asyncSassJobQueue.push [as callback] (/Users/faruqrahmadani/Sites/PresensiGuru/node_modules/sass-loader/lib/loader.js:55:13)\n    at Object.done [as callback] (/Users/faruqrahmadani/Sites/PresensiGuru/node_modules/neo-async/async.js:7974:18)\n    at options.error (/Users/faruqrahmadani/Sites/PresensiGuru/node_modules/node-sass/lib/index.js:294:32)");
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 58 */,
+/* 59 */,
+/* 60 */,
+/* 61 */,
+/* 62 */,
+/* 63 */,
+/* 64 */,
+/* 65 */,
+/* 66 */,
+/* 67 */,
+/* 68 */,
+/* 69 */,
+/* 70 */,
+/* 71 */,
+/* 72 */,
+/* 73 */,
+/* 74 */,
+/* 75 */,
+/* 76 */,
+/* 77 */,
+/* 78 */,
+/* 79 */,
+/* 80 */,
+/* 81 */,
+/* 82 */,
+/* 83 */,
+/* 84 */
+/***/ (function(module, exports) {
+
+(function (window, document, $, undefined) {
+    'use strict';
+
+    $(initColorPicker);
+
+    function initColorPicker() {
+
+        if (!$.fn.colorpicker) return;
+
+        $('.demo-colorpicker').colorpicker();
+
+        $('#demo_selectors').colorpicker({
+            colorSelectors: {
+                'default': '#777777',
+                'primary': APP_COLORS['primary'],
+                'success': APP_COLORS['success'],
+                'info': APP_COLORS['info'],
+                'warning': APP_COLORS['warning'],
+                'danger': APP_COLORS['danger']
+            }
+        });
+    }
+})(window, document, window.jQuery);
+
+/***/ }),
+/* 85 */
+/***/ (function(module, exports) {
+
+
 
 /***/ })
 /******/ ]);
