@@ -14,7 +14,7 @@
           <div class="form-group row">
             <label class="col-xl-2 col-form-label text-bold">Nama Jenjang</label>
             <div class="col-xl-10">
-              <input class="form-control" type="text" placeholder="Nama Jenjang" name="nama">
+              <input class="form-control" type="text" name="nama" placeholder="Nama Jenjang" required>
             </div>
           </div>
           <div class="form-group row">
