@@ -25529,7 +25529,8 @@ button,
 }
 
 .banner-sec {
-  background: url(/img/front-img.jpg) no-repeat left bottom;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5))), url(/img/front-img.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/img/front-img.jpg);
   background-size: cover;
   min-height: 500px;
   border-radius: 0 10px 10px 0;
@@ -25539,8 +25540,6 @@ button,
 .container {
   background: #fff;
   border-radius: 10px;
-  -webkit-box-shadow: 15px 20px 0px rgba(0, 0, 0, 0.1);
-          box-shadow: 15px 20px 0px rgba(0, 0, 0, 0.1);
 }
 
 .container-login {
@@ -25575,6 +25574,14 @@ button,
   border-radius: 3px;
   margin-left: auto;
   margin-right: auto;
+}
+
+.login-sec .link-text {
+  position: absolute;
+  width: 80%;
+  bottom: 50px;
+  font-size: 13px;
+  text-align: left;
 }
 
 .banner-text {

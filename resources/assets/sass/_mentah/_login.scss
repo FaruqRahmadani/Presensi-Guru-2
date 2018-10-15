@@ -9,7 +9,8 @@
 }
 
 .banner-sec {
-	background: url(/img/front-img.jpg) no-repeat left bottom;
+	background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/img/front-img.jpg);
+	// background: url(/img/front-img.jpg) no-repeat left bottom;
 	background-size: cover;
 	min-height: 500px;
 	border-radius: 0 10px 10px 0;
@@ -19,7 +20,7 @@
 .container {
 	background: #fff;
 	border-radius: 10px;
-	box-shadow:15px 20px 0px rgba(0,0,0,0.1);
+	// box-shadow:15px 20px 0px rgba(0,0,0,0.1);
 }
 
 .container-login{
@@ -50,6 +51,13 @@
 		border-radius: 3px;
 		margin-left: auto;
 		margin-right: auto;
+	}
+	.link-text{
+		position:absolute; 
+		width:80%; 
+		bottom:50px; 
+		font-size:13px; 
+		text-align:left;
 	}
 }
 
