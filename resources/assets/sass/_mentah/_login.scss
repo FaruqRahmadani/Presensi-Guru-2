@@ -1,35 +1,59 @@
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+
 .login-block {
-	background: #23B7E7;
-	background: -webkit-linear-gradient(to bottom, #FFB88C, #23B7E7);
-  background: linear-gradient(to bottom, #FFB88C, #23B7E7); 
+	background: var(--angel-blue);
+	background: -webkit-linear-gradient(to bottom, var(--peach), var(--angel-blue));
+  background: linear-gradient(to bottom, var(--peach), var(--angel-blue)); 
   float:left;
 	width: 100%;
 	height: inherit;
-	padding: 50px 0;
 }
 
 .banner-sec {
 	background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/img/front-img.jpg);
-	// background: url(/img/front-img.jpg) no-repeat left bottom;
 	background-size: cover;
 	min-height: 500px;
-	border-radius: 0 10px 10px 0;
+	@media (min-width:$breakpoint-md) {
+		border-radius: 0 10px 10px 0;
+	}
+	@media (max-width:$breakpoint-md) {
+		display:none;
+	}
 	padding: 0;
 }
 
 .container {
 	background: #fff;
-	border-radius: 10px;
+	@media (min-width:$breakpoint-md) {
+		border-radius: 10px;
+	}
+	@media (max-width:$breakpoint-md) {
+		
+	}
 	// box-shadow:15px 20px 0px rgba(0,0,0,0.1);
 }
 
 .container-login{
 		margin:0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%);
+		@media (min-width:$breakpoint-md) {
+			position: absolute;
+	    top: 50%;
+	    left: 50%;
+	    margin-right: -50%;
+	    transform: translate(-50%, -50%);
+		}
+		@media (max-width:$breakpoint-md) {
+			position: absolute;
+	    top: 50%;
+	    left: 50%;
+	    margin-right: -50%;
+	    transform: translate(-50%, -50%);
+	    // border-radius:10px;
+	    min-height:100%;
+		}
 }
 
 .login-sec{
@@ -39,13 +63,13 @@
 		margin-bottom: 30px;
 		font-weight: 800;
 		font-size: 30px;
-		color: #23B7E7;
+		color: var(--angel-blue);
 	}
 	h2:after {
 		content: " ";
 		width: 100px;
 		height: 5px;
-		background: #FEB58A;
+		background: var(--light-peach);
 		display: block;
 		margin-top: 20px;
 		border-radius: 3px;
@@ -74,7 +98,7 @@
 		content: " ";
 		width: 100px;
 		height: 5px;
-		background: #FEB58A;
+		background: var(--light-peach);
 		display: block;
 		margin-top: 20px;
 		border-radius: 3px;

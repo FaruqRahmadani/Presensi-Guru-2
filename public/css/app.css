@@ -10507,6 +10507,9 @@ select.is-valid ~ .select2-container--bootstrap4 .select2-selection {
  */
 
 :root {
+  --angel-blue: #23B7E7;
+  --peach: #FFB88C;
+  --light-peach: #FEB58A;
   --blue: #007bff;
   --indigo: #6610f2;
   --purple: #7266ba;
@@ -25519,13 +25522,12 @@ button,
 }
 
 .login-block {
-  background: #23B7E7;
-  background: -webkit-gradient(linear, left top, left bottom, from(#FFB88C), to(#23B7E7));
-  background: linear-gradient(to bottom, #FFB88C, #23B7E7);
+  background: var(--angel-blue);
+  background: -webkit-gradient(linear, left top, left bottom, from(var(--peach)), to(var(--angel-blue)));
+  background: linear-gradient(to bottom, var(--peach), var(--angel-blue));
   float: left;
   width: 100%;
   height: inherit;
-  padding: 50px 0;
 }
 
 .banner-sec {
@@ -25533,23 +25535,56 @@ button,
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/img/front-img.jpg);
   background-size: cover;
   min-height: 500px;
-  border-radius: 0 10px 10px 0;
   padding: 0;
+}
+
+@media (min-width: 768px) {
+  .banner-sec {
+    border-radius: 0 10px 10px 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .banner-sec {
+    display: none;
+  }
 }
 
 .container {
   background: #fff;
-  border-radius: 10px;
+}
+
+@media (min-width: 768px) {
+  .container {
+    border-radius: 10px;
+  }
 }
 
 .container-login {
   margin: 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin-right: -50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+}
+
+@media (min-width: 768px) {
+  .container-login {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+  }
+}
+
+@media (max-width: 768px) {
+  .container-login {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    min-height: 100%;
+  }
 }
 
 .login-sec {
@@ -25561,14 +25596,14 @@ button,
   margin-bottom: 30px;
   font-weight: 800;
   font-size: 30px;
-  color: #23B7E7;
+  color: var(--angel-blue);
 }
 
 .login-sec h2:after {
   content: " ";
   width: 100px;
   height: 5px;
-  background: #FEB58A;
+  background: var(--light-peach);
   display: block;
   margin-top: 20px;
   border-radius: 3px;
@@ -25600,7 +25635,7 @@ button,
   content: " ";
   width: 100px;
   height: 5px;
-  background: #FEB58A;
+  background: var(--light-peach);
   display: block;
   margin-top: 20px;
   border-radius: 3px;
