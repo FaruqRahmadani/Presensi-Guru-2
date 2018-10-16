@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('content-heading','Tambah Kategori Presensi')
+@section('content-heading','Edit Kategori Presensi')
 @section('content')
   <div class="container-fluid">
     <div class="card card-default">
@@ -9,25 +9,25 @@
         </div>
       </div>
       <div class="card-body">
-        <form action="{!!route('kategoriPresensiTambahSubmit')!!}" class="form-horizontal" method="post">
+        <form action="{!!route('kategoriPresensiEditSubmit', ['id' => $kategoriAbsen->UUID])!!}" class="form-horizontal" method="post">
           @csrf
           <div class="form-group row">
             <label class="col-xl-2 col-form-label text-bold">Kode</label>
             <div class="col-xl-10">
-              <input class="form-control" type="text" name="kode" placeholder="Kode" required>
+              <input class="form-control" type="text" name="kode" value="{{$kategoriAbsen->kode}}" placeholder="Kode" required>
             </div>
           </div>
           <div class="form-group row">
             <label class="col-xl-2 col-form-label text-bold">Keterangan</label>
             <div class="col-xl-10">
-              <input class="form-control" type="text" name="keterangan" placeholder="Keterangan" required>
+              <input class="form-control" type="text" name="keterangan" value="{{$kategoriAbsen->keterangan}}" placeholder="Keterangan" required>
             </div>
           </div>
           <div class="form-group row">
             <label class="col-xl-2 col-form-label text-bold">Kode Warna</label>
             <div class="col-xl-10">
               <div class="input-group demo-colorpicker">
-                <input class="form-control" type="text" name="kode_warna" value="#46beec" required>
+                <input class="form-control" type="text" name="kode_warna" value="{{$kategoriAbsen->kode_warna}}" required>
                 <div class="input-group-append input-group-addon">
                   <div class="input-group-text"><i></i></div>
                 </div>
