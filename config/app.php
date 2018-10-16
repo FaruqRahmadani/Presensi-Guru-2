@@ -210,6 +210,7 @@ return [
     'Validator' => Illuminate\Support\Facades\Validator::class,
     'View' => Illuminate\Support\Facades\View::class,
     'HCrypt' => App\Helpers\CryptHelper::class,
+    'KategoriAbsenRepository' => App\Repositories\KategoriAbsenRepository::class,
   ],
 
 ];
