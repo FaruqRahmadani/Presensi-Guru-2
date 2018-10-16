@@ -25,7 +25,7 @@
                 <tr>
                   <td>{{$loop->iteration}}</td>
                   <td>{{$dataKategoriAbsen->kode}}</td>
-                  <td align="center">{{$dataKategoriAbsen->kode_warna}}</td>
+                  <td align="center" style="background-color:{{$dataKategoriAbsen->kode_warna}}" class="kode-warna">{{$dataKategoriAbsen->kode_warna}}</td>
                   <td>{{$dataKategoriAbsen->keterangan}}</td>
                   <td>
                     <a href="#" class="btn btn-labeled btn-primary btn-xs"><span class="btn-label"><i class="fa fa-edit"></i></span>Edit</a>

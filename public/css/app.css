@@ -25095,6 +25095,11 @@ fieldset .form-group {
   margin-right: 0px;
 }
 
+.table tr .kode-warna {
+  color: #ffffff;
+  font-weight: bold;
+}
+
 .table tr th {
   text-align: center;
 }

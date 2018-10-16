@@ -1,3 +1,4 @@
+@import '_variable';
 .table{
   white-space: nowrap;
   tr{
@@ -14,6 +15,10 @@
         margin-left: 0px;
         margin-right: 0px;
       }
+    }
+    .kode-warna{
+      color: $putih;
+      font-weight: bold;
     }
     th{
       text-align: center;
