@@ -72,9 +72,7 @@ Route::Group(['middleware' => ['AuthMiddleware']], function(){
     return view('sekolah.tambah');
   });
   Route::group(['prefix' => 'kategori-presensi', 'as' => 'kategoriPresensi'], function () {
-    Route::get('', function () {
-      return view('kategoriPresensi.data');
-    })->name('Data');
+    Route::get('', 'KategoriPresensiController@data')->name('Data');
     Route::get('/kategori-presensi/tambah', function () {
       return view('kategoriPresensi.tambah');
     });
