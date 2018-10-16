@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Repositories\UserRepository;
+use Illuminate\Validation\Rule;
+use Illuminate\Http\Request;
+use Validator;
 
 class AdminController extends Controller
 {
@@ -14,5 +16,13 @@ class AdminController extends Controller
 
   public function tambahForm(){
     return view('admin.tambah');
+  }
+
+  public function tambahSubmit(UserRepository $user, Request $request){
+    Validator::make($request->all(),[
+      'username' => Rule::unique('users'),
+    ])->validate();
+    $user->store($request->all());
+    return redirect()->route('adminData')->with(['alert' => true, 'tipe' => 'success', 'judul' => 'Berhasil', 'pesan' => 'Data Berhasil Ditambahkan']);
   }
 }

@@ -9,7 +9,8 @@
         </div>
       </div>
       <div class="card-body">
-        <form action="{!!route('adminTambahSubmit')!!}" class="form-horizontal">
+        <form action="{!!route('adminTambahSubmit')!!}" class="form-horizontal" method="post">
+          @csrf
           <div class="form-group row">
             <label class="col-xl-2 col-form-label text-bold">Nama</label>
             <div class="col-lg-10">
@@ -33,7 +34,7 @@
           <div class="form-group row">
             <label class="col-xl-2 col-form-label text-bold">Username</label>
             <div class="col-lg-10">
-              <input class="form-control" type="text" name="username" value="{{old('username')}}" required pattern="[a-zA-Z0-9]+.{5,}" title="Minimal 6 Karakter">
+              <input class="form-control" type="text" name="username" value="{{old('username')}}" required pattern="[a-zA-Z0-9]+.{4,}" title="Minimal 5 Karakter">
             </div>
           </div>
           <div class="form-group row">
