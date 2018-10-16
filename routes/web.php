@@ -71,12 +71,13 @@ Route::Group(['middleware' => ['AuthMiddleware']], function(){
   Route::get('/sekolah/tambah', function () {
     return view('sekolah.tambah');
   });
-  // kategori presensi
-  Route::get('/kategori-presensi/data', function () {
-    return view('kategoriPresensi.data');
-  });
-  Route::get('/kategori-presensi/tambah', function () {
-    return view('kategoriPresensi.tambah');
+  Route::group(['prefix' => 'kategori-presensi', 'as' => 'kategoriPresensi'], function () {
+    Route::get('', function () {
+      return view('kategoriPresensi.data');
+    })->name('Data');
+    Route::get('/kategori-presensi/tambah', function () {
+      return view('kategoriPresensi.tambah');
+    });
   });
   // jenjang sekolah
   Route::group(['prefix' => 'jenjang', 'as' => 'jenjang'], function () {
