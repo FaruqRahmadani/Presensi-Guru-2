@@ -31,12 +31,10 @@ Route::Group(['middleware' => ['AuthMiddleware']], function(){
     return view('dataPresensi.data');
   });
   Route::group(['prefix' => 'admin', 'as' => 'admin'], function () {
-  Route::get('', function () {
-    return view('dataAdmin.data');
-  })->name('Data');
-  Route::get('/data-admin/tambah', function () {
-    return view('dataAdmin.tambah');
-  });
+    Route::get('', 'AdminController@data')->name('Data');
+    Route::get('/data-admin/tambah', function () {
+      return view('dataAdmin.tambah');
+    });
   });
 
   // halaman dashboard
