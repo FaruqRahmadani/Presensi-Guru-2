@@ -30,4 +30,9 @@ class KategoriPresensiController extends Controller
     $kategoriAbsen->update($id, $request->all());
     return redirect()->route('kategoriPresensiData')->with(['alert' => true, 'tipe' => 'success', 'judul' => 'Berhasil', 'pesan' => 'Data Berhasil Diubah']);
   }
+
+  public function hapus(KategoriAbsenRepository $kategoriAbsen, $id){
+    $kategoriAbsen->delete($id);
+    return redirect()->route('kategoriPresensiData')->with(['alert' => true, 'tipe' => 'success', 'judul' => 'Berhasil', 'pesan' => 'Data Berhasil Dihapus']);
+  }
 }
