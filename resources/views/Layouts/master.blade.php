@@ -136,7 +136,7 @@
               </a>
             </li>
             <li class="">
-              <a href="/data-admin/data" title="Data Admin">
+              <a href="{!!route('adminData')!!}" title="Data Admin">
                 <div class="float-right mr-2"><em class="]"></em>&nbsp;</div>
                 <em class="fa fa-users"></em>
                 <span>Data Admin</span>
