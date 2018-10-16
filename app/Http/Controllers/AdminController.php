@@ -22,7 +22,7 @@ class AdminController extends Controller
     Validator::make($request->all(),[
       'username' => Rule::unique('users'),
     ])->validate();
-    $user->store($request->all());
+    $user->store(array_merge($request->all(), ['tipe' => 1]));
     return redirect()->route('adminData')->with(['alert' => true, 'tipe' => 'success', 'judul' => 'Berhasil', 'pesan' => 'Data Berhasil Ditambahkan']);
   }
 }
