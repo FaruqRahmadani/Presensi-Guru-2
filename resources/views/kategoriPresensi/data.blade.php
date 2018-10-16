@@ -25,7 +25,13 @@
                 <tr>
                   <td>{{$loop->iteration}}</td>
                   <td>{{$dataKategoriAbsen->kode}}</td>
-                  <td align="center" style="background-color:{{$dataKategoriAbsen->kode_warna}}" class="kode-warna">{{$dataKategoriAbsen->kode_warna}}</td>
+                  <td align="center" class="kode-warna">
+                    <div class="btn btn-oval" style="background-color:{{$dataKategoriAbsen->kode_warna}}; color: {{$dataKategoriAbsen->kode_warna}};">
+                      <div style="filter: invert(1); font-weight: bold;">
+                        {{$dataKategoriAbsen->kode_warna}}
+                      </div>
+                    </div>                    
+                  </td>
                   <td>{{$dataKategoriAbsen->keterangan}}</td>
                   <td>
                     <a href="{!!route('kategoriPresensiEditForm', ['id' => $dataKategoriAbsen->UUID])!!}" class="btn btn-labeled btn-primary btn-xs"><span class="btn-label"><i class="fa fa-edit"></i></span>Edit</a>
