@@ -11,4 +11,8 @@ class AdminController extends Controller
     $user = $user->where('tipe', 1);
     return view('admin.data', compact('user'));
   }
+
+  public function tambahForm(){
+    return view('admin.tambah');
+  }
 }

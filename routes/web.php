@@ -32,9 +32,8 @@ Route::Group(['middleware' => ['AuthMiddleware']], function(){
   });
   Route::group(['prefix' => 'admin', 'as' => 'admin'], function () {
     Route::get('', 'AdminController@data')->name('Data');
-    Route::get('/data-admin/tambah', function () {
-      return view('dataAdmin.tambah');
-    });
+    Route::get('tambah', 'AdminController@tambahForm')->name('TambahForm');
+    Route::post('tambah', 'AdminController@tambahSubmit')->name('TambahSubmit');
   });
 
   // halaman dashboard
