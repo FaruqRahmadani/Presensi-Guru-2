@@ -20,4 +20,9 @@ class KategoriPresensiController extends Controller
     $kategoriAbsen->store($request->all());
     return redirect()->route('kategoriPresensiData')->with(['alert' => true, 'tipe' => 'success', 'judul' => 'Berhasil', 'pesan' => 'Data Berhasil Ditambahkan']);
   }
+
+  public function editForm(KategoriAbsenRepository $kategoriAbsen, $id){
+    $kategoriAbsen = $kategoriAbsen->get($id);
+    return view('kategoriPresensi.edit', compact('kategoriAbsen'));
+  }
 }

@@ -28,7 +28,7 @@
                   <td align="center" style="background-color:{{$dataKategoriAbsen->kode_warna}}" class="kode-warna">{{$dataKategoriAbsen->kode_warna}}</td>
                   <td>{{$dataKategoriAbsen->keterangan}}</td>
                   <td>
-                    <a href="#" class="btn btn-labeled btn-primary btn-xs"><span class="btn-label"><i class="fa fa-edit"></i></span>Edit</a>
+                    <a href="{!!route('kategoriPresensiEditForm', ['id' => $dataKategoriAbsen->UUID])!!}" class="btn btn-labeled btn-primary btn-xs"><span class="btn-label"><i class="fa fa-edit"></i></span>Edit</a>
                     <a href="#" class="btn btn-labeled btn-danger btn-xs"><span class="btn-label"><i class="fa fa-trash"></i></span>Hapus</a>
                   </td>
                 </tr>
