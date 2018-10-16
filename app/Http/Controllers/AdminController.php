@@ -22,7 +22,11 @@ class AdminController extends Controller
     Validator::make($request->all(),[
       'username' => Rule::unique('users'),
     ])->validate();
-    $user->store(array_merge($request->all(), ['tipe' => 1]));
+    $FotoExt = $request->foto->getClientOriginalExtension();
+    $FotoName = "[super_admin]$request->nama.$request->_token";
+    $Foto = "{$FotoName}.{$FotoExt}";
+    $path = $request->foto->move('img/user', $Foto);
+    $user->store(array_merge($request->all(), ['tipe' => 1, 'foto' => $path]));
     return redirect()->route('adminData')->with(['alert' => true, 'tipe' => 'success', 'judul' => 'Berhasil', 'pesan' => 'Data Berhasil Ditambahkan']);
   }
 }
