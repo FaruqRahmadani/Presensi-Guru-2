@@ -11,4 +11,8 @@ class KategoriPresensiController extends Controller
     $kategoriAbsen = $kategoriAbsen->all();
     return view('kategoriPresensi.data', compact('kategoriAbsen'));
   }
+
+  public function tambahForm(){
+    return view('kategoriPresensi.tambah');
+  }
 }

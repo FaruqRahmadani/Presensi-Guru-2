@@ -5,7 +5,7 @@
     <div class="card card-default">
         <div class="card-header">
             <div class="card-title">
-                <a href="/kategori-presensi/data" class="btn btn-labeled btn-primary btn-md"><span class="btn-label"><i class="fa fa-angle-left"></i></span><b>Kembali</b></a>
+                <a href="{!!route('kategoriPresensiData')!!}" class="btn btn-labeled btn-primary btn-md"><span class="btn-label"><i class="fa fa-angle-left"></i></span><b>Kembali</b></a>
             </div>
         </div>
         <div class="card-body">
