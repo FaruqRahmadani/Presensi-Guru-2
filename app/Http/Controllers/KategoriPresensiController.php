@@ -15,4 +15,9 @@ class KategoriPresensiController extends Controller
   public function tambahForm(){
     return view('kategoriPresensi.tambah');
   }
+
+  public function tambahSubmit(KategoriAbsenRepository $kategoriAbsen, Request $request){
+    $kategoriAbsen->store($request->all());
+    return redirect()->route('kategoriPresensiData')->with(['alert' => true, 'tipe' => 'success', 'judul' => 'Berhasil', 'pesan' => 'Data Berhasil Ditambahkan']);
+  }
 }

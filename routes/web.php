@@ -74,6 +74,7 @@ Route::Group(['middleware' => ['AuthMiddleware']], function(){
   Route::group(['prefix' => 'kategori-presensi', 'as' => 'kategoriPresensi'], function () {
     Route::get('', 'KategoriPresensiController@data')->name('Data');
     Route::get('tambah', 'KategoriPresensiController@tambahForm')->name('TambahForm');
+    Route::post('tambah', 'KategoriPresensiController@tambahSubmit')->name('TambahSubmit');
   });
   // jenjang sekolah
   Route::group(['prefix' => 'jenjang', 'as' => 'jenjang'], function () {
