@@ -25073,32 +25073,6 @@ fieldset .form-group {
   }
 }
 
-.table {
-  white-space: nowrap;
-}
-
-.table tr td {
-  vertical-align: middle !important;
-}
-
-.table tr td:first-child {
-  text-align: center;
-}
-
-.table tr td:last-child {
-  white-space: nowrap;
-  text-align: center;
-}
-
-.table tr td:last-child .btn {
-  margin-left: 0px;
-  margin-right: 0px;
-}
-
-.table tr th {
-  text-align: center;
-}
-
 .login-block {
   background: var(--angel-blue);
   background: -webkit-gradient(linear, left top, left bottom, from(var(--peach)), to(var(--angel-blue)));
@@ -25221,5 +25195,42 @@ fieldset .form-group {
 
 .banner-text p {
   color: #fff;
+}
+
+.table {
+  white-space: nowrap;
+}
+
+.table tr td {
+  vertical-align: middle !important;
+}
+
+.table tr td:first-child {
+  text-align: center;
+}
+
+.table tr td:last-child {
+  white-space: nowrap;
+  text-align: center;
+}
+
+.table tr td:last-child .btn {
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+@media (max-width: 768px) {
+  .table tr td:last-child .btn {
+    font-size: 0;
+  }
+
+  .table tr td:last-child .fa {
+    font-size: initial;
+    margin: 2px;
+  }
+}
+
+.table tr th {
+  text-align: center;
 }
 

@@ -15,6 +15,15 @@
         margin-left: 0px;
         margin-right: 0px;
       }
+      @media (max-width:$breakpoint-md) {
+        .btn {
+          font-size:0;
+        }
+        .fa {
+          font-size:initial;
+          margin:2px;
+        } 
+      }
     }
     th{
       text-align: center;
