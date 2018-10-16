@@ -1,5 +1,5 @@
-@extends('layouts/master')
-@section('content-heading','Tambah Data Status Sekolah')
+@extends('layouts.master')
+@section('content-heading','Edit Data Status Sekolah')
 @section('content')
   <div class="container-fluid">
     <div class="card card-default">
@@ -9,12 +9,12 @@
         </div>
       </div>
       <div class="card-body">
-        <form action="{!!route('statusSekolahTambahSubmit')!!}" class="form-horizontal" method="post">
+        <form action="{!!route('statusSekolahEditSubmit', ['id' => $status->UUID])!!}" class="form-horizontal" method="post">
           @csrf
           <div class="form-group row">
             <label class="col-xl-2 col-form-label text-bold">Status Sekolah</label>
             <div class="col-xl-10">
-              <input class="form-control" type="text" name="nama" placeholder="Nama Status Sekolah" required>
+              <input class="form-control" type="text" name="nama" value="{{$status->nama}}" placeholder="Nama Status Sekolah" required>
             </div>
           </div>
           <div class="form-group row">
