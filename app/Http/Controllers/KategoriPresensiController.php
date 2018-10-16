@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use KategoriAbsenRepository;
+use App\Repositories\KategoriAbsenRepository;
 
 class KategoriPresensiController extends Controller
 {
