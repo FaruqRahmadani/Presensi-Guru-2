@@ -50,12 +50,13 @@ Route::Group(['middleware' => ['AuthMiddleware']], function(){
   Route::get('/pegawai/tambah', function () {
     return view('pegawai.tambah');
   });
-  // halaman status sekolah
-  Route::get('/status-sekolah/data', function () {
-    return view('statusSekolah.data');
-  });
-  Route::get('/status-sekolah/tambah', function () {
-    return view('statusSekolah.tambah');
+  Route::group(['prefix' => 'status-sekolah', 'as' => 'statusSekolah'], function () {
+    Route::get('', 'StatusSekolahController@data')->name('Data');
+    Route::get('tambah', 'StatusSekolahController@tambahForm')->name('TambahForm');
+    Route::post('tambah', 'StatusSekolahController@tambahSubmit')->name('TambahSubmit');
+    Route::get('{id}/edit', 'StatusSekolahController@editForm')->name('EditForm');
+    Route::post('{id}/edit', 'StatusSekolahController@editSubmit')->name('EditSubmit');
+    Route::get('hapus/{id?}', 'StatusSekolahController@hapus')->name('Hapus');
   });
   // halaman data sekolah .
   Route::get('/admin-sekolah/data', function () {
@@ -79,7 +80,6 @@ Route::Group(['middleware' => ['AuthMiddleware']], function(){
     Route::post('{id}/edit', 'KategoriPresensiController@editSubmit')->name('EditSubmit');
     Route::get('hapus/{id?}', 'KategoriPresensiController@hapus')->name('Hapus');
   });
-  // jenjang sekolah
   Route::group(['prefix' => 'jenjang', 'as' => 'jenjang'], function () {
     Route::get('', 'JenjangController@data')->name('Data');
     Route::get('tambah', 'JenjangController@tambahForm')->name('TambahForm');
