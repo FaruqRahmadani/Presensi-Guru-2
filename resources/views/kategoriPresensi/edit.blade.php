@@ -1,5 +1,5 @@
-@extends('layouts/master')
-@section('content-heading','Tambah Kategori Presensi')
+@extends('layouts.master')
+@section('content-heading','Edit Kategori Presensi')
 @section('content')
   <div class="container-fluid">
     <div class="card card-default">

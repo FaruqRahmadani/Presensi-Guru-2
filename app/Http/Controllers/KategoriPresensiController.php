@@ -25,4 +25,9 @@ class KategoriPresensiController extends Controller
     $kategoriAbsen = $kategoriAbsen->get($id);
     return view('kategoriPresensi.edit', compact('kategoriAbsen'));
   }
+
+  public function editSubmit(KategoriAbsenRepository $kategoriAbsen, Request $request, $id){
+    $kategoriAbsen->update($id, $request->all());
+    return redirect()->route('kategoriPresensiData')->with(['alert' => true, 'tipe' => 'success', 'judul' => 'Berhasil', 'pesan' => 'Data Berhasil Diubah']);
+  }
 }
