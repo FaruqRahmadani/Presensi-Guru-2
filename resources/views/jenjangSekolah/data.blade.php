@@ -26,8 +26,8 @@
                   <td>{{$dataJenjang->nama}}</td>
                   <td align="center">{{$dataJenjang->Sekolah->count()}}</td>
                   <td>
-                    <a href="{!!route('jenjangEditForm', ['id' => $dataJenjang->UUID])!!}" class="btn btn-labeled btn-primary btn-xs"><span class="btn-label"><i class="fa fa-edit"></i></span>Edit</a>
-                    <button data-url="{!!route('jenjangHapus')!!}" data="{{$dataJenjang->UUID}}" @if ($dataJenjang->Sekolah->count()) status="Data Tidak Dapat Dihapus Karena Memiliki Data Sekolah" @endif class="btn btn-labeled btn-danger btn-xs btn-delete"><span class="btn-label"><i class="fa fa-trash"></i></span>Hapus</button>
+                    <a href="{!!route('jenjangEditForm', ['id' => $dataJenjang->UUID])!!}" class="btn btn-labeled btn-primary btn-xs"><i class="fa fa-edit"></i> Edit</a>
+                    <button data-url="{!!route('jenjangHapus')!!}" data="{{$dataJenjang->UUID}}" @if ($dataJenjang->Sekolah->count()) status="Data Tidak Dapat Dihapus Karena Memiliki Data Sekolah" @endif class="btn btn-labeled btn-danger btn-xs btn-delete"><i class="fa fa-trash"></i> Hapus</button>
                   </td>
                 </tr>
               @endforeach

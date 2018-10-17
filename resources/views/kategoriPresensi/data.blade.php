@@ -34,8 +34,8 @@
                   </td>
                   <td>{{$dataKategoriAbsen->keterangan}}</td>
                   <td>
-                    <a href="{!!route('kategoriPresensiEditForm', ['id' => $dataKategoriAbsen->UUID])!!}" class="btn btn-labeled btn-primary btn-xs"><span class="btn-label"><i class="fa fa-edit"></i></span>Edit</a>
-                    <button data-url="{!!route('kategoriPresensiHapus')!!}" data="{{$dataKategoriAbsen->UUID}}" class="btn btn-labeled btn-danger btn-xs btn-delete"><span class="btn-label"><i class="fa fa-trash"></i></span>Hapus</button>
+                    <a href="{!!route('kategoriPresensiEditForm', ['id' => $dataKategoriAbsen->UUID])!!}" class="btn btn-labeled btn-primary btn-xs"><i class="fa fa-edit"></i> Edit</a>
+                    <button data-url="{!!route('kategoriPresensiHapus')!!}" data="{{$dataKategoriAbsen->UUID}}" class="btn btn-labeled btn-danger btn-xs btn-delete"><i class="fa fa-trash"></i> Hapus</button>
                   </td>
                 </tr>
               @endforeach
