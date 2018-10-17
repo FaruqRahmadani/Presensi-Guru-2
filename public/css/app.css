@@ -25222,11 +25222,14 @@ fieldset .form-group {
 @media (max-width: 768px) {
   .table tr td:last-child .btn {
     font-size: 0;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    padding-top: 9px;
   }
 
   .table tr td:last-child .fa {
-    font-size: initial;
-    margin: 2px;
+    font-size: 0.8125rem;
   }
 }
 
