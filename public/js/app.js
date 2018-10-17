@@ -29209,8 +29209,8 @@ __webpack_require__(47);
 __webpack_require__(48);
 __webpack_require__(49);
 __webpack_require__(50);
-__webpack_require__(84);
-__webpack_require__(85);
+__webpack_require__(51);
+__webpack_require__(52);
 __webpack_require__(53);
 __webpack_require__(55);
 __webpack_require__(56);
@@ -75374,8 +75374,40 @@ S2.define('jquery.select2',[
 })(window, document, window.jQuery);
 
 /***/ }),
-/* 51 */,
-/* 52 */,
+/* 51 */
+/***/ (function(module, exports) {
+
+(function (window, document, $, undefined) {
+    'use strict';
+
+    $(initColorPicker);
+
+    function initColorPicker() {
+
+        if (!$.fn.colorpicker) return;
+
+        $('.demo-colorpicker').colorpicker();
+
+        $('#demo_selectors').colorpicker({
+            colorSelectors: {
+                'default': '#777777',
+                'primary': APP_COLORS['primary'],
+                'success': APP_COLORS['success'],
+                'info': APP_COLORS['info'],
+                'warning': APP_COLORS['warning'],
+                'danger': APP_COLORS['danger']
+            }
+        });
+    }
+})(window, document, window.jQuery);
+
+/***/ }),
+/* 52 */
+/***/ (function(module, exports) {
+
+
+
+/***/ }),
 /* 53 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -75679,66 +75711,6 @@ $('#datatable').DataTable({
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 58 */,
-/* 59 */,
-/* 60 */,
-/* 61 */,
-/* 62 */,
-/* 63 */,
-/* 64 */,
-/* 65 */,
-/* 66 */,
-/* 67 */,
-/* 68 */,
-/* 69 */,
-/* 70 */,
-/* 71 */,
-/* 72 */,
-/* 73 */,
-/* 74 */,
-/* 75 */,
-/* 76 */,
-/* 77 */,
-/* 78 */,
-/* 79 */,
-/* 80 */,
-/* 81 */,
-/* 82 */,
-/* 83 */,
-/* 84 */
-/***/ (function(module, exports) {
-
-(function (window, document, $, undefined) {
-    'use strict';
-
-    $(initColorPicker);
-
-    function initColorPicker() {
-
-        if (!$.fn.colorpicker) return;
-
-        $('.demo-colorpicker').colorpicker();
-
-        $('#demo_selectors').colorpicker({
-            colorSelectors: {
-                'default': '#777777',
-                'primary': APP_COLORS['primary'],
-                'success': APP_COLORS['success'],
-                'info': APP_COLORS['info'],
-                'warning': APP_COLORS['warning'],
-                'danger': APP_COLORS['danger']
-            }
-        });
-    }
-})(window, document, window.jQuery);
-
-/***/ }),
-/* 85 */
-/***/ (function(module, exports) {
-
-
 
 /***/ })
 /******/ ]);
