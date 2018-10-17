@@ -45,4 +45,8 @@ class User extends Authenticatable
         break;
     }
   }
+
+  public function getUUIDAttribute(){
+    return encrypt($this->id);
+  }
 }

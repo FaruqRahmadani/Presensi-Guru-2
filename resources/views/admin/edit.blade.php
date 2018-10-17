@@ -9,38 +9,39 @@
         </div>
       </div>
       <div class="card-body">
-        <form action="{!!route('adminTambahSubmit')!!}" class="form-horizontal" method="post" enctype="multipart/form-data">
+        <form action="{!!route('adminEditSubmit', ['id' => $user->UUID])!!}" class="form-horizontal" method="post" enctype="multipart/form-data">
           @csrf
           <div class="form-group row">
             <label class="col-xl-2 col-form-label text-bold">Nama</label>
             <div class="col-lg-10">
-              <input class="form-control" type="text" name="nama" value="{{old('nama')}}" required pattern="[a-zA-Z0-9]+.{0,}" title="Minimal 1 Karakter" autofocus>
+              <input class="form-control" type="text" name="nama" value="{{$user->nama}}" required pattern="[a-zA-Z0-9]+.{0,}" title="Minimal 1 Karakter" autofocus>
             </div>
           </div>
           <div class="form-group row">
             <label class="col-xl-2 col-form-label text-bold">E-mail</label>
             <div class="col-lg-10">
-              <input class="form-control" type="email" name="email" value="{{old('email')}}" required>
+              <input class="form-control" type="email" name="email" value="{{$user->email}}" required>
             </div>
           </div>
           <div class="form-group row">
             <label class="col-xl-2 col-form-label text-bold">Foto</label>
             <div class="col-lg-10">
               <input class="form-control" type="file" name="foto" accept="image/*">
-              <span>Ukuran Foto 1:1 </span>
+              <small>Ukuran Foto 1:1 </small>
             </div>
           </div>
           <hr>
           <div class="form-group row">
             <label class="col-xl-2 col-form-label text-bold">Username</label>
             <div class="col-lg-10">
-              <input class="form-control" type="text" name="username" value="{{old('username')}}" required pattern="[a-zA-Z0-9]+.{4,}" title="Minimal 5 Karakter">
+              <input class="form-control" type="text" name="username" value="{{$user->username}}" required pattern="[a-zA-Z0-9]+.{4,}" title="Minimal 5 Karakter">
             </div>
           </div>
           <div class="form-group row">
             <label class="col-xl-2 col-form-label text-bold">Password</label>
             <div class="col-lg-10">
-              <input class="form-control" type="password" name="password" required pattern=".{5,}" title="Minimal 6 Karakter">
+              <input class="form-control" type="password" name="password" pattern=".{5,}" title="Minimal 6 Karakter">
+              <small>Isi hanya jika ganti password</small>
             </div>
           </div>
           <div class="form-group row">

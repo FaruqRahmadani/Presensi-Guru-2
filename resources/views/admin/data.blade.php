@@ -35,7 +35,7 @@
                   <td>{{$dataUser->email}}</td>
                   <td>{{$dataUser->username}}</td>
                   <td>
-                    <a href="#" class="btn btn-labeled btn-primary btn-xs"><span class="btn-label"><i class="fa fa-edit"></i></span>Edit</a>
+                    <a href="{!!route('adminEditForm', ['id' => $dataUser->UUID])!!}" class="btn btn-labeled btn-primary btn-xs"><span class="btn-label"><i class="fa fa-edit"></i></span>Edit</a>
                     <a href="#" class="btn btn-labeled btn-danger btn-xs"><span class="btn-label"><i class="fa fa-trash"></i></span>Hapus</a>
                   </td>
                 </tr>
