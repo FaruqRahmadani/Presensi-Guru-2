@@ -36,7 +36,7 @@
                   <td>{{$dataUser->username}}</td>
                   <td>
                     <a href="{!!route('adminEditForm', ['id' => $dataUser->UUID])!!}" class="btn btn-labeled btn-primary btn-xs"><span class="btn-label"><i class="fa fa-edit"></i></span>Edit</a>
-                    <a href="#" class="btn btn-labeled btn-danger btn-xs"><span class="btn-label"><i class="fa fa-trash"></i></span>Hapus</a>
+                    <button data-url="{!!route('adminHapus')!!}" data="{{$dataUser->UUID}}" @if ($dataUser->id == Auth::User()->id) status="Tidak Dapat Menghapus Data Sendiri" @endif class="btn btn-labeled btn-danger btn-xs btn-delete"><span class="btn-label"><i class="fa fa-trash"></i></span>Hapus</button>
                   </td>
                 </tr>
               @endforeach

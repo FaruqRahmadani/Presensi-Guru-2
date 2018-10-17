@@ -36,6 +36,7 @@ Route::Group(['middleware' => ['AuthMiddleware']], function(){
     Route::post('tambah', 'AdminController@tambahSubmit')->name('TambahSubmit');
     Route::get('{id}/edit', 'AdminController@editForm')->name('EditForm');
     Route::post('{id}/edit', 'AdminController@editSubmit')->name('EditSubmit');
+    Route::get('hapus/{id?}', 'AdminController@hapus')->name('Hapus');
   });
 
   // halaman dashboard

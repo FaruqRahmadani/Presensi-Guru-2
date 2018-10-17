@@ -42,13 +42,13 @@ class AdminController extends Controller
 
   public function editSubmit(UserRepository $user, Request $request, $id){
     $data = [];
-    $userAdmin = $user->get($id);
+    $userData = $user->get($id);
     Validator::make($request->all(),[
-      'username' => Rule::unique('users')->ignore($userAdmin->id),
+      'username' => Rule::unique('users')->ignore($userData->id),
     ])->validate();
     if ($request->foto) {
-      if (!str_is('*default.png', $userAdmin->foto)) {
-        File::delete($userAdmin->foto);
+      if (!str_is('*default.png', $userData->foto)) {
+        File::delete($userData->foto);
       }
       $FotoExt = $request->foto->getClientOriginalExtension();
       $FotoName = "[super_admin]$request->nama.$request->_token";
@@ -58,5 +58,14 @@ class AdminController extends Controller
     }
     $user->update($id, array_merge($request->all(), $data));
     return redirect()->route('adminData')->with(['alert' => true, 'tipe' => 'success', 'judul' => 'Berhasil', 'pesan' => 'Data Berhasil Diubah']);
+  }
+
+  public function hapus(UserRepository $user, $id){
+    $userData = $user->get($id);
+    if (!str_is('*default.png', $userData->foto)) {
+      File::delete($userData->foto);
+    }
+    $user->delete($id);
+    return redirect()->route('adminData')->with(['alert' => true, 'tipe' => 'success', 'judul' => 'Berhasil', 'pesan' => 'Data Berhasil Dihapus']);
   }
 }
