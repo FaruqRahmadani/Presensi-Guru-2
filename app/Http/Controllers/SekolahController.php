@@ -27,4 +27,13 @@ class SekolahController extends Controller
     $sekolah->store($request->all());
     return redirect()->route('sekolahData')->with(['alert' => true, 'tipe' => 'success', 'judul' => 'Berhasil', 'pesan' => 'Data Berhasil Ditambahkan']);
   }
+
+  public function editForm(SekolahRepository $sekolah, JenjangRepository $jenjang, StatusRepository $status, KecamatanRepository $kecamatan, KelurahanRepository $kelurahan, $id){
+    $sekolah = $sekolah->get($id);
+    $jenjang = $jenjang->all();
+    $status = $status->all();
+    $kecamatan = $kecamatan->all();
+    $kelurahan = $kelurahan->where('kecamatan_id' ,$sekolah->kecamatan_id);
+    return view('sekolah.edit', compact('sekolah', 'jenjang', 'status', 'kecamatan', 'kelurahan'));
+  }
 }

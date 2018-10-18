@@ -42,7 +42,7 @@
                   <td>{{$dataSekolah->no_telepon}}</td>
                   <td>{{$dataSekolah->email}}</td>
                   <td>
-                    <a href="#" class="btn btn-labeled btn-primary btn-xs"><i class="fa fa-edit"></i> Edit</a>
+                    <a href="{!!route('sekolahEditForm', ['id' => $dataSekolah->UUID])!!}" class="btn btn-labeled btn-primary btn-xs"><i class="fa fa-edit"></i> Edit</a>
                     <a href="#" class="btn btn-labeled btn-danger btn-xs"><i class="fa fa-trash"></i> Hapus</a>
                   </td>
                 </tr>

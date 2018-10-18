@@ -34,4 +34,8 @@ class Sekolah extends Model
     }
     return $this->Pegawai->nama;
   }
+
+  public function getUUIDAttribute(){
+    return encrypt($this->id);
+  }
 }
