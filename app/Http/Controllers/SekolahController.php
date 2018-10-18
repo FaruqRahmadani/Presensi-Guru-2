@@ -22,4 +22,9 @@ class SekolahController extends Controller
     $kecamatan = $kecamatan->all();
     return view('sekolah.tambah', compact('jenjang', 'status', 'kecamatan'));
   }
+
+  public function tambahSubmit(SekolahRepository $sekolah, Request $request){
+    $sekolah->store($request->all());
+    return redirect()->route('sekolahData')->with(['alert' => true, 'tipe' => 'success', 'judul' => 'Berhasil', 'pesan' => 'Data Berhasil Ditambahkan']);
+  }
 }

@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Sekolah extends Model
 {
+  protected $fillable = ['npsn', 'nama', 'nss', 'jenjang_id', 'status_id', 'pegawai_id', 'kecamatan_id', 'kelurahan_id', 'alamat', 'no_telepon', 'email'];
+
   public function Pegawai(){
     return $this->belongsTo('App\Pegawai');
   }

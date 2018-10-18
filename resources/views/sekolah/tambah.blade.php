@@ -9,7 +9,8 @@
         </div>
       </div>
       <div class="card-body">
-        <form action="" class="form-horizontal">
+        <form action="{!!route('sekolahTambahSubmit')!!}" class="form-horizontal" method="post">
+          @csrf
           <div class="form-group row row">
             <label class="col-xl-2 col-form-label text-bold">NPSN</label>
             <div class="col-lg-10">
