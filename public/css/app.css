@@ -25205,6 +25205,10 @@ fieldset .form-group {
   vertical-align: middle !important;
 }
 
+.table tr td .thumb48 {
+  margin-right: 9px;
+}
+
 .table tr td:first-child {
   text-align: center;
 }
