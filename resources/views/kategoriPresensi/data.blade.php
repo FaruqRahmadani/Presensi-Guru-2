@@ -26,7 +26,7 @@
                   <td>{{$loop->iteration}}</td>
                   <td>{{$dataKategoriAbsen->kode}}</td>
                   <td align="center" class="kode-warna">
-                    <div class="btn btn-oval" style="background-color:{{$dataKategoriAbsen->kode_warna}}; color: {{$dataKategoriAbsen->kode_warna}};">
+                    <div class="badge" style="background-color:{{$dataKategoriAbsen->kode_warna}}; color: {{$dataKategoriAbsen->kode_warna}};">
                       <div style="filter: invert(1); font-weight: bold;">
                         {{$dataKategoriAbsen->kode_warna}}
                       </div>
