@@ -16,7 +16,7 @@ class User extends Authenticatable
   * @var array
   */
   protected $fillable = [
-    'name', 'email', 'password',
+    'nama', 'email', 'username', 'password', 'foto', 'tipe'
   ];
 
   /**
@@ -44,5 +44,9 @@ class User extends Authenticatable
         return "Kode Level User Tidak Diketahui";
         break;
     }
+  }
+
+  public function getUUIDAttribute(){
+    return encrypt($this->id);
   }
 }
