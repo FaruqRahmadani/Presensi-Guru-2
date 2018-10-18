@@ -8,7 +8,7 @@ class Sekolah extends Model
 {
   protected $fillable = ['npsn', 'nama', 'nss', 'jenjang_id', 'status_id', 'pegawai_id', 'kecamatan_id', 'kelurahan_id', 'alamat', 'no_telepon', 'email'];
 
-  public function Pegawai(){
+  public function KepalaSekolah(){
     return $this->belongsTo('App\Pegawai');
   }
 
@@ -28,11 +28,13 @@ class Sekolah extends Model
     return $this->belongsTo('App\Kelurahan');
   }
 
+  public function Pegawai(){
+    return $this->hasMany('App\Pegawai');
+  }
+
   public function getNamaKepsekAttribute(){
-    if (!$this->pegawai_id) {
-      return "Belum Diisi";
-    }
-    return $this->Pegawai->nama;
+    if (!$this->pegawai_id) return "Belum Diisi";
+    return $this->KepalaSekolah->nama;
   }
 
   public function getUUIDAttribute(){
