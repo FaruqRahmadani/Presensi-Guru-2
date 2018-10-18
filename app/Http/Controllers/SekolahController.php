@@ -36,4 +36,9 @@ class SekolahController extends Controller
     $kelurahan = $kelurahan->where('kecamatan_id' ,$sekolah->kecamatan_id);
     return view('sekolah.edit', compact('sekolah', 'jenjang', 'status', 'kecamatan', 'kelurahan'));
   }
+
+  public function editSubmit(SekolahRepository $sekolah, Request $request, $id){
+    $sekolah->update($id, $request->all());
+    return redirect()->route('sekolahData')->with(['alert' => true, 'tipe' => 'success', 'judul' => 'Berhasil', 'pesan' => 'Data Berhasil Diubah']);
+  }
 }
