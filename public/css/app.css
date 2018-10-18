@@ -25225,7 +25225,7 @@ fieldset .form-group {
     border-radius: 50%;
     width: 32px;
     height: 32px;
-    padding-top: 9px;
+    padding: 8px 9px !important;
   }
 
   .table tr td:last-child .fa {
