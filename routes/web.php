@@ -66,9 +66,7 @@ Route::Group(['middleware' => ['AuthMiddleware']], function(){
     return view('adminSekolah.tambah');
   });
   Route::group(['prefix' => 'sekolah', 'as' => 'sekolah'], function () {
-    Route::get('', function () {
-      return view('sekolah.data');
-    })->name('Data');
+    Route::get('', 'SekolahController@data')->name('Data');
     Route::get('tambah', function () {
       return view('sekolah.tambah');
     })->name('Tambah');
