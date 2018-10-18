@@ -43,7 +43,7 @@
                   <td>{{$dataSekolah->email}}</td>
                   <td>
                     <a href="{!!route('sekolahEditForm', ['id' => $dataSekolah->UUID])!!}" class="btn btn-labeled btn-primary btn-xs"><i class="fa fa-edit"></i> Edit</a>
-                    <a href="#" class="btn btn-labeled btn-danger btn-xs"><i class="fa fa-trash"></i> Hapus</a>
+                    <button data-url="{!!route('sekolahHapus')!!}" data="{{$dataSekolah->UUID}}" @if ($dataSekolah->Pegawai->count()) status="Data Tidak Dapat Dihapus Karena Memiliki Data Pegawai" @endif class="btn btn-labeled btn-danger btn-xs btn-delete"><i class="fa fa-trash"></i> Hapus</button>
                   </td>
                 </tr>
               @endforeach

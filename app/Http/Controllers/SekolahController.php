@@ -41,4 +41,9 @@ class SekolahController extends Controller
     $sekolah->update($id, $request->all());
     return redirect()->route('sekolahData')->with(['alert' => true, 'tipe' => 'success', 'judul' => 'Berhasil', 'pesan' => 'Data Berhasil Diubah']);
   }
+
+  public function hapus(SekolahRepository $sekolah, $id){
+    $sekolah->delete($id);
+    return redirect()->route('sekolahData')->with(['alert' => true, 'tipe' => 'success', 'judul' => 'Berhasil', 'pesan' => 'Data Berhasil Dihapus']);
+  }
 }
