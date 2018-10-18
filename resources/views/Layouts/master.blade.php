@@ -112,7 +112,7 @@
                 <li class="sidebar-subnav-header">Master Data</li>
                 <li class=""><a href="{!!route('jenjangData')!!}"><span>Jenjang</span></a></li>
                 <li class=""><a href="{!!route('statusSekolahData')!!}"><span>Status Sekolah</span></a></li>
-                <li class=""><a href="/kategori-presensi/data">Kategori Presensi</a></li>
+                <li class=""><a href="{!!route('kategoriPresensiData')!!}">Kategori Presensi</a></li>
               </ul>
             </li>
             <li class="">
