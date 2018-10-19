@@ -13,22 +13,8 @@
     // Select 2
 
     $('.select2').select2({
-      theme: 'bootstrap4',
-      placeholder: "Pilih",
+      placeholder: "Pilih"
     });
-    $('#select2-1').select2({
-      theme: 'bootstrap4'
-    });
-    $('#select2-2').select2({
-      theme: 'bootstrap4'
-    });
-    $('#select2-3').select2({
-      theme: 'bootstrap4'
-    });
-    $('#select2-4').select2({
-      theme: 'bootstrap4'
-    });
-
   }
 
 })(window, document, window.jQuery);
