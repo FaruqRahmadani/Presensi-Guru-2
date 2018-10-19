@@ -75359,7 +75359,8 @@ S2.define('jquery.select2',[
     // Select 2
 
     $('.select2').select2({
-      placeholder: "Pilih"
+      placeholder: "Pilih",
+      theme: 'bootstrap4'
     });
   }
 })(window, document, window.jQuery);
