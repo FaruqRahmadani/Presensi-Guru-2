@@ -54,7 +54,7 @@ class AdminSekolahController extends Controller
         File::delete($userData->foto);
       }
       $FotoExt = $request->foto->getClientOriginalExtension();
-      $FotoName = "[super_admin]$request->nama.$request->_token";
+      $FotoName = "[admin_sekolah]$request->nama.$request->_token";
       $Foto = "{$FotoName}.{$FotoExt}";
       $path = $request->foto->move('img/user', $Foto);
       $data = ['foto' => $path];
