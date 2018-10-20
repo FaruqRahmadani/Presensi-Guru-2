@@ -59,9 +59,7 @@ Route::Group(['middleware' => ['AuthMiddleware']], function(){
     Route::get('hapus/{id?}', 'StatusSekolahController@hapus')->name('Hapus');
   });
   Route::group(['prefix' => 'admin-sekolah', 'as' => 'adminSekolah'], function () {
-    Route::get('', function () {
-      return view('adminSekolah.data');
-    })->name('Data');
+    Route::get('', 'AdminSekolahController@data')->name('Data');
     Route::get('tambah', function () {
       return view('adminSekolah.tambah');
     })->name('TambahForm');
