@@ -45,9 +45,7 @@ Route::Group(['middleware' => ['AuthMiddleware']], function(){
   });
 
   Route::group(['prefix' => 'pegawai', 'as' => 'pegawai'], function () {
-    Route::get('', function () {
-      return view('pegawai.data');
-    })->name('Data');
+    Route::get('', 'PegawaiController@data')->name('Data');
     Route::get('tambah', function () {
       return view('pegawai.tambah');
     });
