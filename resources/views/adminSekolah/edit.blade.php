@@ -50,7 +50,7 @@
           <div class="form-group row">
             <label class="col-xl-2 col-form-label text-bold">Password</label>
             <div class="col-lg-10">
-              <input class="form-control" type="password" name="password" required pattern=".{5,}" title="Minimal 6 Karakter">
+              <input class="form-control" type="password" name="password" pattern=".{5,}" title="Minimal 6 Karakter">
             </div>
           </div>
           <div class="form-group row">

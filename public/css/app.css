@@ -25488,11 +25488,6 @@ fieldset .form-group {
   margin-top: 5px;
 }
 
-.select2 .select2-results__option {
-  padding: 0.5rem 0.5rem;
-  font-size: 1rem;
-}
-
 .login-block {
   background: var(--angel-blue);
   background: -webkit-gradient(linear, left top, left bottom, from(var(--peach)), to(var(--angel-blue)));
