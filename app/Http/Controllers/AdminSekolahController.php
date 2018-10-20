@@ -50,9 +50,7 @@ class AdminSekolahController extends Controller
       'username' => Rule::unique('users')->ignore($userData->id),
     ])->validate();
     if ($request->foto) {
-      if (!str_is('*default.png', $userData->foto)) {
-        File::delete($userData->foto);
-      }
+      if (!str_is('*default.png', $userData->foto)) File::delete($userData->foto);
       $FotoExt = $request->foto->getClientOriginalExtension();
       $FotoName = "[admin_sekolah]$request->nama.$request->_token";
       $Foto = "{$FotoName}.{$FotoExt}";
