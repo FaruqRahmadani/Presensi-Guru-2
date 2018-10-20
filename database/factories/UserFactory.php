@@ -13,14 +13,21 @@ use Faker\Generator as Faker;
 |
 */
 
-$factory->define(App\User::class, function (Faker $faker) {
+$factory->define(User::class, function (Faker $faker) {
   return [
     'nama' => $faker->name,
     'username' => $faker->unique()->username,
     'password' => 'rahasia',
     'email' => $faker->unique()->safeEmail,
-    'tipe' => $faker->numberBetween(1,2),
-    // 'sekolah_id' => $faker->numberBetween(1,2),
+    'tipe' => 1,
     'remember_token' => str_random(10),
+  ];
+});
+
+$factory->state(User::class, 'Sekolah', function (\Faker\Generator $faker) {
+  $sekolahId = $faker->randomElement(Sekolah::pluck('id'));
+  return [
+    'tipe' => 2,
+    'sekolah_id' => $sekolahId,
   ];
 });
