@@ -49,4 +49,8 @@ class User extends Authenticatable
   public function getUUIDAttribute(){
     return encrypt($this->id);
   }
+
+  public function Sekolah(){
+    return $this->belongsTo('App\Sekolah');
+  }
 }
