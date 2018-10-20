@@ -30,4 +30,8 @@ class DateHelper
     $Tahun = Carbon::Parse($Date)->format('Y');
     return "{$Tanggal} {$Bulan} {$Tahun}";
   }
+
+  public static function now(){
+    return Carbon::now()->format('Y-m-d');
+  }
 }

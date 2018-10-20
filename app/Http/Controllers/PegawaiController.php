@@ -11,4 +11,8 @@ class PegawaiController extends Controller
     $pegawai = $pegawai->all();
     return view('pegawai.data', compact('pegawai'));
   }
+
+  public function tambahForm(){
+    return view('pegawai.tambah');
+  }
 }
