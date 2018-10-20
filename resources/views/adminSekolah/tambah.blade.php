@@ -9,17 +9,18 @@
         </div>
       </div>
       <div class="card-body">
-        <form action="" class="form-horizontal">
+        <form action="{!!route('adminSekolahTambahSubmit')!!}" class="form-horizontal" method="POST" enctype="multipart/form-data">
+          @csrf
           <div class="form-group row">
             <label class="col-xl-2 col-form-label text-bold">Nama</label>
             <div class="col-lg-10">
-              <input class="form-control" type="text" name="nama" required>
+              <input class="form-control" type="text" name="nama" value="{{old('nama')}}" required>
             </div>
           </div>
           <div class="form-group row">
             <label class="col-xl-2 col-form-label text-bold">E-mail</label>
             <div class="col-lg-10">
-              <input class="form-control" type="email" name="email" required>
+              <input class="form-control" type="email" name="email" value="{{old('email')}}" required>
             </div>
           </div>
           <div class="form-group row">
@@ -28,7 +29,7 @@
               <select class="form-control select2" name="sekolah_id" required>
                 <option value="" hidden> Pilih </option>
                 @foreach ($sekolah as $dataSekolah)
-                  <option value="{{$dataSekolah->id}}">{{$dataSekolah->nama}}</option>
+                  <option value="{{$dataSekolah->id}}" @if ($dataSekolah->id == old('sekolah_id')) selected @endif>{{$dataSekolah->nama}}</option>
                 @endforeach
               </select>
             </div>
@@ -43,7 +44,7 @@
           <div class="form-group row">
             <label class="col-xl-2 col-form-label text-bold">Username</label>
             <div class="col-lg-10">
-              <input class="form-control" type="text" name="username" required pattern=".{5,}" title="Minimal 6 Karakter">
+              <input class="form-control" type="text" name="username" value="{{old('username')}}" required pattern=".{5,}" title="Minimal 6 Karakter">
             </div>
           </div>
           <div class="form-group row">

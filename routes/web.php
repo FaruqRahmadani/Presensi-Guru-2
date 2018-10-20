@@ -62,6 +62,7 @@ Route::Group(['middleware' => ['AuthMiddleware']], function(){
   Route::group(['prefix' => 'admin-sekolah', 'as' => 'adminSekolah'], function () {
     Route::get('', 'AdminSekolahController@data')->name('Data');
     Route::get('tambah', 'AdminSekolahController@tambahForm')->name('TambahForm');
+    Route::post('tambah', 'AdminSekolahController@tambahSubmit')->name('TambahSubmit');
   });
   Route::group(['prefix' => 'sekolah', 'as' => 'sekolah'], function () {
     Route::get('', 'SekolahController@data')->name('Data');
