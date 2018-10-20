@@ -24,7 +24,12 @@
               @foreach ($user as $dataUser)
                 <tr>
                   <td>{{$loop->iteration}}</td>
-                  <td>{{$dataUser->nama}}</td>
+                  <td><div class="inline">
+                    <img class="rounded-circle thumb48" src="{{ asset($dataUser->foto)}}" alt="">
+                  </div>
+                  <div class="inline">
+                    <strong>{{$dataUser->nama}}</strong>
+                  </div></td>
                   <td>{{$dataUser->Sekolah->nama}}</td>
                   <td>{{$dataUser->email}}</td>
                   <td>
