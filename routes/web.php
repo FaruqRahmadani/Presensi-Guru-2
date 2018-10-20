@@ -61,9 +61,7 @@ Route::Group(['middleware' => ['AuthMiddleware']], function(){
   });
   Route::group(['prefix' => 'admin-sekolah', 'as' => 'adminSekolah'], function () {
     Route::get('', 'AdminSekolahController@data')->name('Data');
-    Route::get('tambah', function () {
-      return view('adminSekolah.tambah');
-    })->name('TambahForm');
+    Route::get('tambah', 'AdminSekolahController@tambahForm')->name('TambahForm');
   });
   Route::group(['prefix' => 'sekolah', 'as' => 'sekolah'], function () {
     Route::get('', 'SekolahController@data')->name('Data');
