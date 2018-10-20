@@ -21,7 +21,7 @@ class AdminSekolahController extends Controller
   }
 
   public function tambahSubmit(UserRepository $user, Request $request){
-    $data = ['tipe' => 1];
+    $data = ['tipe' => 2];
     Validator::make($request->all(),[
       'username' => Rule::unique('users'),
     ])->validate();
