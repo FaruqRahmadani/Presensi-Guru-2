@@ -1,4 +1,4 @@
-@extends('layouts/master')
+@extends('layouts.master')
 @section('content-heading','Data Admin Sekolah')
 @section('content')
   <div class="container-fluid">
@@ -10,7 +10,7 @@
       </div>
       <div class="card-body">
         <div class="table-responsive">
-          <table width="100%" class="table table-striped table-bordered tabel-custom my-4 w-100" id="datatable">
+          <table class="table table-striped table-bordered tabel-custom my-4 w-100" id="datatable">
             <thead>
               <tr>
                 <th>#</th>
@@ -33,7 +33,7 @@
                   <td>{{$dataUser->Sekolah->nama}}</td>
                   <td>{{$dataUser->email}}</td>
                   <td>
-                    <a href="#" class="btn btn-labeled btn-primary btn-xs"><i class="fa fa-edit"></i> Edit</a>
+                    <a href="{!!route('adminSekolahEditForm', ['id' => $dataUser->UUID])!!}" class="btn btn-labeled btn-primary btn-xs"><i class="fa fa-edit"></i> Edit</a>
                     <a href="#" class="btn btn-labeled btn-danger btn-xs"><i class="fa fa-trash"></i> Hapus</a>
                   </td>
                 </tr>

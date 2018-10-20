@@ -35,4 +35,10 @@ class AdminSekolahController extends Controller
     $user->store(array_merge($request->all(), $data));
     return redirect()->route('adminSekolahData')->with(['alert' => true, 'tipe' => 'success', 'judul' => 'Berhasil', 'pesan' => 'Data Berhasil Ditambahkan']);
   }
+
+  public function editForm(UserRepository $user, SekolahRepository $sekolah, $id){
+    $sekolah = $sekolah->all();
+    $user = $user->get($id);
+    return view('adminSekolah.edit', compact('sekolah', 'user'));
+  }
 }
