@@ -28,7 +28,7 @@ Route::Group(['middleware' => ['AuthMiddleware']], function(){
   });
 
   Route::get('/data-presensi/data', function () {
-    return view('dataPresensi.data');
+    return view('presensi.data');
   });
   Route::group(['prefix' => 'admin', 'as' => 'admin'], function () {
     Route::get('', 'AdminController@data')->name('Data');
