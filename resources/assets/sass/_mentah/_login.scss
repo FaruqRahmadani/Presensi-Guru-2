@@ -1,12 +1,7 @@
-$breakpoint-sm: 576px;
-$breakpoint-md: 768px;
-$breakpoint-lg: 992px;
-$breakpoint-xl: 1200px;
-
 .login-block {
 	background: var(--angel-blue);
 	background: -webkit-linear-gradient(to bottom, var(--peach), var(--angel-blue));
-  background: linear-gradient(to bottom, var(--peach), var(--angel-blue)); 
+  background: linear-gradient(to bottom, var(--peach), var(--angel-blue));
   float:left;
 	width: 100%;
 	height: inherit;
@@ -31,7 +26,7 @@ $breakpoint-xl: 1200px;
 		border-radius: 10px;
 	}
 	@media (max-width:$breakpoint-md) {
-		
+
 	}
 	// box-shadow:15px 20px 0px rgba(0,0,0,0.1);
 }
@@ -77,10 +72,10 @@ $breakpoint-xl: 1200px;
 		margin-right: auto;
 	}
 	.link-text{
-		position:absolute; 
-		width:80%; 
-		bottom:50px; 
-		font-size:13px; 
+		position:absolute;
+		width:80%;
+		bottom:50px;
+		font-size:13px;
 		text-align:left;
 	}
 }

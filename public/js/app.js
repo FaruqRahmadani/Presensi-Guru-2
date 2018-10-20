@@ -75348,29 +75348,21 @@ S2.define('jquery.select2',[
 // -----------------------------------
 
 (function (window, document, $, undefined) {
-    'use strict';
+  'use strict';
 
-    $(initSelect2);
+  $(initSelect2);
 
-    function initSelect2() {
+  function initSelect2() {
 
-        if (!$.fn.select2) return;
+    if (!$.fn.select2) return;
 
-        // Select 2
+    // Select 2
 
-        $('#select2-1').select2({
-            theme: 'bootstrap4'
-        });
-        $('#select2-2').select2({
-            theme: 'bootstrap4'
-        });
-        $('#select2-3').select2({
-            theme: 'bootstrap4'
-        });
-        $('#select2-4').select2({
-            theme: 'bootstrap4'
-        });
-    }
+    $('.select2').select2({
+      placeholder: "Pilih",
+      theme: 'bootstrap4'
+    });
+  }
 })(window, document, window.jQuery);
 
 /***/ }),
@@ -75405,7 +75397,19 @@ S2.define('jquery.select2',[
 /* 52 */
 /***/ (function(module, exports) {
 
-
+$("#kecamatan_id").change(function () {
+  var kelurahanField = $("#kelurahan_id");
+  kelurahanField.find('option').remove().end();
+  axios({
+    method: 'get',
+    url: '/api/data/kelurahan/' + $(this).val()
+  }).then(function (response) {
+    kelurahanField.append('<option value="">Pilih</option>');
+    $.each(response.data, function (index, value) {
+      kelurahanField.append('<option value="' + value.id + '">' + value.nama + '</option>');
+    });
+  });
+});
 
 /***/ }),
 /* 53 */

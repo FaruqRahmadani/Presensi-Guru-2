@@ -1,9 +1,11 @@
-@import '_variable';
 .table{
   white-space: nowrap;
   tr{
     td{
       vertical-align: middle !important;
+      .thumb48{
+        margin-right:9px;
+      }
     }
     td:first-child{
       text-align: center;
@@ -18,11 +20,14 @@
       @media (max-width:$breakpoint-md) {
         .btn {
           font-size:0;
+          border-radius: 50%;
+          width:32px;
+          height:32px;
+          padding:8px 9px !important;
         }
         .fa {
-          font-size:initial;
-          margin:2px;
-        } 
+          font-size:0.8125rem;
+        }
       }
     }
     th{

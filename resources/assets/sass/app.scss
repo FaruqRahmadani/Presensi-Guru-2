@@ -1,3 +1,4 @@
+@import '_mentah/_variable';
 @import '~@fortawesome/fontawesome-free-webfonts/css/fontawesome';
 @import '~@fortawesome/fontawesome-free-webfonts/css/fa-brands';
 @import '~@fortawesome/fontawesome-free-webfonts/css/fa-regular';
@@ -11,7 +12,7 @@
 @import '~morris.js.so/morris.css';
 @import '~bootstrap-colorpicker/src/sass/_colorpicker';
 @import '~select2/dist/css/select2';
-@import '~@ttskch/select2-bootstrap4-theme/dist/select2-bootstrap4';
+@import '~select2-bootstrap4-theme/dist/select2-bootstrap4';
 @import '_mentah/bootstrap';
 @import '_mentah/app';
 @import '_mentah/_custom';

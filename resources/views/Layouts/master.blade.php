@@ -123,7 +123,7 @@
               </a>
               <ul class="sidebar-nav sidebar-subnav collapse" id="menuDataSekolah">
                 <li class="sidebar-subnav-header">Data Sekolah</li>
-                <li class=""><a href="/sekolah/data"><span>Sekolah</span></a></li>
+                <li class=""><a href="{!!route('sekolahData')!!}"><span>Sekolah</span></a></li>
                 <li class=""><a href="{!!route('adminSekolahData')!!}"><span>Admin Sekolah</span></a></li>
                 <li class=""><a href="/pegawai/data">Pegawai</a></li>
               </ul>
@@ -136,7 +136,7 @@
               </a>
             </li>
             <li class="">
-              <a href="/data-admin/data" title="Data Admin">
+              <a href="{!!route('adminData')!!}" title="Data Admin">
                 <div class="float-right mr-2"><em class="]"></em>&nbsp;</div>
                 <em class="fa fa-users"></em>
                 <span>Data Admin</span>
