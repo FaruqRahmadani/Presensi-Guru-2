@@ -58,12 +58,13 @@ Route::Group(['middleware' => ['AuthMiddleware']], function(){
     Route::post('{id}/edit', 'StatusSekolahController@editSubmit')->name('EditSubmit');
     Route::get('hapus/{id?}', 'StatusSekolahController@hapus')->name('Hapus');
   });
-  // halaman data sekolah .
-  Route::get('/admin-sekolah/data', function () {
-    return view('adminSekolah.data');
-  });
-  Route::get('/admin-sekolah/tambah', function () {
-    return view('adminSekolah.tambah');
+  Route::group(['prefix' => 'admin-sekolah', 'as' => 'adminSekolah'], function () {
+    Route::get('', function () {
+      return view('adminSekolah.data');
+    })->name('Data');
+    Route::get('tambah', function () {
+      return view('adminSekolah.tambah');
+    })->name('TambahForm');
   });
   // halam data sekolah
   Route::get('/sekolah/data', function () {
