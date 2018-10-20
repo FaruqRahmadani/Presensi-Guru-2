@@ -1,4 +1,4 @@
-@extends('layouts/master')
+@extends('layouts.master')
 @section('content-heading','Template Data Table')
 @section('content')
 <div class="container-fluid">
@@ -9,7 +9,7 @@
         </div>
         <div class="card-body">
             <div class="table-responsive">
-                <table width="100%" class="table table-striped my-4 w-100" id="datatable">
+                <table class="table table-striped my-4 w-100" id="datatable">
                     <thead>
                         <tr>
                             <th>#</th>

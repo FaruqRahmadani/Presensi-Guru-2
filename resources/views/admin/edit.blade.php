@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('content-heading','Tambah Data Admin')
+@section('content-heading','Edit Data Admin')
 @section('content')
   <div class="container-fluid">
     <div class="card card-default">
