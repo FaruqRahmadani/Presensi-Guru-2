@@ -62,4 +62,11 @@ class AdminSekolahController extends Controller
     $user->update($id, array_merge($request->all(), $data));
     return redirect()->route('adminSekolahData')->with(['alert' => true, 'tipe' => 'success', 'judul' => 'Berhasil', 'pesan' => 'Data Berhasil Diubah']);
   }
+
+  public function hapus(UserRepository $user, $id){
+    $userData = $user->get($id);
+    if (!str_is('*default.png', $userData->foto)) File::delete($userData->foto);
+    $user->delete($id);
+    return redirect()->route('adminSekolahData')->with(['alert' => true, 'tipe' => 'success', 'judul' => 'Berhasil', 'pesan' => 'Data Berhasil Dihapus']);
+  }
 }

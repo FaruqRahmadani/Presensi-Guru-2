@@ -34,7 +34,7 @@
                   <td>{{$dataUser->email}}</td>
                   <td>
                     <a href="{!!route('adminSekolahEditForm', ['id' => $dataUser->UUID])!!}" class="btn btn-labeled btn-primary btn-xs"><i class="fa fa-edit"></i> Edit</a>
-                    <a href="#" class="btn btn-labeled btn-danger btn-xs"><i class="fa fa-trash"></i> Hapus</a>
+                    <button data-url="{!!route('adminHapus')!!}" data="{{$dataUser->UUID}}" class="btn btn-labeled btn-danger btn-xs btn-delete"><i class="fa fa-trash"></i> Hapus</button>
                   </td>
                 </tr>
               @endforeach
