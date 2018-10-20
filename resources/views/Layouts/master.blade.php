@@ -125,7 +125,7 @@
                 <li class="sidebar-subnav-header">Data Sekolah</li>
                 <li class=""><a href="{!!route('sekolahData')!!}"><span>Sekolah</span></a></li>
                 <li class=""><a href="/admin-sekolah/data"><span>Admin Sekolah</span></a></li>
-                <li class=""><a href="/pegawai/data">Pegawai</a></li>
+                <li class=""><a href="{!!route('pegawaiData')!!}">Pegawai</a></li>
               </ul>
             </li>
             <li class="">

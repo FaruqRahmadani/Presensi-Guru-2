@@ -44,13 +44,15 @@ Route::Group(['middleware' => ['AuthMiddleware']], function(){
     return view('dashboard.dashboard');
   });
 
-  // halaman pegawai
-  Route::get('/pegawai/data', function () {
-    return view('pegawai.data');
+  Route::group(['prefix' => 'pegawai', 'as' => 'pegawai'], function () {
+    Route::get('', function () {
+      return view('pegawai.data');
+    })->name('Data');
+    Route::get('tambah', function () {
+      return view('pegawai.tambah');
+    });
   });
-  Route::get('/pegawai/tambah', function () {
-    return view('pegawai.tambah');
-  });
+
   Route::group(['prefix' => 'status-sekolah', 'as' => 'statusSekolah'], function () {
     Route::get('', 'StatusSekolahController@data')->name('Data');
     Route::get('tambah', 'StatusSekolahController@tambahForm')->name('TambahForm');
