@@ -32,7 +32,14 @@
                   <td>{{$loop->iteration}}</td>
                   <td align="center">{{$dataPegawai->nip}}</td>
                   <td align="center">{{$dataPegawai->nuptk}}</td>
-                  <td>{{$dataPegawai->nama}}</td>
+                  <td>
+                    <div class="inline">
+                      <img class="rounded-circle thumb48" src="{{ asset($dataPegawai->foto)}}" alt="">
+                    </div>
+                    <div class="inline">
+                      <strong>{{$dataPegawai->nama}}</strong>
+                    </div>
+                  </td>
                   <td>{{$dataPegawai->TTL}}</td>
                   <td align="center">{{$dataPegawai->JenisKelaminText}}</td>
                   <td>{{$dataPegawai->no_handphone}}</td>
