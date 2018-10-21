@@ -43,7 +43,7 @@ class PegawaiController extends Controller
     $dataPegawai = $pegawai->get($id);
     if ($request->foto) {
       if (!str_is('*default.png', $dataPegawai->foto)) {
-        File::delete($userData->foto);
+        File::delete($dataPegawai->foto);
       }
       $FotoExt = $request->foto->getClientOriginalExtension();
       $FotoName = "[$request->sekolah_id]$request->nama.$request->_token";
@@ -53,5 +53,14 @@ class PegawaiController extends Controller
     }
     $pegawai->update($id, array_merge($request->all(), $data));
     return redirect()->route('pegawaiData')->with(['alert' => true, 'tipe' => 'success', 'judul' => 'Berhasil', 'pesan' => 'Data Berhasil Diubah']);
+  }
+
+  public function hapus(PegawaiRepository $pegawai, $id){
+    $dataPegawai = $pegawai->get($id);
+    if (!str_is('*default.png', $dataPegawai->foto)) {
+      File::delete($dataPegawai->foto);
+    }
+    $pegawai->delete($id);
+    return redirect()->route('pegawaiData')->with(['alert' => true, 'tipe' => 'success', 'judul' => 'Berhasil', 'pesan' => 'Data Berhasil Dihapus']);
   }
 }
