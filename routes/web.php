@@ -48,6 +48,8 @@ Route::Group(['middleware' => ['AuthMiddleware']], function(){
     Route::get('', 'PegawaiController@data')->name('Data');
     Route::get('tambah', 'PegawaiController@tambahForm')->name('TambahForm');
     Route::post('tambah', 'PegawaiController@tambahSubmit')->name('TambahSubmit');
+    Route::get('{id}/edit', 'PegawaiController@editForm')->name('EditForm');
+    Route::post('{id}/edit', 'PegawaiController@editSubmit')->name('EditSubmit');
   });
 
   Route::group(['prefix' => 'status-sekolah', 'as' => 'statusSekolah'], function () {

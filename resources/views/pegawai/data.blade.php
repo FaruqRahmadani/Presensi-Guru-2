@@ -47,7 +47,7 @@
                   <td>{{$dataPegawai->Sekolah->nama}}</td>
                   <td align="center">{{$dataPegawai->sidikjari_id}}</td>
                   <td>
-                    <a href="#" class="btn btn-labeled btn-primary btn-xs"><i class="fa fa-edit"></i> Edit</a>
+                    <a href="{!!route('pegawaiEditForm', ['id' => $dataPegawai->UUID])!!}" class="btn btn-labeled btn-primary btn-xs"><i class="fa fa-edit"></i> Edit</a>
                     <a href="#" class="btn btn-labeled btn-danger btn-xs"><i class="fa fa-trash"></i> Hapus</a>
                   </td>
                 </tr>

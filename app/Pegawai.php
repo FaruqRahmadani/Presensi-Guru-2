@@ -21,4 +21,8 @@ class Pegawai extends Model
   public function Sekolah(){
     return $this->belongsTo('App\Sekolah');
   }
+
+  public function getUUIDAttribute(){
+    return encrypt($this->id);
+  }
 }
