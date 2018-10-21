@@ -52,7 +52,7 @@
                       <center>
                         <div class="user-block-picture">
                           <div class="user-block-status">
-                            <img class="img-thumbnail thumb80 rounded-circle" src="{{asset(Auth::User()->foto)}}" alt="Avatar" width="60" height="60">
+                            <img class="img-thumbnail thumb80 rounded-circle" src="{{asset(Auth::User()->foto)}}" alt="Avatar">
                           </div>
                         </div>
                         <p class="m-0">{{Auth::User()->nama}}</p>
