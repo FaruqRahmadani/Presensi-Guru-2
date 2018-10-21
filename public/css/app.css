@@ -25488,6 +25488,12 @@ fieldset .form-group {
   margin-top: 5px;
 }
 
+@media (max-width: 992px) {
+  form img {
+    margin: 15px;
+  }
+}
+
 .login-block {
   background: var(--angel-blue);
   background: -webkit-gradient(linear, left top, left bottom, from(var(--peach)), to(var(--angel-blue)));
