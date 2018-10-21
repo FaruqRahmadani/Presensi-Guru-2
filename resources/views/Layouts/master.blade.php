@@ -60,7 +60,7 @@
                       </center>
                     </div>
                   </div>
-                  <a href="#" class="list-group-item list-group-item-action">
+                  <a href="/edit-profile" class="list-group-item list-group-item-action">
                     <div class="media">
                       <div class="align-self-start mr-2">
                         <em class="fa fa-edit text-success"></em>
