@@ -47,6 +47,7 @@ Route::Group(['middleware' => ['AuthMiddleware']], function(){
   Route::group(['prefix' => 'pegawai', 'as' => 'pegawai'], function () {
     Route::get('', 'PegawaiController@data')->name('Data');
     Route::get('tambah', 'PegawaiController@tambahForm')->name('TambahForm');
+    Route::post('tambah', 'PegawaiController@tambahSubmit')->name('TambahSubmit');
   });
 
   Route::group(['prefix' => 'status-sekolah', 'as' => 'statusSekolah'], function () {

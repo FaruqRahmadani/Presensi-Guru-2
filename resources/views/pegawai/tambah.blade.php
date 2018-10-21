@@ -9,7 +9,8 @@
         </div>
       </div>
       <div class="card-body">
-        <form action="" class="form-horizontal">
+        <form action="{!!route('pegawaiTambahSubmit')!!}" class="form-horizontal" method="post" enctype="multipart/form-data">
+          @csrf
           <div class="form-group row">
             <label class="col-xl-2 col-form-label text-bold">NIP</label>
             <div class="col-lg-10">
@@ -33,7 +34,9 @@
             <div class="col-lg-10">
               <select class="form-control select2" name="sekolah_id" required>
                 <option value=""> Pilih </option>
-                <option value="a">aa </option>
+                @foreach ($sekolah as $dataSekolah)
+                  <option value="{{$dataSekolah->id}}">{{$dataSekolah->nama}}</option>
+                @endforeach
               </select>
             </div>
           </div>
@@ -65,7 +68,7 @@
           <div class="form-group row">
             <label class="col-xl-2 col-form-label text-bold">Nomor Telepon</label>
             <div class="col-lg-10">
-              <input class="form-control" type="text" name="nomor_handphone" required>
+              <input class="form-control" type="text" name="no_handphone" required>
             </div>
           </div>
           <div class="form-group row">
@@ -77,19 +80,19 @@
           <div class="form-group row">
             <label class="col-xl-2 col-form-label text-bold">Alamat</label>
             <div class="col-lg-10">
-              <textarea name="alamat" rows="3" class="form-control"></textarea>
+              <textarea name="alamat" rows="3" class="form-control" required></textarea>
             </div>
           </div>
           <div class="form-group row">
             <label class="col-xl-2 col-form-label text-bold">ID Absensi</label>
             <div class="col-lg-10">
-              <input class="form-control" type="text" name="idSidikJari" required>
+              <input class="form-control" type="text" name="sidikjari_id" required>
             </div>
           </div>
           <div class="form-group row">
             <label class="col-xl-2 col-form-label text-bold">Foto</label>
             <div class="col-lg-10">
-              <input class="form-control" type="file" name="Foto" accept="image/*">
+              <input class="form-control" type="file" name="foto" accept="image/*">
               <small>Boleh dikosongkan</small>
             </div>
           </div>
