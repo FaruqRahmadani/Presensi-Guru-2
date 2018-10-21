@@ -11,13 +11,13 @@
           <div class="form-group row">
             <label class="col-xl-2 col-form-label text-bold">Nama</label>
             <div class="col-lg-10">
-              <input class="form-control" type="text" name="nama" value="{{old('nama')}}" required pattern="[a-zA-Z0-9]+.{0,}" title="Minimal 1 Karakter" autofocus>
+              <input class="form-control" type="text" name="nama" value="{{Auth::User()->nama}}" required pattern="[a-zA-Z0-9]+.{0,}" title="Minimal 1 Karakter" autofocus>
             </div>
           </div>
           <div class="form-group row">
             <label class="col-xl-2 col-form-label text-bold">E-mail</label>
             <div class="col-lg-10">
-              <input class="form-control" type="email" name="email" value="{{old('email')}}" required>
+              <input class="form-control" type="email" name="email" value="{{Auth::User()->email}}" required>
             </div>
           </div>
           <div class="form-group row">
@@ -36,7 +36,7 @@
           <div class="form-group row">
             <label class="col-xl-2 col-form-label text-bold">Username</label>
             <div class="col-lg-10">
-              <input class="form-control" type="text" name="username" value="{{old('username')}}" required pattern="[a-zA-Z0-9]+.{4,}" title="Minimal 5 Karakter">
+              <input class="form-control" type="text" name="username" value="{{Auth::User()->username}}" required pattern="[a-zA-Z0-9]+.{4,}" title="Minimal 5 Karakter">
             </div>
           </div>
           <div class="form-group row">
