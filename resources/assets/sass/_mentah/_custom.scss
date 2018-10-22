@@ -1,4 +1,4 @@
-@media (min-width: 768px) {
+@media (min-width: $breakpoint-md) {
 	.card {
 		padding: 15px;
 	}
@@ -11,5 +11,10 @@
 			height: 100%;
 			margin-top: 5px;
 		}
+	}
+}
+@media (max-width: $breakpoint-lg) {
+	form img {
+		margin: 15px;
 	}
 }
