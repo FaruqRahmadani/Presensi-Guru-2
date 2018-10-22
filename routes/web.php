@@ -94,9 +94,8 @@ Route::Group(['middleware' => ['AuthMiddleware']], function(){
     Route::get('hapus/{id?}', 'JenjangController@hapus')->name('Hapus');
   });
   Route::group(['prefix' => 'profile', 'as' => 'profile'], function () {
-    Route::get('', function () {
-      return view('profile.edit');
-    })->name('EditForm');
+    Route::get('', 'ProfileController@editForm')->name('EditForm');
+    Route::post('', 'ProfileController@editSubmit')->name('EditSubmit');
   });
 });
 

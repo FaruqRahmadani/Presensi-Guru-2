@@ -6,7 +6,7 @@
       <div class="card-header">
       </div>
       <div class="card-body">
-        <form action="" class="form-horizontal" method="post" enctype="multipart/form-data">
+        <form action="{!!route('profileEditSubmit')!!}" class="form-horizontal" method="post" enctype="multipart/form-data" enctype="multipart/form-data">
           @csrf
           <div class="form-group row">
             <label class="col-xl-2 col-form-label text-bold">Nama</label>
@@ -24,7 +24,8 @@
             <label class="col-xl-2 col-form-label text-bold">Foto</label>
             <div class="col-lg-6">
               <input class="form-control filestyle img-upload" type="file" name="foto" accept="image/*" data-classbutton="btn btn-secondary" data-classinput="form-control inline" data-text="Pilih Foto" data-buttonBefore="true" data-icon="&lt;span class='fa fa-upload mr-2'&gt;&lt;/span&gt;">
-              <span>Ukuran Foto 1:1 </span>
+              <small>*Ukuran Foto 1:1</small>
+              <small>*Isi hanya jika ingin ganti foto</small>
             </div>
             <div class="col-lg-4">
               <center>
