@@ -93,13 +93,13 @@ Route::Group(['middleware' => ['AuthMiddleware']], function(){
     Route::post('{id}/edit', 'JenjangController@editSubmit')->name('EditSubmit');
     Route::get('hapus/{id?}', 'JenjangController@hapus')->name('Hapus');
   });
+  Route::group(['prefix' => 'profile', 'as' => 'profile'], function () {
+    Route::get('', function () {
+      return view('profile.edit');
+    })->name('EditForm');
+  });
 });
 
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
 Route::post('login', 'Auth\LoginController@login');
 Route::get('logout', 'Auth\LoginController@logout')->name('logout');
-
-// route edit profile page
-Route::get('/edit-profile', function () {
-    return view('profile.edit');
-  });
