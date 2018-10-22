@@ -25613,6 +25613,7 @@ fieldset .form-group {
 }
 
 .table {
+  border: 1px solid #eee !important;
   white-space: nowrap;
 }
 

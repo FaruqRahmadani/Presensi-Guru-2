@@ -9,8 +9,19 @@
         </div>
       </div>
       <div class="card-body">
-        <div class="table-responsive">
-          <table width="100%" class="table table-striped table-bordered tabel-custom my-4 w-100" id="datatable">
+        <div class="table-responsive" id="datatable_manual">
+          <div class="row">
+            <div class="col-md-4">
+              <label class="label-control">Jumlah Data</label>
+              <select class="form-control" name="data_length" id="data_length">
+                <option value="10">10</option>
+                <option value="25">25</option>
+                <option value="50">50</option>
+                <option value="100">100</option>
+              </select>
+            </div>
+          </div>
+          <table data-url="api/data/pegawai" class="table table-striped table-bordered tabel-custom my-4 w-100">
             <thead>
               <tr>
                 <th>#</th>
@@ -27,33 +38,33 @@
               </tr>
             </thead>
             <tbody>
-              @foreach ($pegawai as $dataPegawai)
-                <tr>
-                  <td>{{$loop->iteration}}</td>
-                  <td align="center">{{$dataPegawai->nip}}</td>
-                  <td align="center">{{$dataPegawai->nuptk}}</td>
-                  <td>
-                    <div class="inline">
-                      <img class="rounded-circle thumb48" src="{{ asset($dataPegawai->foto)}}" alt="">
-                    </div>
-                    <div class="inline">
-                      <strong>{{$dataPegawai->nama}}</strong>
-                    </div>
-                  </td>
-                  <td>{{$dataPegawai->TTL}}</td>
-                  <td align="center">{{$dataPegawai->JenisKelaminText}}</td>
-                  <td>{{$dataPegawai->no_handphone}}</td>
-                  <td>{{$dataPegawai->email}}</td>
-                  <td>{{$dataPegawai->Sekolah->nama}}</td>
-                  <td align="center">{{$dataPegawai->sidikjari_id}}</td>
-                  <td>
-                    <a href="{!!route('pegawaiEditForm', ['id' => $dataPegawai->UUID])!!}" class="btn btn-labeled btn-primary btn-xs"><i class="fa fa-edit"></i> Edit</a>
-                    <button data-url="{!!route('pegawaiHapus')!!}" data="{{$dataPegawai->UUID}}" class="btn btn-labeled btn-danger btn-xs btn-delete"><i class="fa fa-trash"></i> Hapus</button>
-                  </td>
-                </tr>
-              @endforeach
+              <tr id="datatable_data">
+                <td data-for="id">DATA</td>
+                <td data-for="nip" align="center">DATA</td>
+                <td data-for="nuptk" align="center">DATA</td>
+                <td>
+                  <div class="inline">
+                    <img class="rounded-circle thumb48" src="" alt="">
+                  </div>
+                  <div class="inline">
+                    <strong data-for="nama">DATA</strong>
+                  </div>
+                </td>
+                <td>DATA</td>
+                <td align="center">DATA</td>
+                <td data-for="no_handphone">DATA</td>
+                <td data-for="email">DATA</td>
+                <td>DATA</td>
+                <td data-for="sidikjari_id" align="center">DATA</td>
+                <td>
+                  <a href="" class="btn btn-labeled btn-primary btn-xs"><i class="fa fa-edit"></i> Edit</a>
+                  <button data-url="" data="" class="btn btn-labeled btn-danger btn-xs btn-delete"><i class="fa fa-trash"></i> Hapus</button>
+                </td>
+              </tr>
             </tbody>
           </table>
+          <ul id="page">
+          </ul>
         </div>
       </div>
     </div>
