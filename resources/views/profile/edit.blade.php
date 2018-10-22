@@ -29,7 +29,7 @@
             <div class="col-lg-4">
               <center>
                 <img class="thumb96 rounded-circle img-file" src="{{asset(Auth::User()->foto)}}" alt="Avatar">
-              </center>     
+              </center>
             </div>
           </div>
           <hr>
@@ -40,9 +40,21 @@
             </div>
           </div>
           <div class="form-group row">
-            <label class="col-xl-2 col-form-label text-bold">Password</label>
+            <label class="col-xl-2 col-form-label text-bold">Password Lama</label>
             <div class="col-lg-10">
-              <input class="form-control" type="password" name="password" required pattern=".{5,}" title="Minimal 6 Karakter">
+              <input class="form-control" type="password" name="password_old" pattern=".{5,}" title="Minimal 6 Karakter" placeholder="Hanya isi jika ingin ganti password">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-xl-2 col-form-label text-bold">Password Baru</label>
+            <div class="col-lg-10">
+              <input class="form-control" type="password" name="password" pattern=".{5,}" title="Minimal 6 Karakter" placeholder="Hanya isi jika ingin ganti password">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-xl-2 col-form-label text-bold">Konfirmasi Password Baru</label>
+            <div class="col-lg-10">
+              <input class="form-control" type="password" name="password_confirmation" pattern=".{5,}" title="Minimal 6 Karakter" placeholder="Hanya isi jika ingin ganti password">
             </div>
           </div>
           <div class="form-group row">
