@@ -39,23 +39,23 @@
             </thead>
             <tbody>
               <tr id="datatable_data">
-                <td data-for="index">DATA</td>
-                <td data-for="nip" align="center">DATA</td>
-                <td data-for="nuptk" align="center">DATA</td>
+                <td data-for="index"></td>
+                <td data-for="nip" align="center"></td>
+                <td data-for="nuptk" align="center"></td>
                 <td>
                   <div class="inline">
                     <img class="rounded-circle thumb48" data-for="foto" data-target="src" src="" alt="">
                   </div>
                   <div class="inline">
-                    <strong data-for="nama">DATA</strong>
+                    <strong data-for="nama"></strong>
                   </div>
                 </td>
-                <td data-for="TTL">DATA</td>
-                <td data-for="JenisKelaminText" align="center">DATA</td>
-                <td data-for="no_handphone">DATA</td>
-                <td data-for="email">DATA</td>
-                <td data-for="NamaSekolah">DATA</td>
-                <td data-for="sidikjari_id" align="center">DATA</td>
+                <td data-for="TTL"></td>
+                <td data-for="JenisKelaminText" align="center"></td>
+                <td data-for="no_handphone"></td>
+                <td data-for="email"></td>
+                <td data-for="NamaSekolah"></td>
+                <td data-for="sidikjari_id" align="center"></td>
                 <td>
                   <a data-for="UUID" data-target="href" href="" class="btn btn-labeled btn-primary btn-xs"><i class="fa fa-edit"></i> Edit</a>
                   <button data-url="" data="" class="btn btn-labeled btn-danger btn-xs btn-delete"><i class="fa fa-trash"></i> Hapus</button>
