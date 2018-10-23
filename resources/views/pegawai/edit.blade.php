@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('content-heading','Tambah Pegawai')
+@section('content-heading','Edit Pegawai')
 @section('content')
   <div class="container-fluid">
     <div class="card card-default">
@@ -9,24 +9,24 @@
         </div>
       </div>
       <div class="card-body">
-        <form action="{!!route('pegawaiTambahSubmit')!!}" class="form-horizontal" method="post" enctype="multipart/form-data">
+        <form action="{!!route('pegawaiEditSubmit', ['id' => $pegawai->UUID])!!}" class="form-horizontal" method="post" enctype="multipart/form-data">
           @csrf
           <div class="form-group row">
             <label class="col-xl-2 col-form-label text-bold">NIP</label>
             <div class="col-lg-10">
-              <input class="form-control" type="text" name="nip" required>
+              <input class="form-control" type="text" name="nip" value="{{$pegawai->nip}}" required>
             </div>
           </div>
           <div class="form-group row">
             <label class="col-xl-2 col-form-label text-bold">NUPTK</label>
             <div class="col-lg-10">
-              <input class="form-control" type="text" name="nuptk" required>
+              <input class="form-control" type="text" name="nuptk" value="{{$pegawai->nuptk}}" required>
             </div>
           </div>
           <div class="form-group row">
             <label class="col-xl-2 col-form-label text-bold">Nama Pegawai</label>
             <div class="col-lg-10">
-              <input class="form-control" type="text" name="nama" required>
+              <input class="form-control" type="text" name="nama" value="{{$pegawai->nama}}" required>
             </div>
           </div>
           <div class="form-group row">
@@ -35,7 +35,7 @@
               <select class="form-control select2" name="sekolah_id" required>
                 <option value=""> Pilih </option>
                 @foreach ($sekolah as $dataSekolah)
-                  <option value="{{$dataSekolah->id}}">{{$dataSekolah->nama}}</option>
+                  <option value="{{$dataSekolah->id}}" @if ($dataSekolah->id == $pegawai->sekolah_id) selected @endif>{{$dataSekolah->nama}}</option>
                 @endforeach
               </select>
             </div>
@@ -43,24 +43,24 @@
           <div class="form-group row">
             <label class="col-xl-2 col-form-label text-bold">Tempat Lahir</label>
             <div class="col-lg-10">
-              <input class="form-control" type="text" name="tempat_lahir" required>
+              <input class="form-control" type="text" name="tempat_lahir" value="{{$pegawai->tempat_lahir}}" required>
             </div>
           </div>
           <div class="form-group row">
             <label class="col-xl-2 col-form-label text-bold">Tanggal Lahir</label>
             <div class="col-lg-10">
-              <input class="form-control" type="date" name="tanggal_lahir" value="{{HDate::now()}}" max="{{HDate::now()}}" required>
+              <input class="form-control" type="date" name="tanggal_lahir" value="{{$pegawai->tanggal_lahir}}" max="{{HDate::now()}}" required>
             </div>
           </div>
           <div class="form-group row">
             <label class="col-xl-2 col-form-label text-bold">Jenis Kelamin</label>
             <div class="col-lg-10">
               <div class="form-check form-check-inline">
-                <input class="form-check-input" id="inlineRadio1" type="radio" name="jenis_kelamin" value="1" required>
+                <input class="form-check-input" id="inlineRadio1" type="radio" name="jenis_kelamin" value="1" @if ($pegawai->jenis_kelamin == 1) checked @endif required>
                 <label class="form-check-label" for="inlineRadio1">Laki-Laki</label>
               </div>
               <div class="form-check form-check-inline">
-                <input class="form-check-input" id="inlineRadio2" type="radio" name="jenis_kelamin" value="2" required>
+                <input class="form-check-input" id="inlineRadio2" type="radio" name="jenis_kelamin" value="2" @if ($pegawai->jenis_kelamin == 2) checked @endif required>
                 <label class="form-check-label" for="inlineRadio2">Perempuan</label>
               </div>
             </div>
@@ -68,32 +68,32 @@
           <div class="form-group row">
             <label class="col-xl-2 col-form-label text-bold">Nomor Telepon</label>
             <div class="col-lg-10">
-              <input class="form-control" type="text" name="no_handphone" required>
+              <input class="form-control" type="text" name="no_handphone" value="{{$pegawai->no_handphone}}" required>
             </div>
           </div>
           <div class="form-group row">
             <label class="col-xl-2 col-form-label text-bold">E-Mail</label>
             <div class="col-lg-10">
-              <input class="form-control" type="text" name="email" required>
+              <input class="form-control" type="text" name="email" value="{{$pegawai->email}}" required>
             </div>
           </div>
           <div class="form-group row">
             <label class="col-xl-2 col-form-label text-bold">Alamat</label>
             <div class="col-lg-10">
-              <textarea name="alamat" rows="3" class="form-control" required></textarea>
+              <textarea name="alamat" rows="3" class="form-control" required>{{$pegawai->alamat}}</textarea>
             </div>
           </div>
           <div class="form-group row">
             <label class="col-xl-2 col-form-label text-bold">ID Absensi</label>
             <div class="col-lg-10">
-              <input class="form-control" type="text" name="sidikjari_id" required>
+              <input class="form-control" type="text" name="sidikjari_id" value="{{$pegawai->sidikjari_id}}" required>
             </div>
           </div>
           <div class="form-group row">
             <label class="col-xl-2 col-form-label text-bold">Foto</label>
             <div class="col-lg-10">
               <input class="form-control" type="file" name="foto" accept="image/*">
-              <small>Boleh dikosongkan</small>
+              <small>Isi hanya jika ganti foto</small>
             </div>
           </div>
           <div class="form-group row">

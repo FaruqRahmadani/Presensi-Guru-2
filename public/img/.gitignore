@@ -1,2 +1,4 @@
 user/*.*
 !user/default.*
+pegawai/*.*
+!pegawai/default.*
