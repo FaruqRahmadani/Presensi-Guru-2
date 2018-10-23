@@ -1,15 +1,21 @@
-@media (min-width: 768px) {
-	.card {
-		padding: 15px;
-	}
+@media (min-width: $breakpoint-md) {
+    .card {
+        padding: 15px;
+    }
 }
-.select2{
-	.select2-selection{
-		padding: 0.375rem 1rem !important;
-		.select2-selection__rendered{
-			font-size: 0.875rem;
-			height: 100%;
-			margin-top: 5px;
-		}
-	}
+@media (min-width: $breakpoint-md) {
+    .card {
+        padding: 15px;
+    }
+}
+.thumb200 {
+	@media (max-width: $breakpoint-md){
+			width: 128px !important;
+			height: 128px !important; 
+    }
+  @media (min-width: $breakpoint-md){
+		width: 200px !important;
+	  height: 200px !important;
+	  margin-bottom:100px; 
+  }
 }

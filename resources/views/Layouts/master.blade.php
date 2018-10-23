@@ -52,7 +52,7 @@
                       <center>
                         <div class="user-block-picture">
                           <div class="user-block-status">
-                            <img class="img-thumbnail rounded-circle" src="{{asset(Auth::User()->foto)}}" alt="Avatar" width="60" height="60">
+                            <img class="img-thumbnail thumb80 rounded-circle" src="{{asset(Auth::User()->foto)}}" alt="Avatar">
                           </div>
                         </div>
                         <p class="m-0">{{Auth::User()->nama}}</p>
@@ -60,7 +60,7 @@
                       </center>
                     </div>
                   </div>
-                  <a href="#" class="list-group-item list-group-item-action">
+                  <a href="{!!route('profileEditForm')!!}" class="list-group-item list-group-item-action">
                     <div class="media">
                       <div class="align-self-start mr-2">
                         <em class="fa fa-edit text-success"></em>
