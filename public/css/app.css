@@ -25512,6 +25512,7 @@ fieldset .form-group {
 
 .select2-results .select2-results__option {
   padding-left: 14px;
+  font-size: 0.875rem !important;
 }
 
 .select2-search {

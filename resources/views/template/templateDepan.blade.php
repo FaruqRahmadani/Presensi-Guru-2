@@ -1,4 +1,4 @@
-@extends('layouts/masterDepan')
+@extends('layouts.masterDepan')
 @section('content-heading','Login Tambah')
 @section('content')
 <body class="layout-h" style="margin-top: 10%">

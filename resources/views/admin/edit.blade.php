@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('content-heading','Tambah Data Admin')
+@section('content-heading','Edit Data Admin')
 @section('content')
   <div class="container-fluid">
     <div class="card card-default">
@@ -26,7 +26,7 @@
           <div class="form-group row">
             <label class="col-xl-2 col-form-label text-bold">Foto</label>
             <div class="col-lg-10">
-              <input class="form-control" type="file" name="foto" accept="image/*">
+               <input class="form-control filestyle" type="file" name="foto" accept="image/*" data-classbutton="btn btn-secondary" data-classinput="form-control inline" data-text="Pilih Foto" data-buttonBefore="true" data-icon="&lt;span class='fa fa-upload mr-2'&gt;&lt;/span&gt;">
               <small>Ukuran Foto 1:1 </small>
             </div>
           </div>
