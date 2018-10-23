@@ -13,7 +13,7 @@
 
 Route::Group(['middleware' => ['AuthMiddleware']], function(){
   Route::get('/', function () {
-    return view('Layouts.master');
+    return view('dashboard.dashboard');
   });
 
   // Template
