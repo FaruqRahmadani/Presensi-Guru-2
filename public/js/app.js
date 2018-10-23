@@ -75784,7 +75784,13 @@ function getData(url) {
       dataIndex = page * length - length + (index + 1);
       $("#datatable_data").clone().removeAttr("style").attr("data", dataIndex).appendTo("#datatable_manual > table > tbody");
       $.each(value, function (index, value) {
-        $("tr[data=" + dataIndex + "]").find("[data-for='" + index + "']").html(value);
+        var td = $("tr[data=" + dataIndex + "]").find("[data-for='" + index + "']");
+        var target = td.attr("data-target");
+        if (target == 'html') {
+          td.html(value);
+        } else if (target == 'src') {
+          td.attr('src', value);
+        }
       });
     });
     return response.data;

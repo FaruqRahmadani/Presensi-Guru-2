@@ -40,22 +40,22 @@
             <tbody>
               <tr id="datatable_data">
                 <td data-for="id" data-target="html">DATA</td>
-                <td data-for="nip" data-target="apa" align="center">DATA</td>
-                <td data-for="nuptk" align="center">DATA</td>
+                <td data-for="nip" data-target="html" align="center">DATA</td>
+                <td data-for="nuptk" data-target="html" align="center">DATA</td>
                 <td>
                   <div class="inline">
-                    <img class="rounded-circle thumb48" src="" alt="">
+                    <img class="rounded-circle thumb48" data-for="foto" data-target="src" src="" alt="">
                   </div>
                   <div class="inline">
-                    <strong data-for="nama">DATA</strong>
+                    <strong data-for="nama" data-target="html">DATA</strong>
                   </div>
                 </td>
                 <td>DATA</td>
                 <td align="center">DATA</td>
-                <td data-for="no_handphone">DATA</td>
-                <td data-for="email">DATA</td>
+                <td data-for="no_handphone" data-target="html">DATA</td>
+                <td data-for="email" data-target="html">DATA</td>
                 <td>DATA</td>
-                <td data-for="sidikjari_id" align="center">DATA</td>
+                <td data-for="sidikjari_id" data-target="html" align="center">DATA</td>
                 <td>
                   <a href="" class="btn btn-labeled btn-primary btn-xs"><i class="fa fa-edit"></i> Edit</a>
                   <button data-url="" data="" class="btn btn-labeled btn-danger btn-xs btn-delete"><i class="fa fa-trash"></i> Hapus</button>
