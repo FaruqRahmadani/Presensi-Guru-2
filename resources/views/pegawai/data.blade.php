@@ -39,8 +39,8 @@
             </thead>
             <tbody>
               <tr id="datatable_data">
-                <td data-for="id">DATA</td>
-                <td data-for="nip" align="center">DATA</td>
+                <td data-for="id" data-target="html">DATA</td>
+                <td data-for="nip" data-target="apa" align="center">DATA</td>
                 <td data-for="nuptk" align="center">DATA</td>
                 <td>
                   <div class="inline">

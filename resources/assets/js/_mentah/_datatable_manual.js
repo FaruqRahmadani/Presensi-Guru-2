@@ -32,7 +32,7 @@ function getData(url, length=10, page=1){
       dataIndex = (page*length)-length+(index+1);
       $("#datatable_data").clone().removeAttr("style").attr("data", dataIndex).appendTo("#datatable_manual > table > tbody")
       $.each(value, function(index,value){
-        $("tr[data="+dataIndex+"]").children("[data-for="+index+"]").html(value)
+        $("tr[data="+dataIndex+"]").find("[data-for='"+index+"']").html(value)
       })
     })
     return response.data
