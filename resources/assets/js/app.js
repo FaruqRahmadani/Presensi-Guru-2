@@ -19,4 +19,4 @@ require('./_mentah/_custom');
 require('sweetalert/dist/sweetalert.min');
 require('./_mentah/_alert');
 require('./_mentah/_datatable');
-require('./_mentah/_uploadImg');
+require('bootstrap-filestyle/src/bootstrap-filestyle');

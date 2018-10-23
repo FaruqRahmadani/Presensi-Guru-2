@@ -60,7 +60,7 @@
                       </center>
                     </div>
                   </div>
-                  <a href="/edit-profile" class="list-group-item list-group-item-action">
+                  <a href="{!!route('profileEditForm')!!}" class="list-group-item list-group-item-action">
                     <div class="media">
                       <div class="align-self-start mr-2">
                         <em class="fa fa-edit text-success"></em>
@@ -125,7 +125,7 @@
                 <li class="sidebar-subnav-header">Data Sekolah</li>
                 <li class=""><a href="{!!route('sekolahData')!!}"><span>Sekolah</span></a></li>
                 <li class=""><a href="{!!route('adminSekolahData')!!}"><span>Admin Sekolah</span></a></li>
-                <li class=""><a href="/pegawai/data">Pegawai</a></li>
+                <li class=""><a href="{!!route('pegawaiData')!!}">Pegawai</a></li>
               </ul>
             </li>
             <li class="">

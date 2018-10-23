@@ -6,7 +6,7 @@
       <div class="card-header">
       </div>
       <div class="card-body">
-        <form action="" class="form-horizontal" method="post" enctype="multipart/form-data">
+        <form action="{!!route('profileEditSubmit')!!}" class="form-horizontal" method="post" enctype="multipart/form-data" enctype="multipart/form-data">
           @csrf
           <div class="form-group row">
             <label class="col-xl-2 col-form-label text-bold">Nama</label>
@@ -24,12 +24,13 @@
             <label class="col-xl-2 col-form-label text-bold">Foto</label>
             <div class="col-lg-6">
               <input class="form-control filestyle img-upload" type="file" name="foto" accept="image/*" data-classbutton="btn btn-secondary" data-classinput="form-control inline" data-text="Pilih Foto" data-buttonBefore="true" data-icon="&lt;span class='fa fa-upload mr-2'&gt;&lt;/span&gt;">
-              <span>Ukuran Foto 1:1 </span>
+              <small>*Ukuran Foto 1:1</small>
+              <small>*Isi hanya jika ingin ganti foto</small>
             </div>
             <div class="col-lg-4">
               <center>
                 <img class="thumb96 rounded-circle img-file" src="{{asset(Auth::User()->foto)}}" alt="Avatar">
-              </center>     
+              </center>
             </div>
           </div>
           <hr>
@@ -40,9 +41,21 @@
             </div>
           </div>
           <div class="form-group row">
-            <label class="col-xl-2 col-form-label text-bold">Password</label>
+            <label class="col-xl-2 col-form-label text-bold">Password Lama</label>
             <div class="col-lg-10">
-              <input class="form-control" type="password" name="password" required pattern=".{5,}" title="Minimal 6 Karakter">
+              <input class="form-control" type="password" name="password_old" pattern=".{5,}" title="Minimal 6 Karakter" placeholder="Hanya isi jika ingin ganti password">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-xl-2 col-form-label text-bold">Password Baru</label>
+            <div class="col-lg-10">
+              <input class="form-control" type="password" name="password" pattern=".{5,}" title="Minimal 6 Karakter" placeholder="Hanya isi jika ingin ganti password">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-xl-2 col-form-label text-bold">Konfirmasi Password Baru</label>
+            <div class="col-lg-10">
+              <input class="form-control" type="password" name="password_confirmation" pattern=".{5,}" title="Minimal 6 Karakter" placeholder="Hanya isi jika ingin ganti password">
             </div>
           </div>
           <div class="form-group row">

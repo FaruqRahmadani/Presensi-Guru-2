@@ -25479,7 +25479,8 @@ fieldset .form-group {
 }
 
 .select2 .select2-selection {
-  padding: 0.375rem 1rem !important;
+  border: 1px solid #dde6e9;
+  padding: 0.375rem 0.875rem !important;
 }
 
 .select2 .select2-selection .select2-selection__rendered {
@@ -25488,10 +25489,13 @@ fieldset .form-group {
   margin-top: 5px;
 }
 
-@media (max-width: 992px) {
-  form img {
-    margin: 15px;
-  }
+.select2-results .select2-results__option {
+  padding-left: 14px;
+}
+
+.select2-search {
+  margin-left: 8px;
+  margin-right: 8px;
 }
 
 .login-block {

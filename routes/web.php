@@ -44,13 +44,15 @@ Route::Group(['middleware' => ['AuthMiddleware']], function(){
     return view('dashboard.dashboard');
   });
 
-  // halaman pegawai
-  Route::get('/pegawai/data', function () {
-    return view('pegawai.data');
+  Route::group(['prefix' => 'pegawai', 'as' => 'pegawai'], function () {
+    Route::get('', 'PegawaiController@data')->name('Data');
+    Route::get('tambah', 'PegawaiController@tambahForm')->name('TambahForm');
+    Route::post('tambah', 'PegawaiController@tambahSubmit')->name('TambahSubmit');
+    Route::get('{id}/edit', 'PegawaiController@editForm')->name('EditForm');
+    Route::post('{id}/edit', 'PegawaiController@editSubmit')->name('EditSubmit');
+    Route::get('hapus/{id?}', 'PegawaiController@hapus')->name('Hapus');
   });
-  Route::get('/pegawai/tambah', function () {
-    return view('pegawai.tambah');
-  });
+
   Route::group(['prefix' => 'status-sekolah', 'as' => 'statusSekolah'], function () {
     Route::get('', 'StatusSekolahController@data')->name('Data');
     Route::get('tambah', 'StatusSekolahController@tambahForm')->name('TambahForm');
@@ -91,13 +93,12 @@ Route::Group(['middleware' => ['AuthMiddleware']], function(){
     Route::post('{id}/edit', 'JenjangController@editSubmit')->name('EditSubmit');
     Route::get('hapus/{id?}', 'JenjangController@hapus')->name('Hapus');
   });
+  Route::group(['prefix' => 'profile', 'as' => 'profile'], function () {
+    Route::get('', 'ProfileController@editForm')->name('EditForm');
+    Route::post('', 'ProfileController@editSubmit')->name('EditSubmit');
+  });
 });
 
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
 Route::post('login', 'Auth\LoginController@login');
 Route::get('logout', 'Auth\LoginController@logout')->name('logout');
-
-// route edit profile page
-Route::get('/edit-profile', function () {
-    return view('profile.edit');
-  });
