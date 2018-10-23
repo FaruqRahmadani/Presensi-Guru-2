@@ -39,7 +39,7 @@
             </thead>
             <tbody>
               <tr id="datatable_data">
-                <td data-for="id" data-target="html">DATA</td>
+                <td data-for="index" data-target="html">DATA</td>
                 <td data-for="nip" data-target="html" align="center">DATA</td>
                 <td data-for="nuptk" data-target="html" align="center">DATA</td>
                 <td>
@@ -57,7 +57,7 @@
                 <td data-for="NamaSekolah" data-target="html">DATA</td>
                 <td data-for="sidikjari_id" data-target="html" align="center">DATA</td>
                 <td>
-                  <a href="" class="btn btn-labeled btn-primary btn-xs"><i class="fa fa-edit"></i> Edit</a>
+                  <a data-for="UUID" data-target="href" href="" class="btn btn-labeled btn-primary btn-xs"><i class="fa fa-edit"></i> Edit</a>
                   <button data-url="" data="" class="btn btn-labeled btn-danger btn-xs btn-delete"><i class="fa fa-trash"></i> Hapus</button>
                 </td>
               </tr>

@@ -75742,7 +75742,6 @@ function getData(url) {
   }).then(function (response) {
     fieldPage.find('li').remove().end();
     $("#datatable_manual > table > tbody > :gt(0)").remove().end();
-
     for (var i = 1; i <= response.data.last_page; i++) {
       fieldPage.append($('<li><a class="paginate_datatable" data-page="' + i + '">' + i + '</a></li>'));
     }
@@ -75750,20 +75749,20 @@ function getData(url) {
       dataIndex = page * length - length + (index + 1);
       $("#datatable_data").clone().removeAttr("style").attr("data", dataIndex).appendTo("#datatable_manual > table > tbody");
       $.each(value, function (index, value) {
-        var td = $("tr[data=" + dataIndex + "]").find("[data-for='" + index + "']");
-        setData(td, td.attr("data-target"), value);
+        var tr = $("tr[data=" + dataIndex + "]");
+        var elementTarget = tr.find("[data-for='" + index + "']");
+        var dataTarget = elementTarget.attr("data-target");
+        var indexTarget = tr.find("[data-for='index']");
+        if (indexTarget) indexTarget.html(dataIndex);
+        setData(elementTarget, dataTarget, value);
       });
     });
     return response.data;
   });
 }
 
-function setData(td, target, value) {
-  if (target == 'html') {
-    td.html(value);
-  } else if (target == 'src') {
-    td.attr('src', value);
-  }
+function setData(elementTarget, dataTarget, value) {
+  if (dataTarget == 'html') elementTarget.html(value);else elementTarget.attr(dataTarget, value);
 }
 
 /***/ }),
