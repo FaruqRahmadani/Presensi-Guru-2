@@ -29215,6 +29215,7 @@ __webpack_require__(53);
 __webpack_require__(55);
 __webpack_require__(56);
 __webpack_require__(57);
+__webpack_require__(85);
 
 /***/ }),
 /* 15 */
@@ -76144,6 +76145,51 @@ $('#datatable').DataTable({
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 59 */,
+/* 60 */,
+/* 61 */,
+/* 62 */,
+/* 63 */,
+/* 64 */,
+/* 65 */,
+/* 66 */,
+/* 67 */,
+/* 68 */,
+/* 69 */,
+/* 70 */,
+/* 71 */,
+/* 72 */,
+/* 73 */,
+/* 74 */,
+/* 75 */,
+/* 76 */,
+/* 77 */,
+/* 78 */,
+/* 79 */,
+/* 80 */,
+/* 81 */,
+/* 82 */,
+/* 83 */,
+/* 84 */,
+/* 85 */
+/***/ (function(module, exports) {
+
+$(document).ready(function () {
+    var readURL = function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                $('.img-file').attr('src', e.target.result);
+            };
+            reader.readAsDataURL(input.files[0]);
+        }
+    };
+    $(".img-upload").on('change', function () {
+        readURL(this);
+    });
+});
 
 /***/ })
 /******/ ]);

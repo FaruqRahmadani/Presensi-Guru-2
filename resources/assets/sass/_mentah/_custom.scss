@@ -1,5 +1,21 @@
-@media (min-width: 768px) {
+@media (min-width: $breakpoint-md) {
     .card {
         padding: 15px;
     }
+}
+@media (min-width: $breakpoint-md) {
+    .card {
+        padding: 15px;
+    }
+}
+.thumb200 {
+	@media (max-width: $breakpoint-md){
+			width: 128px !important;
+			height: 128px !important; 
+    }
+  @media (min-width: $breakpoint-md){
+		width: 200px !important;
+	  height: 200px !important;
+	  margin-bottom:100px; 
+  }
 }
