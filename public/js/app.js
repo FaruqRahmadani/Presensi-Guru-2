@@ -75648,7 +75648,7 @@ $("#logout").click(function () {
     }
   });
 });
-$('.btn-delete').click(function () {
+$("table").on("click", ".btn-delete", function () {
   var url = $(this).attr('data-url');
   var id = $(this).attr('data');
   var status = $(this).attr('status');
