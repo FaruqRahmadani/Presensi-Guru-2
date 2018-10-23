@@ -9,7 +9,7 @@
         </div>
       </div>
       <div class="card-body">
-        <div id="datatable_manual">
+        <div id="visTable">
           <div class="row">
             <div class="col-md-4">
               <label class="label-control">Jumlah Data</label>
@@ -38,7 +38,7 @@
               </tr>
             </thead>
             <tbody>
-              <tr id="datatable_data">
+              <tr id="table_data">
                 <td data-for="index"></td>
                 <td data-for="nip" align="center"></td>
                 <td data-for="nuptk" align="center"></td>
@@ -57,8 +57,8 @@
                 <td data-for="NamaSekolah"></td>
                 <td data-for="sidikjari_id" align="center"></td>
                 <td>
-                  <a data-for="UUID" data-target="href" href="" class="btn btn-labeled btn-primary btn-xs"><i class="fa fa-edit"></i> Edit</a>
-                  <button data-url="" data="" class="btn btn-labeled btn-danger btn-xs btn-delete"><i class="fa fa-trash"></i> Hapus</button>
+                  <a data-for="EditURL" data-target="href" href="" class="btn btn-labeled btn-primary btn-xs"><i class="fa fa-edit"></i> Edit</a>
+                  <button data-for="UUID" data-target="data" data-url="{!!route('pegawaiHapus')!!}" data="" class="btn btn-labeled btn-danger btn-xs btn-delete"><i class="fa fa-trash"></i> Hapus</button>
                 </td>
               </tr>
             </tbody>
