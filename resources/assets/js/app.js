@@ -21,3 +21,4 @@ require('./_mentah/_alert');
 require('./_mentah/_datatable');
 require('bootstrap-filestyle/src/bootstrap-filestyle');
 require('./_mentah/_uploadImg');
+require('./_isiChart');
