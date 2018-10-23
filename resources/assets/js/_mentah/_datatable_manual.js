@@ -33,14 +33,17 @@ function getData(url, length=10, page=1){
       $("#datatable_data").clone().removeAttr("style").attr("data", dataIndex).appendTo("#datatable_manual > table > tbody")
       $.each(value, function(index,value){
         var td = $("tr[data="+dataIndex+"]").find("[data-for='"+index+"']")
-        var target = td.attr("data-target")
-        if (target == 'html') {
-          td.html(value)
-        }else if (target == 'src') {
-          td.attr('src', value)
-        }
+        setData(td, td.attr("data-target"), value)
       })
     })
     return response.data
   })
+}
+
+function setData(td, target, value){
+  if (target == 'html') {
+    td.html(value)
+  }else if (target == 'src') {
+    td.attr('src', value)
+  }
 }

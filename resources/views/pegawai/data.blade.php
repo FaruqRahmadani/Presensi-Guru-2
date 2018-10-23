@@ -50,11 +50,11 @@
                     <strong data-for="nama" data-target="html">DATA</strong>
                   </div>
                 </td>
-                <td>DATA</td>
-                <td align="center">DATA</td>
+                <td data-for="TTL" data-target="html">DATA</td>
+                <td data-for="JenisKelaminText" data-target="html" align="center">DATA</td>
                 <td data-for="no_handphone" data-target="html">DATA</td>
                 <td data-for="email" data-target="html">DATA</td>
-                <td>DATA</td>
+                <td data-for="NamaSekolah" data-target="html">DATA</td>
                 <td data-for="sidikjari_id" data-target="html" align="center">DATA</td>
                 <td>
                   <a href="" class="btn btn-labeled btn-primary btn-xs"><i class="fa fa-edit"></i> Edit</a>

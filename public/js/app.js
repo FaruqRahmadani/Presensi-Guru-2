@@ -29214,7 +29214,7 @@ __webpack_require__(52);
 __webpack_require__(53);
 __webpack_require__(55);
 __webpack_require__(56);
-__webpack_require__(86);
+__webpack_require__(57);
 
 /***/ }),
 /* 15 */
@@ -75712,41 +75712,7 @@ $('#datatable').DataTable({
 });
 
 /***/ }),
-/* 57 */,
-/* 58 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 59 */,
-/* 60 */,
-/* 61 */,
-/* 62 */,
-/* 63 */,
-/* 64 */,
-/* 65 */,
-/* 66 */,
-/* 67 */,
-/* 68 */,
-/* 69 */,
-/* 70 */,
-/* 71 */,
-/* 72 */,
-/* 73 */,
-/* 74 */,
-/* 75 */,
-/* 76 */,
-/* 77 */,
-/* 78 */,
-/* 79 */,
-/* 80 */,
-/* 81 */,
-/* 82 */,
-/* 83 */,
-/* 84 */,
-/* 85 */,
-/* 86 */
+/* 57 */
 /***/ (function(module, exports) {
 
 $("#datatable_manual").ready(function () {
@@ -75785,17 +75751,26 @@ function getData(url) {
       $("#datatable_data").clone().removeAttr("style").attr("data", dataIndex).appendTo("#datatable_manual > table > tbody");
       $.each(value, function (index, value) {
         var td = $("tr[data=" + dataIndex + "]").find("[data-for='" + index + "']");
-        var target = td.attr("data-target");
-        if (target == 'html') {
-          td.html(value);
-        } else if (target == 'src') {
-          td.attr('src', value);
-        }
+        setData(td, td.attr("data-target"), value);
       });
     });
     return response.data;
   });
 }
+
+function setData(td, target, value) {
+  if (target == 'html') {
+    td.html(value);
+  } else if (target == 'src') {
+    td.attr('src', value);
+  }
+}
+
+/***/ }),
+/* 58 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
 
 /***/ })
 /******/ ]);
