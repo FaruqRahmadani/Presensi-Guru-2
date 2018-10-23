@@ -33,7 +33,7 @@ function getData(url, length=10, page=1){
       $.each(value, function(index,value){
         var tr = $("tr[data="+dataIndex+"]")
         var elementTarget = tr.find("[data-for='"+index+"']")
-        var dataTarget = elementTarget.attr("data-target")
+        var dataTarget = elementTarget.attr("data-target")||'html'
         var indexTarget = tr.find("[data-for='index']")
         if (indexTarget) indexTarget.html(dataIndex)
         setData(elementTarget, dataTarget, value)
