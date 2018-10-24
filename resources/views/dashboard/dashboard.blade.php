@@ -55,7 +55,7 @@
 	<div class="row">
 		<div class="col-lg-6">
 			<div class="card card-default">
-				<div class="card-header">Bar</div>
+				<div class="card-header">Statistik Absensi</div>
 				<div class="card-body">
 					<div id="morris-bar"></div>
 				</div>
@@ -63,7 +63,7 @@
 		</div>
 		<div class="col-lg-6">
 			<div class="card card-default">
-				<div class="card-header">Donut</div>
+				<div class="card-header">Statistik Jumlah Pegawai Di Masing-Masing Jenjang</div>
 				<div class="card-body">
 					<div id="morris-donut"></div>
 				</div>

@@ -15,16 +15,16 @@ var chartdata = [
 { y: "2012", a: 100, b: 90 }
 ];
 var donutdata = [
-{ label: "Download Sales", value: 12 },
-{ label: "In-Store Sales", value: 30 },
-{ label: "Mail-Order Sales", value: 20 }
+{ label: "Sekolah Dasar", value: 12 },
+{ label: "Sekolah Menegah Pertama", value: 30 },
+{ label: "Sekolah Menegah Atas", value: 20 }
 ];
 // Donut Chart
 // -----------------------------------
 new Morris.Donut({
 element: 'morris-donut',
 data: donutdata,
-colors: ['#f05050', '#fad732', '#ff902b'],
+colors: ['#F05051', '#5D9BEC', '#DDE6E9'],
 resize: true
 });
 // Bar Chart
@@ -34,7 +34,7 @@ element: 'morris-bar',
 data: chartdata,
 xkey: 'y',
 ykeys: ["a", "b"],
-labels: ["Series A", "Series B"],
+labels: ["Kategori Absen 1", "Kategori Absen 2"],
 xLabelMargin: 2,
 barColors: ['#23b7e5', '#f05050'],
 resize: true
