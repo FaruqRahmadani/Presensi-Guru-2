@@ -29186,7 +29186,7 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(14);
-module.exports = __webpack_require__(57);
+module.exports = __webpack_require__(58);
 
 
 /***/ }),
@@ -29214,6 +29214,7 @@ __webpack_require__(52);
 __webpack_require__(53);
 __webpack_require__(55);
 __webpack_require__(56);
+__webpack_require__(57);
 
 /***/ }),
 /* 15 */
@@ -75647,7 +75648,7 @@ $("#logout").click(function () {
     }
   });
 });
-$('.btn-delete').click(function () {
+$("table").on("click", ".btn-delete", function () {
   var url = $(this).attr('data-url');
   var id = $(this).attr('data');
   var status = $(this).attr('status');
@@ -75712,6 +75713,64 @@ $('#datatable').DataTable({
 
 /***/ }),
 /* 57 */
+/***/ (function(module, exports) {
+
+$("#visTable").ready(function () {
+  $('<div class="col-md-4 row">' + '<label class="col-md-6 label-control">Jumlah Data</label>' + '<select class="col-md-6 form-control" name="data_length" id="data_length">' + '<option value="10">10</option>' + '<option value="25">25</option>' + '<option value="50">50</option>' + '<option value="100">100</option>' + '</select>' + '</div>').insertBefore("#visTable");
+  $('<ul id="page">' + '</ul>').insertAfter("#visTable");
+  getData($("#visTable").attr("data-url"));
+});
+
+$(document).ready(function () {
+  $(this).on("change", "#data_length", function () {
+    getData($("#visTable").attr("data-url"), $(this).val());
+  });
+
+  $("#page").on("click", ".paginate_datatable", function () {
+    var dataPage = $(this).attr('data-page');
+    var dataLength = $("#data_length").val();
+    getData($("#visTable").attr("data-url"), dataLength, dataPage);
+  });
+});
+
+function getData(url) {
+  var length = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 10;
+  var page = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 1;
+
+  var fieldPage = $("#page");
+  var datatableRow = $("#table_data");
+  datatableRow.attr("style", "display:none");
+  axios({
+    method: 'get',
+    url: url + '/' + length + '?page=' + page
+  }).then(function (response) {
+    fieldPage.find('li').remove().end();
+    $("#visTable > tbody > :gt(0)").remove().end();
+    for (var i = 1; i <= response.data.last_page; i++) {
+      fieldPage.append($('<li><a class="paginate_datatable" data-page="' + i + '">' + i + '</a></li>'));
+    }
+    $.each(response.data.data, function (index, value) {
+      dataIndex = page * length - length + (index + 1);
+      $("#table_data").clone().removeAttr("style").attr("data", dataIndex).appendTo("#visTable > tbody");
+      $.each(value, function (index, value) {
+        var tr = $("tr[data=" + dataIndex + "]");
+        var elementTarget = tr.find("[data-for='" + index + "']");
+        var dataTarget = elementTarget.attr("data-target") || 'html';
+        var indexTarget = tr.find("[data-for='index']");
+        if (indexTarget) indexTarget.html(dataIndex);
+        setData(elementTarget, dataTarget, value);
+      });
+    });
+    return response.data;
+  });
+}
+
+function setData(elementTarget, dataTarget, value) {
+  if (dataTarget == 'html') elementTarget.html(value);else elementTarget.attr(dataTarget, value);
+}
+
+/***/ }),
+/* 58 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin

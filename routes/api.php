@@ -18,3 +18,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::get('data/kelurahan/{kecamatanId}', 'ApiController@dataKelurahan');
+Route::get('data/pegawai/{length}', 'ApiController@dataPegawai');
