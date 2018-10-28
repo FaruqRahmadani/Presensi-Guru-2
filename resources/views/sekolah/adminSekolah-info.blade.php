@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @section('content-heading')
-<span>Ubah Data Sekolah Saya</span>
+<span>Data Sekolah Saya</span>
 <small>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus, iste.</small>{{-- Jenjang - Nama Sekolah --}}
 @endsection
 @section('content')
