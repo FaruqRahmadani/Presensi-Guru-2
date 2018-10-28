@@ -16,6 +16,13 @@ Route::Group(['middleware' => ['AuthMiddleware']], function(){
     return view('Layouts.master');
   });
 
+  Route::get('/pengaturan-jam-kerja', function () {
+      return view('jamKerja.adminSekolah-data');
+    });
+  Route::get('/tambah-jam-kerja', function () {
+      return view('jamKerja.adminSekolah-tambah');
+    });
+
   // Template
   Route::get('/template/chart', function () {
     return view('template.chart');
