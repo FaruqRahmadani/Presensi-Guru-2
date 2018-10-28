@@ -15,7 +15,9 @@ Route::Group(['middleware' => ['AuthMiddleware']], function(){
   Route::get('/', function () {
     return view('Layouts.master');
   });
-
+  Route::get('/laporan-rekap-presensi', function () {
+      return view('rekapPresensi.adminSekolah-data');
+    });
   // Template
   Route::get('/template/chart', function () {
     return view('template.chart');
