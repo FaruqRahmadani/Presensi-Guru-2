@@ -16,6 +16,13 @@ Route::Group(['middleware' => ['AuthMiddleware']], function(){
     return view('Layouts.master');
   });
 
+  Route::get('/pegawai-sekolah', function () {
+    return view('pegawai.adminSekolah-data');
+  });
+  Route::get('/tambah-pegawai-sekolah', function () {
+    return view('pegawai.adminSekolah-tambah');
+  });
+
   // Template
   Route::get('/template/chart', function () {
     return view('template.chart');
