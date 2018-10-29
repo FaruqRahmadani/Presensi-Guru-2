@@ -76203,10 +76203,9 @@ $(document).ready(function () {
 
   $(initMorris);
   function initMorris() {
-    if (typeof Morris === 'undefined') return;
+    if (typeof Morris === 'undefined' || !$("#morris-donut").length) return;
 
     var statistikPegawai = [{ jenjang: "jenjang 1", jumlahPegawai: 100 }, { jenjang: "jenjang 2", jumlahPegawai: 75 }, { jenjang: "jenjang 3", jumlahPegawai: 50 }, { jenjang: "jenjang 4", jumlahPegawai: 75 }, { jenjang: "jenjang 5", jumlahPegawai: 50 }, { jenjang: "jenjang 6", jumlahPegawai: 75 }, { jenjang: "jenjang 7", jumlahPegawai: 100 }];
-
     var statistikJenjang = [];
     axios({
       method: 'get',
