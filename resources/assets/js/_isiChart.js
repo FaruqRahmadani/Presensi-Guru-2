@@ -16,22 +16,21 @@ var statistikPegawai = [
 { jenjang: "jenjang 7", jumlahPegawai: 100 }
 ];
 
-var statistikJenjang = [
-{ label: "Jenjang 1", value: 12 },
-{ label: "Jenjang 2", value: 13 },
-{ label: "Jenjang 3", value: 14 },
-{ label: "Jenjang 4", value: 15 },
-{ label: "Jenjang 5", value: 16 },
-{ label: "Jenjang 6", value: 17 },
-{ label: "Jenjang 7", value: 18 },
-{ label: "Jenjang 8", value: 19 },
-{ label: "Jenjang 9", value: 20 }
-];
+var statistikJenjang = [];
+axios({
+  method: 'get',
+  url: '/api/data/jenjang',
+}).then((response) => {
+  $.each(response.data, function(index, data) {
+    statistikJenjang.push({label:data.nama, value:data.CountSekolah})
+  })
+  jenjangChart.setData(statistikJenjang)
+})
 
 // Donut Chart
 // -----------------------------------
-new Morris.Donut({
-data: statistikJenjang,
+var jenjangChart = new Morris.Donut({
+data: [{ label: "Initial", value: 112011 }],
 xkey: 'value',
 ykeys: ["label"],
 element: 'morris-donut',

@@ -29186,7 +29186,7 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(14);
-module.exports = __webpack_require__(58);
+module.exports = __webpack_require__(59);
 
 
 /***/ }),
@@ -29214,9 +29214,9 @@ __webpack_require__(52);
 __webpack_require__(53);
 __webpack_require__(55);
 __webpack_require__(56);
-__webpack_require__(85);
+__webpack_require__(57);
+__webpack_require__(58);
 __webpack_require__(86);
-__webpack_require__(87);
 
 /***/ }),
 /* 15 */
@@ -75714,40 +75714,7 @@ $('#datatable').DataTable({
 });
 
 /***/ }),
-/* 57 */,
-/* 58 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 59 */,
-/* 60 */,
-/* 61 */,
-/* 62 */,
-/* 63 */,
-/* 64 */,
-/* 65 */,
-/* 66 */,
-/* 67 */,
-/* 68 */,
-/* 69 */,
-/* 70 */,
-/* 71 */,
-/* 72 */,
-/* 73 */,
-/* 74 */,
-/* 75 */,
-/* 76 */,
-/* 77 */,
-/* 78 */,
-/* 79 */,
-/* 80 */,
-/* 81 */,
-/* 82 */,
-/* 83 */,
-/* 84 */,
-/* 85 */
+/* 57 */
 /***/ (function(module, exports) {
 
 /*
@@ -76175,7 +76142,7 @@ $('#datatable').DataTable({
 })(window.jQuery);
 
 /***/ }),
-/* 86 */
+/* 58 */
 /***/ (function(module, exports) {
 
 $(document).ready(function () {
@@ -76194,7 +76161,39 @@ $(document).ready(function () {
 });
 
 /***/ }),
-/* 87 */
+/* 59 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 60 */,
+/* 61 */,
+/* 62 */,
+/* 63 */,
+/* 64 */,
+/* 65 */,
+/* 66 */,
+/* 67 */,
+/* 68 */,
+/* 69 */,
+/* 70 */,
+/* 71 */,
+/* 72 */,
+/* 73 */,
+/* 74 */,
+/* 75 */,
+/* 76 */,
+/* 77 */,
+/* 78 */,
+/* 79 */,
+/* 80 */,
+/* 81 */,
+/* 82 */,
+/* 83 */,
+/* 84 */,
+/* 85 */,
+/* 86 */
 /***/ (function(module, exports) {
 
 // Morris
@@ -76208,12 +76207,21 @@ $(document).ready(function () {
 
     var statistikPegawai = [{ jenjang: "jenjang 1", jumlahPegawai: 100 }, { jenjang: "jenjang 2", jumlahPegawai: 75 }, { jenjang: "jenjang 3", jumlahPegawai: 50 }, { jenjang: "jenjang 4", jumlahPegawai: 75 }, { jenjang: "jenjang 5", jumlahPegawai: 50 }, { jenjang: "jenjang 6", jumlahPegawai: 75 }, { jenjang: "jenjang 7", jumlahPegawai: 100 }];
 
-    var statistikJenjang = [{ label: "Jenjang 1", value: 12 }, { label: "Jenjang 2", value: 13 }, { label: "Jenjang 3", value: 14 }, { label: "Jenjang 4", value: 15 }, { label: "Jenjang 5", value: 16 }, { label: "Jenjang 6", value: 17 }, { label: "Jenjang 7", value: 18 }, { label: "Jenjang 8", value: 19 }, { label: "Jenjang 9", value: 20 }];
+    var statistikJenjang = [];
+    axios({
+      method: 'get',
+      url: '/api/data/jenjang'
+    }).then(function (response) {
+      $.each(response.data, function (index, data) {
+        statistikJenjang.push({ label: data.nama, value: data.CountSekolah });
+      });
+      jenjangChart.setData(statistikJenjang);
+    });
 
     // Donut Chart
     // -----------------------------------
-    new Morris.Donut({
-      data: statistikJenjang,
+    var jenjangChart = new Morris.Donut({
+      data: [{ label: "Initial", value: 112011 }],
       xkey: 'value',
       ykeys: ["label"],
       element: 'morris-donut',
