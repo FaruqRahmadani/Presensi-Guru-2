@@ -96,7 +96,7 @@
               <span>Menu Navigasi</span>
             </li>
             <li class="">
-              <a href="/dashboard" title="Dashboard">
+              <a href="{!!route('dashboard')!!}" title="Dashboard">
                 <div class="float-right mr-2"><em class="]"></em>&nbsp;</div>
                 <em class="icon-home"></em>
                 <span>Dashboard</span>

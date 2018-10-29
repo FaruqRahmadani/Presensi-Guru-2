@@ -12,7 +12,7 @@
 */
 
 Route::Group(['middleware' => ['AuthMiddleware']], function(){
-  Route::get('', 'HomeController@dashboard');
+  Route::get('', 'HomeController@dashboard')->name('dashboard');
 
   // Template
   Route::get('/template/chart', function () {
