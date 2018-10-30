@@ -24,7 +24,7 @@ class CreateSekolahsTable extends Migration
       $table->integer('kecamatan_id')->default(0);
       $table->integer('kelurahan_id')->default(0);
       $table->text('alamat')->nullable();
-      $table->string('no_telepon', 13)->nullable();
+      $table->string('no_telepon', 20)->nullable();
       $table->string('email', 100)->nullable();
       $table->timestamps();
     });

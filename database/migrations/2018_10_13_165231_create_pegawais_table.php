@@ -22,7 +22,7 @@ class CreatePegawaisTable extends Migration
       $table->string('tempat_lahir', 30)->nullable();
       $table->date('tanggal_lahir')->nullable();
       $table->integer('jenis_kelamin');
-      $table->string('no_handphone', 13)->nullable();
+      $table->string('no_handphone', 20)->nullable();
       $table->string('email', 100)->nullable();
       $table->string('alamat', 100)->nullable();
       $table->string('foto')->default('default.png');
