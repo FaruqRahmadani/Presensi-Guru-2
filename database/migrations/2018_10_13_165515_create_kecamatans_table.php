@@ -15,7 +15,7 @@ class CreateKecamatansTable extends Migration
   {
     Schema::create('kecamatans', function (Blueprint $table) {
       $table->increments('id');
-      $table->string('nama');
+      $table->string('nama', 30);
       $table->timestamps();
     });
   }

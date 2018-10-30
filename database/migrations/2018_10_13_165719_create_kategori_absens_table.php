@@ -16,8 +16,8 @@ class CreateKategoriAbsensTable extends Migration
     Schema::create('kategori_absens', function (Blueprint $table) {
       $table->increments('id');
       $table->string('kode');
-      $table->string('keterangan');
-      $table->string('kode_warna');
+      $table->string('keterangan', 50);
+      $table->string('kode_warna', 7);
       $table->timestamps();
     });
   }

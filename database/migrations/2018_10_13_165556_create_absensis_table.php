@@ -22,7 +22,7 @@ class CreateAbsensisTable extends Migration
       $table->time('jam_masuk')->nullable();
       $table->time('jam_pulang')->nullable();
       $table->integer('kategori_absen_id');
-      $table->string('keterangan')->nullable();
+      $table->string('keterangan',50)->nullable();
       $table->timestamps();
     });
   }
