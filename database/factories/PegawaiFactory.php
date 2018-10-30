@@ -12,7 +12,7 @@ $factory->define(Pegawai::class, function (Faker $faker) {
     'tempat_lahir' => $faker->city,
     'tanggal_lahir' => $faker->dateTime('-18 years'),
     'jenis_kelamin' => $faker->randomElement([1,2]),
-    'no_handphone' => $faker->phoneNumber,
+    'no_handphone' => $faker->phoneNumber($countryCodePrefix = true, $formatting = true, 13),
     'email' => $faker->email,
     'alamat' => $faker->address,
     'sidikjari_id' => $faker->randomNumber(5),
