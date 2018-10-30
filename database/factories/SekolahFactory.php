@@ -8,7 +8,7 @@ $factory->define(Sekolah::class, function (Faker $faker) {
   $kecamatanId = $faker->randomElement(Kecamatan::pluck('id'));
   $kelurahanId = $faker->randomElement(Kelurahan::whereKecamatanId($kecamatanId)->pluck('id'));
   return [
-    'npsn' => $faker->randomNumber(9),
+    'npsn' => $faker->randomNumber(8),
     'nama' => $faker->company,
     'nss' => $faker->randomNumber(9),
     'nss' => $faker->randomNumber(9),
@@ -17,7 +17,7 @@ $factory->define(Sekolah::class, function (Faker $faker) {
     'kecamatan_id' => $kecamatanId,
     'kelurahan_id' => $kelurahanId,
     'alamat' => $faker->address,
-    'no_telepon' => $faker->phoneNumber,
+    'no_telepon' => $faker->phoneNumber($countryCodePrefix = true, $formatting = true, 13),
     'email' => $faker->email,
   ];
 });

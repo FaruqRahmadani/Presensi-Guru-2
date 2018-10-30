@@ -6,6 +6,6 @@ $factory->define(KategoriAbsen::class, function (Faker $faker) {
   return [
     'kode' => $faker->word,
     'kode_warna' => $faker->hexcolor,
-    'keterangan' => $faker->sentence,
+    'keterangan' => $faker->sentence($nb = 3),
   ];
 });
