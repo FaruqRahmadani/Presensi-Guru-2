@@ -25550,7 +25550,7 @@ fieldset .form-group {
 }
 
 .container {
-  background: #ffffff;
+  background: var(--white);
 }
 
 @media (min-width: 768px) {
@@ -25626,7 +25626,7 @@ fieldset .form-group {
 }
 
 .banner-text h2 {
-  color: #ffffff;
+  color: var(--white);
   font-weight: 600;
 }
 
@@ -25641,7 +25641,7 @@ fieldset .form-group {
 }
 
 .banner-text p {
-  color: #ffffff;
+  color: var(--white);
 }
 
 .table {
