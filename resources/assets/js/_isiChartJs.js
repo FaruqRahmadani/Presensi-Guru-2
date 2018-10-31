@@ -8,7 +8,16 @@
 
     function initChartJS() {
         if (typeof Chart === 'undefined' || !$("#chart-pegawai").length || !$("#chart-sekolah").length) return;
-        
+    
+        function acakWarna() {
+            var kode = '0123456789ABCDEF';
+            var tagar = '#';
+            for (var i = 0; i < 6; i++) {
+                tagar += kode[Math.floor(Math.random() * 16)];
+            }
+            return tagar;
+        }
+
         // Bar chart
         // -----------------------------------
         
@@ -45,15 +54,11 @@
             datasets: [{
                 data: [300, 50, 100],
                 backgroundColor: [
-                    '#7266ba',
-                    '#fad732',
-                    '#23b7e5'
+                    acakWarna(),
+                    acakWarna(),
+                    acakWarna()
                 ],
-                hoverBackgroundColor: [
-                    '#7266ba',
-                    '#fad732',
-                    '#23b7e5'
-                ]
+                hoverBackgroundColor: '#23b7e5'
             }]
         };
 
