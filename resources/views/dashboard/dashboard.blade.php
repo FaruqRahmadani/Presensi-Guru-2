@@ -30,7 +30,7 @@
 				<div class="card-header">Statistik Jenjang Sekolah</div>
 				<div class="card-body">
 					<div>
-          	<canvas id="chart-sekolah"></canvas>
+          	<canvas id="chart-pegawai-sekolah"></canvas>
           </div>
 				</div>
 			</div>
