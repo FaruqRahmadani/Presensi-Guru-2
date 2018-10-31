@@ -30,7 +30,6 @@ axios({
   url: '/api/data/jenjang',
 }).then((response) => {
   $.each(response.data, function(index, value) {
-    console.log(value.nama);
     pieChart.data.labels.push(value.nama)
     pieChart.data.datasets[0].data.push(value.CountSekolah)
     pieChart.data.datasets[0].backgroundColor.push(acakWarna(index))
