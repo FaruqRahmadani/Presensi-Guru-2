@@ -88254,7 +88254,7 @@ module.exports = function(Chart) {
     var piectx = document.getElementById('chart-sekolah').getContext('2d');
     var pieChart = new Chart(piectx, {
       data: pieData,
-      type: 'pie',
+      type: 'doughnut',
       options: pieOptions
     });
   }
