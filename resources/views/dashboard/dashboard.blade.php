@@ -7,7 +7,10 @@
 			<div class="card card-default">
 				<div class="card-header">Statistik Pegawai Di Tiap Jenjang</div>
 				<div class="card-body">
-					<div id="morris-bar"></div>
+					{{-- <div id="morris-bar"></div> --}}
+					<div>
+						<canvas id="chart-pegawai"></canvas>
+	        </div>
 				</div>
 			</div>
 		</div>
@@ -15,7 +18,10 @@
 			<div class="card card-default">
 				<div class="card-header">Statistik Jenjang Sekolah</div>
 				<div class="card-body">
-					<div id="morris-donut"></div>
+					{{-- <div id="morris-donut"></div> --}}
+					<div>
+          	<canvas id="chart-sekolah"></canvas>
+          </div>
 				</div>
 			</div>
 		</div>
