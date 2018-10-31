@@ -1,1 +1,2 @@
-require('./_chartJenjangPie');
+require('./_chartJenjangPie')
+require('./_chartJenjangBar')

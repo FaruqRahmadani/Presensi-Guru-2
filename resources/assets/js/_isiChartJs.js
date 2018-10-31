@@ -16,29 +16,6 @@
       if (index>kodeWarna.length) index = index%kodeWarna.length;
       return kodeWarna[index];
     }
-    // Bar chart
-    // -----------------------------------
-
-    var barData = {
-      labels: ['jenjang', 'jenjang', 'jenjang', 'jenjang', 'jenjang', 'jenjang', 'jenjang'],
-      datasets: [{
-        backgroundColor: '#2f80e7',
-        borderColor: '#23b7e5',
-        data: [34, 53, 21, 51, 12, 65, 76]
-      }]
-    };
-
-    var barOptions = {
-      legend: {
-        display: false
-      }
-    };
-    var barctx = document.getElementById('chart-pegawai').getContext('2d');
-    var barChart = new Chart(barctx, {
-      data: barData,
-      type: 'bar',
-      options: barOptions
-    });
   }
 
 })(window, document, window.jQuery);
