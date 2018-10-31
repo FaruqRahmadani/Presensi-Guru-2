@@ -22,7 +22,7 @@ $("#chart-sekolah").ready(function(){
       position: 'left',
     },
   }
-  var piectx = document.getElementById('chart-sekolah').getContext('2d')
+  var piectx = document.getElementById('chart-sekolah-jenjang').getContext('2d')
   var pieChart = new Chart(piectx, {
     data: pieData,
     type: 'doughnut',

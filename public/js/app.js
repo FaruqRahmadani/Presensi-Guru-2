@@ -88282,7 +88282,7 @@ $("#chart-sekolah").ready(function () {
       position: 'left'
     }
   };
-  var piectx = document.getElementById('chart-sekolah').getContext('2d');
+  var piectx = document.getElementById('chart-sekolah-jenjang').getContext('2d');
   var pieChart = new Chart(piectx, {
     data: pieData,
     type: 'doughnut',
@@ -88326,7 +88326,7 @@ var barOptions = {
     display: false
   }
 };
-var barctx = document.getElementById('chart-pegawai').getContext('2d');
+var barctx = document.getElementById('chart-pegawai-jenjang').getContext('2d');
 var barChart = new Chart(barctx, {
   data: barData,
   type: 'horizontalBar',

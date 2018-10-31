@@ -20,7 +20,7 @@ var barOptions = {
     display: false
   },
 };
-var barctx = document.getElementById('chart-pegawai').getContext('2d');
+var barctx = document.getElementById('chart-pegawai-jenjang').getContext('2d');
 var barChart = new Chart(barctx, {
   data: barData,
   type: 'horizontalBar',
