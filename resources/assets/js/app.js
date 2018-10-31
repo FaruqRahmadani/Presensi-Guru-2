@@ -22,3 +22,4 @@ require('bootstrap-filestyle/src/bootstrap-filestyle');
 require('./_mentah/_uploadImg');
 require('chart.js/dist/Chart');
 require('./_isiChartJs');
+require('./_mentah/_chart');
