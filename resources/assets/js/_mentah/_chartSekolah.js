@@ -53,7 +53,7 @@ $("#chart-pegawai-sekolah").ready(function() {
       barData.labels.push(value.nama)
       barData.datasets[0].data.push(value.CountPegawai)
       barData.datasets[0].backgroundColor.push(acakWarna(index))
-      barChart.update()
     })
+    barChart.update()
   })
 })

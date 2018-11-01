@@ -37,7 +37,7 @@ $("#chart-sekolah-jenjang").ready(function(){
       pieData.labels.push(value.nama)
       pieData.datasets[0].data.push(value.CountSekolah)
       pieData.datasets[0].backgroundColor.push(acakWarna(index))
-      pieChart.update()
     })
+    pieChart.update()
   })
 })
