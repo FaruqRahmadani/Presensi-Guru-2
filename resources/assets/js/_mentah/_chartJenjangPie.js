@@ -20,7 +20,7 @@ $("#chart-sekolah-jenjang").ready(function(){
     legend: {
       display: true,
       position: 'left',
-    },
+    }
   }
   var piectx = document.getElementById('chart-sekolah-jenjang').getContext('2d')
   var pieChart = new Chart(piectx, {
