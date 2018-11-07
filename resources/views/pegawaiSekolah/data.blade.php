@@ -8,7 +8,7 @@
   <div class="card card-default">
     <div class="card-header">
       <div class="card-title">
-        <a href="/tambah-pegawai-sekolah" class="btn btn-labeled btn-info btn-md"><span class="btn-label"><i class="fa fa-plus"></i></span><b>Tambah Data</b></a>
+        <a href="{!!route('pegawaiSekolahTambahForm')!!}" class="btn btn-labeled btn-info btn-md"><span class="btn-label"><i class="fa fa-plus"></i></span><b>Tambah Data</b></a>
       </div>
     </div>
     <div class="card-body">

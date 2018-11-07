@@ -14,4 +14,8 @@ class PegawaiSekolahController extends Controller
     $sekolah = $sekolah->get(Auth::User()->Sekolah->id);
     return view('pegawaiSekolah.data', compact('pegawai', 'sekolah'));
   }
+
+  public function tambahForm(){
+    return view('pegawaiSekolah.tambah');
+  }
 }
