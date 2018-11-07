@@ -6,6 +6,7 @@ use App\Repositories\KecamatanRepository;
 use App\Repositories\KelurahanRepository;
 use App\Repositories\JenjangRepository;
 use App\Repositories\PegawaiRepository;
+use App\Repositories\SekolahRepository;
 use App\Repositories\StatusRepository;
 use Illuminate\Http\Request;
 use Auth;
@@ -17,7 +18,7 @@ class SekolahSayaController extends Controller
     return view('sekolahSaya.info', compact('sekolah'));
   }
 
-  public function edit(JenjangRepository $jenjang, StatusRepository $status, KecamatanRepository $kecamatan, KelurahanRepository $kelurahan, PegawaiRepository $pegawai){
+  public function editForm(JenjangRepository $jenjang, StatusRepository $status, KecamatanRepository $kecamatan, KelurahanRepository $kelurahan, PegawaiRepository $pegawai){
     $sekolah = Auth::User()->Sekolah;
     $jenjang = $jenjang->all();
     $status = $status->all();
@@ -25,5 +26,10 @@ class SekolahSayaController extends Controller
     $kelurahan = $kelurahan->where('kecamatan_id' ,$sekolah->kecamatan_id);
     $pegawai = $pegawai->where('sekolah_id', $sekolah->id);
     return view('sekolahSaya.edit', compact('sekolah', 'jenjang', 'status', 'kecamatan', 'kelurahan', 'pegawai'));
+  }
+
+  public function editSubmit(Request $request, SekolahRepository $sekolah){
+    $sekolah->update(Auth::User()->Sekolah->id, $request->all());
+    return redirect()->route('sekolahSayaInfo')->with(['alert' => true, 'tipe' => 'success', 'judul' => 'Berhasil', 'pesan' => 'Data Berhasil Diubah']);
   }
 }

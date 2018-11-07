@@ -8,7 +8,7 @@
     <div class="card card-default">
       <div class="card-header">
         <div class="card-title">
-          <a href="{!!route('sekolahSayaEdit')!!}" class="btn btn-labeled btn-info btn-md"><span class="btn-label"><i class="fa fa-edit"></i></span><b>Ubah Data Sekolah</b></a>
+          <a href="{!!route('sekolahSayaEditForm')!!}" class="btn btn-labeled btn-info btn-md"><span class="btn-label"><i class="fa fa-edit"></i></span><b>Ubah Data Sekolah</b></a>
         </div>
       </div>
       <div class="card-body">
