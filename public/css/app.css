@@ -25499,6 +25499,10 @@ fieldset .form-group {
   }
 }
 
+.no-padding {
+  padding: 0 0 0 0;
+}
+
 .select2 .select2-selection {
   border: 1px solid #dde6e9;
   padding: 0.375rem 0.875rem !important;
@@ -25550,7 +25554,7 @@ fieldset .form-group {
 }
 
 .container {
-  background: #fff;
+  background: var(--white);
 }
 
 @media (min-width: 768px) {
@@ -25626,7 +25630,7 @@ fieldset .form-group {
 }
 
 .banner-text h2 {
-  color: #fff;
+  color: var(--white);
   font-weight: 600;
 }
 
@@ -25641,7 +25645,7 @@ fieldset .form-group {
 }
 
 .banner-text p {
-  color: #fff;
+  color: var(--white);
 }
 
 .table {

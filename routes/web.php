@@ -12,9 +12,7 @@
 */
 
 Route::Group(['middleware' => ['AuthMiddleware']], function(){
-  Route::get('/', function () {
-    return view('Layouts.master');
-  });
+  Route::get('', 'HomeController@dashboard')->name('dashboard');
 
   Route::get('/pegawai-sekolah', function () {
     return view('pegawai.adminSekolah-data');
@@ -44,11 +42,6 @@ Route::Group(['middleware' => ['AuthMiddleware']], function(){
     Route::get('{id}/edit', 'AdminController@editForm')->name('EditForm');
     Route::post('{id}/edit', 'AdminController@editSubmit')->name('EditSubmit');
     Route::get('hapus/{id?}', 'AdminController@hapus')->name('Hapus');
-  });
-
-  // halaman dashboard
-  Route::get('/dashboard', function () {
-    return view('dashboard.dashboard');
   });
 
   Route::group(['prefix' => 'pegawai', 'as' => 'pegawai'], function () {
