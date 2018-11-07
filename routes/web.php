@@ -14,13 +14,6 @@
 Route::Group(['middleware' => 'AuthMiddleware'], function(){
   Route::get('', 'HomeController@dashboard')->name('dashboard');
 
-  Route::get('/pegawai-sekolah', function () {
-    return view('pegawai.adminSekolah-data');
-  });
-  Route::get('/tambah-pegawai-sekolah', function () {
-    return view('pegawai.adminSekolah-tambah');
-  });
-
   // Template
   Route::get('/template/chart', function () {
     return view('template.chart');
@@ -100,7 +93,14 @@ Route::Group(['middleware' => 'AuthMiddleware'], function(){
     });
   });
   Route::Group(['middleware' => 'AdminSekolahMiddleware'], function(){
-    // For Admin Sekolah
+    Route::group(['prefix' => 'pegawai-sekolah', 'as' => 'pegawaiSekolah'], function () {
+      Route::get('', function () {
+        return view('pegawaiSekolah.data');
+      })->name('Data');
+      Route::get('tambah', function () {
+        return view('pegawaiSekolah.tambah');
+      })->name('FormTambah');
+    });
   });
 });
 
