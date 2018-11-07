@@ -90,11 +90,11 @@
     <aside class="aside-container">
       <div class="aside-inner">
         <nav class="sidebar" data-sidebar-anyclick-close="">
-          <!-- START sidebar nav-->
           <ul class="sidebar-nav">
             <li class="nav-heading ">
               <span>Menu Navigasi</span>
             </li>
+<<<<<<< HEAD
             <li class="">
               <a href="{!!route('dashboard')!!}" title="Dashboard">
                 <div class="float-right mr-2"><em class="]"></em>&nbsp;</div>
@@ -142,6 +142,16 @@
                 <span>Data Admin</span>
               </a>
             </li>
+=======
+            {{-- menu Admin --}}
+            @if(Auth::user()->tipe == '1')
+              @include('Layouts.sidebarAdmin')
+            @endif
+            {{-- menu adminSekolah --}}
+            @if(Auth::user()->tipe == '2')
+              @include('Layouts.sidebarAdminSekolah')
+            @endif
+>>>>>>> 5845fbc7d7f16659aed4b72e0f754ded1a66208b
             <!-- Dihapus Saat sudah kelar semua-->
             <li class="nav-heading ">
               <span>Template Page</span>
