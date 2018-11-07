@@ -94,9 +94,7 @@ Route::Group(['middleware' => 'AuthMiddleware'], function(){
   });
   Route::Group(['middleware' => 'AdminSekolahMiddleware'], function(){
     Route::group(['prefix' => 'pegawai-sekolah', 'as' => 'pegawaiSekolah'], function () {
-      Route::get('', function () {
-        return view('pegawaiSekolah.data');
-      })->name('Data');
+      Route::get('', 'PegawaiSekolahController@data')->name('Data');
       Route::get('tambah', function () {
         return view('pegawaiSekolah.tambah');
       })->name('FormTambah');

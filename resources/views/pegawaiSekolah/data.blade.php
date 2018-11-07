@@ -1,7 +1,7 @@
 @extends('layouts.master')
 @section('content-heading')
 <span>Data Pegawai</span>
-<small>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus, iste.</small>{{-- Jenjang - Nama Sekolah --}}
+<small>{{"{$sekolah->Jenjang->nama} - {$sekolah->nama}"}}</small>
 @endsection
 @section('content')
 <div class="container-fluid">
@@ -29,30 +29,30 @@
             </tr>
           </thead>
           <tbody>
-            @for ($i = 0; $i < 12; $i++)
-            <tr>
-              <td>{{$i+1}}</td>
-              <td align="center">nip</td>
-              <td align="center">ini nomor nuptk</td>
-              <td>
-                <div class="inline">
-                  <img class="rounded-circle thumb48" src="/public/img/pegawai/default.png" alt="">
-                </div>
-                <div class="inline">
-                  <strong>ini nama pegawai</strong>
-                </div>
-              </td>
-              <td>ini TTL</td>
-              <td align="center">ini jenis kelamin</td>
-              <td>ini nomor telepom</td>
-              <td>ini email</td>
-              <td align="center">ini id sidik jari</td>
-              <td>
-                <a href="" class="btn btn-labeled btn-primary btn-xs"><i class="fa fa-edit"></i> Edit</a>
-                <button data-url="" data="" class="btn btn-labeled btn-danger btn-xs btn-delete"><i class="fa fa-trash"></i> Hapus</button>
-              </td>
-            </tr>
-            @endfor
+            @foreach ($pegawai as $dataPegawai)
+              <tr>
+                <td>{{$loop->iteration}}</td>
+                <td align="center">{{$dataPegawai->nip}}</td>
+                <td align="center">{{$dataPegawai->nuptk}}</td>
+                <td>
+                  <div class="inline">
+                    <img class="rounded-circle thumb48" src="{{ asset($dataPegawai->foto)}}" alt="">
+                  </div>
+                  <div class="inline">
+                    <strong>{{$dataPegawai->nama}}</strong>
+                  </div>
+                </td>
+                <td>{{$dataPegawai->TTL}}</td>
+                <td align="center">{{$dataPegawai->JenisKelaminText}}</td>
+                <td>{{$dataPegawai->no_handphone}}</td>
+                <td>{{$dataPegawai->email}}</td>
+                <td align="center">{{$dataPegawai->sidikjari_id}}</td>
+                <td>
+                  <a href="{!!route('pegawaiEditForm', ['id' => $dataPegawai->UUID])!!}" class="btn btn-labeled btn-primary btn-xs"><i class="fa fa-edit"></i> Edit</a>
+                  <button data-url="{!!route('pegawaiHapus')!!}" data="{{$dataPegawai->UUID}}" class="btn btn-labeled btn-danger btn-xs btn-delete"><i class="fa fa-trash"></i> Hapus</button>
+                </td>
+              </tr>
+            @endforeach
           </tbody>
         </table>
       </div>
