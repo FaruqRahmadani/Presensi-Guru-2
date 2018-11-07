@@ -94,10 +94,10 @@ Route::Group(['middleware' => 'AuthMiddleware'], function(){
   });
   Route::Group(['middleware' => 'AdminSekolahMiddleware'], function(){
     Route::get('sekolah-saya', function () {
-      return view('sekolah.adminSekolah-info');
+      return view('sekolahSaya.info');
     });
     Route::get('ubah-sekolah-saya', function () {
-      return view('sekolah.adminSekolah-edit');
+      return view('sekolahSaya.edit');
     });
   });
 });
