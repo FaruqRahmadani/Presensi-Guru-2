@@ -11,7 +11,7 @@ class Sekolah extends Model
   protected $appends = ['CountPegawai'];
 
   public function KepalaSekolah(){
-    return $this->belongsTo('App\Pegawai');
+    return $this->belongsTo('App\Pegawai', 'pegawai_id');
   }
 
   public function Jenjang(){
