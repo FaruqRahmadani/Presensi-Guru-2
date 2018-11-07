@@ -94,64 +94,11 @@
             <li class="nav-heading ">
               <span>Menu Navigasi</span>
             </li>
-<<<<<<< HEAD
-            <li class="">
-              <a href="{!!route('dashboard')!!}" title="Dashboard">
-                <div class="float-right mr-2"><em class="]"></em>&nbsp;</div>
-                <em class="icon-home"></em>
-                <span>Dashboard</span>
-              </a>
-            </li>
-            <li class="">
-              <a href="#menuMaster" title="Master Data" data-toggle="collapse">
-                <div class="float-right mr-2"><em class="fa fa-angle-down"></em></div>
-                <em class="icon-layers"></em>
-                <span>Master</span>
-              </a>
-              <ul class="sidebar-nav sidebar-subnav collapse" id="menuMaster">
-                <li class="sidebar-subnav-header">Master Data</li>
-                <li class=""><a href="{!!route('jenjangData')!!}"><span>Jenjang</span></a></li>
-                <li class=""><a href="{!!route('statusSekolahData')!!}"><span>Status Sekolah</span></a></li>
-                <li class=""><a href="{!!route('kategoriPresensiData')!!}">Kategori Presensi</a></li>
-              </ul>
-            </li>
-            <li class="">
-              <a href="#menuDataSekolah" title="Data Sekolah" data-toggle="collapse">
-                <div class="float-right mr-2"><em class="fa fa-angle-down"></em></div>
-                <em class="fa fa-university"></em>
-                <span>Data Sekolah</span>
-              </a>
-              <ul class="sidebar-nav sidebar-subnav collapse" id="menuDataSekolah">
-                <li class="sidebar-subnav-header">Data Sekolah</li>
-                <li class=""><a href="{!!route('sekolahData')!!}"><span>Sekolah</span></a></li>
-                <li class=""><a href="{!!route('adminSekolahData')!!}"><span>Admin Sekolah</span></a></li>
-                <li class=""><a href="{!!route('pegawaiData')!!}">Pegawai</a></li>
-              </ul>
-            </li>
-            <li class="">
-              <a href="/data-presensi/data" title="Data Presensi">
-                <div class="float-right mr-2"><em class="]"></em>&nbsp;</div>
-                <em class="fa fa-book"></em>
-                <span>Data Presensi</span>
-              </a>
-            </li>
-            <li class="">
-              <a href="{!!route('adminData')!!}" title="Data Admin">
-                <div class="float-right mr-2"><em class="]"></em>&nbsp;</div>
-                <em class="fa fa-users"></em>
-                <span>Data Admin</span>
-              </a>
-            </li>
-=======
-            {{-- menu Admin --}}
             @if(Auth::user()->tipe == '1')
               @include('Layouts.sidebarAdmin')
-            @endif
-            {{-- menu adminSekolah --}}
-            @if(Auth::user()->tipe == '2')
+            @elseif(Auth::user()->tipe == '2')
               @include('Layouts.sidebarAdminSekolah')
             @endif
->>>>>>> 5845fbc7d7f16659aed4b72e0f754ded1a66208b
             <!-- Dihapus Saat sudah kelar semua-->
             <li class="nav-heading ">
               <span>Template Page</span>
@@ -191,11 +138,11 @@
   </div>
   <script src="{{ asset('js/app.js') }}"></script>
   @if (session('alert'))
-     <script>notif('{{session('tipe')}}', '{{session('judul')}}', '{{session('pesan')}}')</script>
-    @endif
-    @if ($errors->count())
-      <script>notif('error', 'Ada Kesalahan', '{{$errors->first()}}')</script>
-    @endif
+    <script>notif('{{session('tipe')}}', '{{session('judul')}}', '{{session('pesan')}}')</script>
+  @endif
+  @if ($errors->count())
+    <script>notif('error', 'Ada Kesalahan', '{{$errors->first()}}')</script>
+  @endif
   @yield('js-content')
 </body>
 </html>
