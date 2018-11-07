@@ -3,11 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Auth;
 
 class SekolahSayaController extends Controller
 {
   public function info(){
-    return view('sekolahSaya.info');
+    $sekolah = Auth::User()->Sekolah;
+    return view('sekolahSaya.info', compact('sekolah'));
   }
 
   public function edit(){
