@@ -58,4 +58,9 @@ class User extends Authenticatable
     if ($this->tipe == 1) return true;
     return false;
   }
+
+  public function getIsAdminSekolahAttribute(){
+    if ($this->tipe == 2) return true;
+    return false;
+  }
 }

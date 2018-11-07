@@ -92,6 +92,9 @@ Route::Group(['middleware' => 'AuthMiddleware'], function(){
       Route::post('', 'ProfileController@editSubmit')->name('EditSubmit');
     });
   });
+  Route::Group(['middleware' => 'AdminSekolahMiddleware'], function(){
+    // For Admin Sekolah
+  });
 });
 
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
