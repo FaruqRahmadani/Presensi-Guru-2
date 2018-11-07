@@ -93,8 +93,10 @@ Route::Group(['middleware' => 'AuthMiddleware'], function(){
     });
   });
   Route::Group(['middleware' => 'AdminSekolahMiddleware'], function(){
-    Route::get('sekolah-saya', 'SekolahSayaController@info');
-    Route::get('ubah-sekolah-saya', 'SekolahSayaController@edit');
+    Route::group(['prefix' => 'sekolah-saya', 'as' => 'sekolahSaya'], function () {
+      Route::get('', 'SekolahSayaController@info')->name('Info');
+      Route::get('ubah-sekolah-saya', 'SekolahSayaController@edit');
+    });
   });
 });
 
