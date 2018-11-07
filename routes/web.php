@@ -14,13 +14,6 @@
 Route::Group(['middleware' => 'AuthMiddleware'], function(){
   Route::get('', 'HomeController@dashboard')->name('dashboard');
 
-  Route::get('/sekolah-saya', function () {
-    return view('sekolah.adminSekolah-info');
-  });
-  Route::get('/ubah-sekolah-saya', function () {
-    return view('sekolah.adminSekolah-edit');
-  });
-
   // Template
   Route::get('/template/chart', function () {
     return view('template.chart');
@@ -100,7 +93,12 @@ Route::Group(['middleware' => 'AuthMiddleware'], function(){
     });
   });
   Route::Group(['middleware' => 'AdminSekolahMiddleware'], function(){
-    // For Admin Sekolah
+    Route::get('sekolah-saya', function () {
+      return view('sekolah.adminSekolah-info');
+    });
+    Route::get('ubah-sekolah-saya', function () {
+      return view('sekolah.adminSekolah-edit');
+    });
   });
 });
 
