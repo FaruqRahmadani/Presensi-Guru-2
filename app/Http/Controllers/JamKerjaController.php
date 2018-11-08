@@ -36,4 +36,9 @@ class JamKerjaController extends Controller
     $jamKerja->update($id, $request->all());
     return redirect()->route('jamKerjaData')->with(['alert' => true, 'tipe' => 'success', 'judul' => 'Berhasil', 'pesan' => 'Data Berhasil Diubah']);
   }
+
+  public function hapus(JamKerjaRepository $jamKerja, $id){
+    $jamKerja->delete($id);
+    return redirect()->route('jamKerjaData')->with(['alert' => true, 'tipe' => 'success', 'judul' => 'Berhasil', 'pesan' => 'Data Berhasil Dihapus']);
+  }
 }

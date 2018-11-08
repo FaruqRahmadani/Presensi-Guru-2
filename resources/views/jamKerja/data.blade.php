@@ -32,7 +32,7 @@
                 <td class="text-center">{{$dataJamKerja->jam_pulang}}</td>
                 <td>
                   <a href="{!!route('jamKerjaEditForm', ['id' => $dataJamKerja->UUID])!!}" class="btn btn-labeled btn-primary btn-xs"><i class="fa fa-edit"></i> Edit</a>
-                  <button data-url="" data="" class="btn btn-labeled btn-danger btn-xs btn-delete"><i class="fa fa-trash"></i> Hapus</button>
+                  <button data-url="{!!route('jamKerjaHapus')!!}" data="{{$dataJamKerja->UUID}}" class="btn btn-labeled btn-danger btn-xs btn-delete"><i class="fa fa-trash"></i> Hapus</button>
                 </td>
               </tr>
             @endforeach

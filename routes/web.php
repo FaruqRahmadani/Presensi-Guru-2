@@ -113,6 +113,7 @@ Route::Group(['middleware' => 'AuthMiddleware'], function(){
       Route::post('tambah', 'JamKerjaController@tambahSubmit')->name('TambahSubmit');
       Route::get('{id}/edit', 'JamKerjaController@editForm')->name('EditForm');
       Route::post('{id}/edit', 'JamKerjaController@editSubmit')->name('EditSubmit');
+      Route::get('hapus/{id?}', 'JamKerjaController@hapus')->name('Hapus');
     });
   });
 });
