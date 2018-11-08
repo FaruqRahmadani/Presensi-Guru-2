@@ -97,6 +97,7 @@ Route::Group(['middleware' => 'AuthMiddleware'], function(){
       Route::get('', 'PegawaiSekolahController@data')->name('Data');
       Route::get('tambah', 'PegawaiSekolahController@tambahForm')->name('TambahForm');
       Route::post('tambah', 'PegawaiSekolahController@tambahSubmit')->name('TambahSubmit');
+      Route::get('{id}/edit', 'PegawaiSekolahController@editForm')->name('EditForm');
     });
   });
 });

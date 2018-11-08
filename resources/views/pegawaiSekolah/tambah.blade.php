@@ -1,5 +1,8 @@
 @extends('layouts.master')
-@section('content-heading','Tambah Pegawai')
+@section('content-heading')
+<span>Tambah Pegawai</span>
+<small>{{"{$sekolah->Jenjang->nama} - {$sekolah->nama}"}}</small>
+@endsection
 @section('content')
 <div class="container-fluid">
   <div class="card card-default">
