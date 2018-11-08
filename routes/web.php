@@ -28,6 +28,7 @@ Route::Group(['middleware' => 'AuthMiddleware'], function(){
   Route::get('/data-presensi/data', function () {
     return view('presensi.data');
   });
+  
   Route::Group(['middleware' => 'SuperAdminMiddleware'], function(){
     Route::group(['prefix' => 'admin', 'as' => 'admin'], function () {
       Route::get('', 'AdminController@data')->name('Data');
@@ -93,6 +94,14 @@ Route::Group(['middleware' => 'AuthMiddleware'], function(){
     });
   });
   Route::Group(['middleware' => 'AdminSekolahMiddleware'], function(){
+    Route::group(['prefix' => 'pegawai-sekolah', 'as' => 'pegawaiSekolah'], function () {
+      Route::get('', 'PegawaiSekolahController@data')->name('Data');
+      Route::get('tambah', 'PegawaiSekolahController@tambahForm')->name('TambahForm');
+      Route::post('tambah', 'PegawaiSekolahController@tambahSubmit')->name('TambahSubmit');
+      Route::get('{id}/edit', 'PegawaiSekolahController@editForm')->name('EditForm');
+      Route::post('{id}/edit', 'PegawaiSekolahController@editSubmit')->name('EditSubmit');
+      Route::get('hapus/{id?}', 'PegawaiSekolahController@hapus')->name('Hapus');
+    });
     Route::group(['prefix' => 'sekolah-saya', 'as' => 'sekolahSaya'], function () {
       Route::get('', 'SekolahSayaController@info')->name('Info');
       Route::get('edit', 'SekolahSayaController@editForm')->name('EditForm');
