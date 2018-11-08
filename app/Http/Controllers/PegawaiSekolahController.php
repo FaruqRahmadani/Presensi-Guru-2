@@ -6,6 +6,7 @@ use App\Repositories\PegawaiRepository;
 use App\Repositories\SekolahRepository;
 use Illuminate\Http\Request;
 use Auth;
+use File;
 
 class PegawaiSekolahController extends Controller
 {
@@ -38,5 +39,23 @@ class PegawaiSekolahController extends Controller
     $sekolah = $sekolah->get(Auth::User()->Sekolah->id);
     $pegawai = $pegawai->get($id);
     return view('pegawaiSekolah.edit', compact('sekolah', 'pegawai'));
+  }
+
+  public function editSubmit(Request $request, PegawaiRepository $pegawai, $id){
+    $data = [];
+    $sekolahId = Auth::User()->sekolah_id;
+    $dataPegawai = $pegawai->get($id);
+    if ($request->foto) {
+      if (!str_is('*default.png', $dataPegawai->foto)) {
+        File::delete($dataPegawai->foto);
+      }
+      $FotoExt = $request->foto->getClientOriginalExtension();
+      $FotoName = "[$sekolahId]$request->nama.$request->_token";
+      $Foto = "{$FotoName}.{$FotoExt}";
+      $path = $request->foto->move('img/pegawai', $Foto);
+      $data = array_prepend($data, $path, 'foto');
+    }
+    $pegawai->update($id, array_merge($request->all(), $data));
+    return redirect()->route('pegawaiSekolahData')->with(['alert' => true, 'tipe' => 'success', 'judul' => 'Berhasil', 'pesan' => 'Data Berhasil Diubah']);
   }
 }
