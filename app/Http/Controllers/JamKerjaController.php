@@ -15,7 +15,9 @@ class JamKerjaController extends Controller
     return view('jamKerja.data', compact('jamKerja', 'sekolah'));
   }
 
-  public function tambahForm(){
-    return view('jamKerja.adminSekolah-tambah');
+  public function tambahForm(SekolahRepository $sekolah, JamKerjaRepository $jamKerja){
+    $sekolah = $sekolah->get(Auth::User()->sekolah_id);
+    $hariPicked = collect($jamKerja->where('sekolah_id', Auth::User()->sekolah_id)->pluck('hari'));
+    return view('jamKerja.tambah', compact('sekolah', 'hariPicked'));
   }
 }
