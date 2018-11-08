@@ -15,8 +15,9 @@ class PegawaiSekolahController extends Controller
     return view('pegawaiSekolah.data', compact('pegawai', 'sekolah'));
   }
 
-  public function tambahForm(){
-    return view('pegawaiSekolah.tambah');
+  public function tambahForm(SekolahRepository $sekolah){
+    $sekolah = $sekolah->get(Auth::User()->Sekolah->id);
+    return view('pegawaiSekolah.tambah', compact('sekolah'));
   }
 
   public function tambahSubmit(Request $request, PegawaiRepository $pegawai){
@@ -31,5 +32,11 @@ class PegawaiSekolahController extends Controller
     }
     $pegawai->store(array_merge($request->all(), $data));
     return redirect()->route('pegawaiSekolahData')->with(['alert' => true, 'tipe' => 'success', 'judul' => 'Berhasil', 'pesan' => 'Data Berhasil Ditambahkan']);
+  }
+
+  public function editForm(SekolahRepository $sekolah, PegawaiRepository $pegawai, $id){
+    $sekolah = $sekolah->get(Auth::User()->Sekolah->id);
+    $pegawai = $pegawai->get($id);
+    return view('pegawaiSekolah.edit', compact('sekolah', 'pegawai'));
   }
 }
