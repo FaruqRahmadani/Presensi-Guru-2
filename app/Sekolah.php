@@ -8,6 +8,8 @@ class Sekolah extends Model
 {
   protected $fillable = ['npsn', 'nama', 'nss', 'jenjang_id', 'status_id', 'pegawai_id', 'kecamatan_id', 'kelurahan_id', 'alamat', 'no_telepon', 'email'];
 
+  protected $appends = ['CountPegawai'];
+
   public function KepalaSekolah(){
     return $this->belongsTo('App\Pegawai');
   }
@@ -39,5 +41,9 @@ class Sekolah extends Model
 
   public function getUUIDAttribute(){
     return encrypt($this->id);
+  }
+
+  public function getCountPegawaiAttribute(){
+    return $this->Pegawai->count();
   }
 }

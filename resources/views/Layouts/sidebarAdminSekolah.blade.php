@@ -13,7 +13,7 @@
   </a>
   <ul class="sidebar-nav sidebar-subnav collapse" id="menuDataSekolah">
     <li class="sidebar-subnav-header">Data Sekolah</li>
-    <li class=""><a href="/pegawai-sekolah">Pegawai</a></li>
+    <li class=""><a href="{!!route('pegawaiSekolahData')!!}">Pegawai</a></li>
     <li class=""><a href="/sekolah-saya">Sekolah</a></li>
   </ul>
 </li>
