@@ -34,4 +34,18 @@ class DateHelper
   public static function now(){
     return Carbon::now()->format('Y-m-d');
   }
+
+  public static function Hari($index=null){
+    $hari = [
+      1 => 'Senin',
+      2 => 'Selasa',
+      3 => 'Rabu',
+      4 => 'Kamis',
+      5 => 'Jumat',
+      6 => 'Sabtu',
+      7 => 'Minggu',
+    ];
+    if (!$index) return $hari;
+    return $hari[$index];
+  }
 }
