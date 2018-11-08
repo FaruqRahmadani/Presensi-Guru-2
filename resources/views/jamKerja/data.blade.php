@@ -1,7 +1,7 @@
 @extends('layouts.master')
 @section('content-heading')
 <span>Data Jam Kerja</span>
-<small>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus, iste.</small>{{-- Jenjang - Nama Sekolah --}}
+<small>{{"{$sekolah->Jenjang->nama} - {$sekolah->nama}"}}</small>
 @endsection
 @section('content')
 <div class="container-fluid">
