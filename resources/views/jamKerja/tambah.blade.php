@@ -12,7 +12,7 @@
       </div>
     </div>
     <div class="card-body">
-      <form action="" class="form-horizontal" method="post" enctype="multipart/form-data">
+      <form action="{!!route('jamKerjaTambahSubmit')!!}" class="form-horizontal" method="post" enctype="multipart/form-data">
         @csrf
         <div class="form-group row">
           <label class="col-xl-2 col-form-label text-bold">Hari</label>
@@ -32,13 +32,13 @@
         <div class="form-group row">
           <label class="col-xl-2 col-form-label text-bold">Jam Masuk</label>
           <div class="col-lg-10">
-            <input class="form-control" type="text" name="jam_masuk" required>
+            <input class="form-control" type="time" name="jam_masuk" required>
           </div>
         </div>
         <div class="form-group row">
           <label class="col-xl-2 col-form-label text-bold">Jam Pulang</label>
           <div class="col-lg-10">
-            <input class="form-control" type="text" name="jam_pulang" required>
+            <input class="form-control" type="time" name="jam_pulang" required>
           </div>
         </div>
         <div class="form-group row">

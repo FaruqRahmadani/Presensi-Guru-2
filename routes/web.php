@@ -110,6 +110,7 @@ Route::Group(['middleware' => 'AuthMiddleware'], function(){
     Route::group(['prefix' => 'jam-kerja', 'as' => 'jamKerja'], function () {
       Route::get('', 'JamKerjaController@data')->name('Data');
       Route::get('tambah', 'JamKerjaController@tambahForm')->name('TambahForm');
+      Route::post('tambah', 'JamKerjaController@tambahSubmit')->name('TambahSubmit');
     });
   });
 });
