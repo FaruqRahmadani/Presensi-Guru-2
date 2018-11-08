@@ -26,9 +26,14 @@ class JamKerjaController extends Controller
     return redirect()->route('jamKerjaData')->with(['alert' => true, 'tipe' => 'success', 'judul' => 'Berhasil', 'pesan' => 'Data Berhasil Ditambahkan']);
   }
 
-  public function editForm(SekolahRepository $sekolah, JamKerjaRepository $jamKerja, $id){
+  public function editForm(JamKerjaRepository $jamKerja, $id){
     $hariPicked = collect($jamKerja->where('sekolah_id', Auth::User()->sekolah_id)->pluck('hari'));
     $jamKerja = $jamKerja->get($id);
     return view('jamKerja.Edit', compact('jamKerja', 'hariPicked'));
+  }
+
+  public function editSubmit(Request $request, JamKerjaRepository $jamKerja, $id){
+    $jamKerja->update($id, $request->all());
+    return redirect()->route('jamKerjaData')->with(['alert' => true, 'tipe' => 'success', 'judul' => 'Berhasil', 'pesan' => 'Data Berhasil Diubah']);
   }
 }

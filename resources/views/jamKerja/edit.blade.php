@@ -12,7 +12,7 @@
       </div>
     </div>
     <div class="card-body">
-      <form action="{!!route('jamKerjaTambahSubmit')!!}" class="form-horizontal" method="post" enctype="multipart/form-data">
+      <form action="{!!route('jamKerjaEditSubmit', ['id' => $jamKerja->UUID])!!}" class="form-horizontal" method="post" enctype="multipart/form-data">
         @csrf
         <div class="form-group row">
           <label class="col-xl-2 col-form-label text-bold">Hari</label>
