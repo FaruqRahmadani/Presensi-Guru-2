@@ -49,7 +49,7 @@
                 <td align="center">{{$dataPegawai->sidikjari_id}}</td>
                 <td>
                   <a href="{!!route('pegawaiSekolahEditForm', ['id' => $dataPegawai->UUID])!!}" class="btn btn-labeled btn-primary btn-xs"><i class="fa fa-edit"></i> Edit</a>
-                  <button data-url="{!!route('pegawaiHapus')!!}" data="{{$dataPegawai->UUID}}" class="btn btn-labeled btn-danger btn-xs btn-delete"><i class="fa fa-trash"></i> Hapus</button>
+                  <button data-url="{!!route('pegawaiSekolahHapus')!!}" data="{{$dataPegawai->UUID}}" class="btn btn-labeled btn-danger btn-xs btn-delete"><i class="fa fa-trash"></i> Hapus</button>
                 </td>
               </tr>
             @endforeach

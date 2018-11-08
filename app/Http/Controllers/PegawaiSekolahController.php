@@ -58,4 +58,13 @@ class PegawaiSekolahController extends Controller
     $pegawai->update($id, array_merge($request->all(), $data));
     return redirect()->route('pegawaiSekolahData')->with(['alert' => true, 'tipe' => 'success', 'judul' => 'Berhasil', 'pesan' => 'Data Berhasil Diubah']);
   }
+
+  public function hapus(PegawaiRepository $pegawai, $id){
+    $dataPegawai = $pegawai->get($id);
+    if (!str_is('*default.png', $dataPegawai->foto)) {
+      File::delete($dataPegawai->foto);
+    }
+    $pegawai->delete($id);
+    return redirect()->route('pegawaiSekolahData')->with(['alert' => true, 'tipe' => 'success', 'judul' => 'Berhasil', 'pesan' => 'Data Berhasil Dihapus']);
+  }
 }
