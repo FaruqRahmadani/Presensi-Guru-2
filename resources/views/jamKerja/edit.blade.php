@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @section('content-heading')
-<span>Tambah Jam Kerja</span>
+<span>Edit Jam Kerja</span>
 <small>{{Auth::User()->Sekolah->Jenjang->nama}} - {{Auth::User()->Sekolah->nama}}</small>
 @endsection
 @section('content')
@@ -21,7 +21,8 @@
               <option value=""></option>
               @foreach (HDate::Hari() as $index=>$value)
                 <option value="{{$index}}"
-                  @if ($hariPicked->search($index) !== false) disabled @endif
+                  @if ($hariPicked->search($index) !== false && $jamKerja->hari != $index) disabled @endif
+                  @if ($jamKerja->hari == $index) selected @endif
                 >{{$value}}</option>
               @endforeach
             </select>
@@ -30,13 +31,13 @@
         <div class="form-group row">
           <label class="col-xl-2 col-form-label text-bold">Jam Masuk</label>
           <div class="col-lg-10">
-            <input class="form-control" type="time" name="jam_masuk" required>
+            <input class="form-control" type="time" name="jam_masuk" value="{{$jamKerja->jam_masuk}}" required>
           </div>
         </div>
         <div class="form-group row">
           <label class="col-xl-2 col-form-label text-bold">Jam Pulang</label>
           <div class="col-lg-10">
-            <input class="form-control" type="time" name="jam_pulang" required>
+            <input class="form-control" type="time" name="jam_pulang" value="{{$jamKerja->jam_pulang}}" required>
           </div>
         </div>
         <div class="form-group row">

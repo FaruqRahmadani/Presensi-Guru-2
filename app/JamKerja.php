@@ -12,4 +12,8 @@ class JamKerja extends Model
     $hari = ['Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu', 'Minggu'];
     return $hari[$this->hari-1] ?? "Kode Hari Tidak Diketahui";
   }
+
+  public function getUUIDAttribute(){
+    return encrypt($this->id);
+  }
 }
