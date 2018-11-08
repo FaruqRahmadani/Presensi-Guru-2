@@ -24,18 +24,18 @@
             </tr>
           </thead>
           <tbody>
-            @for ($i = 0; $i < 12; $i++)
-            <tr>
-              <td>{{$i+1}}</td>
-              <td>ini Hari</td>
-              <td class="text-center">ini Jam Masuk</td>
-              <td class="text-center">ini Jam Keluar</td>
-              <td>
-                <a href="" class="btn btn-labeled btn-primary btn-xs"><i class="fa fa-edit"></i> Edit</a>
-                <button data-url="" data="" class="btn btn-labeled btn-danger btn-xs btn-delete"><i class="fa fa-trash"></i> Hapus</button>
-              </td>
-            </tr>
-            @endfor
+            @foreach ($jamKerja as $dataJamKerja)
+              <tr>
+                <td>{{$loop->iteration}}</td>
+                <td>{{$dataJamKerja->HariText}}</td>
+                <td class="text-center">{{$dataJamKerja->jam_masuk}}</td>
+                <td class="text-center">{{$dataJamKerja->jam_pulang}}</td>
+                <td>
+                  <a href="" class="btn btn-labeled btn-primary btn-xs"><i class="fa fa-edit"></i> Edit</a>
+                  <button data-url="" data="" class="btn btn-labeled btn-danger btn-xs btn-delete"><i class="fa fa-trash"></i> Hapus</button>
+                </td>
+              </tr>
+            @endforeach
           </tbody>
         </table>
       </div>

@@ -94,12 +94,8 @@ Route::Group(['middleware' => 'AuthMiddleware'], function(){
   });
   Route::Group(['middleware' => 'AdminSekolahMiddleware'], function(){
     Route::group(['prefix' => 'jam-kerja', 'as' => 'jamKerja'], function () {
-      Route::get('', function () {
-        return view('jamKerja.adminSekolah-data');
-      })->name('Data');
-      Route::get('tambah', function () {
-        return view('jamKerja.adminSekolah-tambah');
-      })->name('Tambah');
+      Route::get('', 'JamKerjaController@data')->name('Data');
+      Route::get('tambah', 'JamKerjaController@tambahForm')->name('TambahForm');
     });
   });
 });
