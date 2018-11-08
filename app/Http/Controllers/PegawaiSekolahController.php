@@ -18,4 +18,18 @@ class PegawaiSekolahController extends Controller
   public function tambahForm(){
     return view('pegawaiSekolah.tambah');
   }
+
+  public function tambahSubmit(Request $request, PegawaiRepository $pegawai){
+    $sekolahId = Auth::User()->sekolah_id;
+    $data = ['sekolah_id' => $sekolahId];
+    if ($request->foto) {
+      $FotoExt = $request->foto->getClientOriginalExtension();
+      $FotoName = "[$sekolahId]$request->nama.$request->_token";
+      $Foto = "{$FotoName}.{$FotoExt}";
+      $path = $request->foto->move('img/pegawai', $Foto);
+      $data = array_prepend($data, $path, 'foto');
+    }
+    $pegawai->store(array_merge($request->all(), $data));
+    return redirect()->route('pegawaiSekolahData')->with(['alert' => true, 'tipe' => 'success', 'judul' => 'Berhasil', 'pesan' => 'Data Berhasil Ditambahkan']);
+  }
 }

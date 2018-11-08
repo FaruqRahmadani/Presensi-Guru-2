@@ -9,7 +9,7 @@
       </div>
     </div>
     <div class="card-body">
-      <form action="" class="form-horizontal" method="post" enctype="multipart/form-data">
+      <form action="{!!route('pegawaiSekolahTambahSubmit')!!}" class="form-horizontal" method="post" enctype="multipart/form-data">
         @csrf
         <div class="form-group row">
           <label class="col-xl-2 col-form-label text-bold">NIP</label>
