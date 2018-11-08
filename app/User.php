@@ -53,4 +53,14 @@ class User extends Authenticatable
   public function Sekolah(){
     return $this->belongsTo('App\Sekolah');
   }
+
+  public function getIsSuperAdminAttribute(){
+    if ($this->tipe == 1) return true;
+    return false;
+  }
+
+  public function getIsAdminSekolahAttribute(){
+    if ($this->tipe == 2) return true;
+    return false;
+  }
 }
