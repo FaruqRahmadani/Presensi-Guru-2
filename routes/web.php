@@ -14,13 +14,6 @@
 Route::Group(['middleware' => 'AuthMiddleware'], function(){
   Route::get('', 'HomeController@dashboard')->name('dashboard');
 
-  Route::get('/pengaturan-jam-kerja', function () {
-      return view('jamKerja.adminSekolah-data');
-    });
-  Route::get('/tambah-jam-kerja', function () {
-      return view('jamKerja.adminSekolah-tambah');
-    });
-
   // Template
   Route::get('/template/chart', function () {
     return view('template.chart');
@@ -100,7 +93,14 @@ Route::Group(['middleware' => 'AuthMiddleware'], function(){
     });
   });
   Route::Group(['middleware' => 'AdminSekolahMiddleware'], function(){
-    // For Admin Sekolah
+    Route::group(['prefix' => 'jam-kerja', 'as' => 'jamKerja'], function () {
+      Route::get('', function () {
+        return view('jamKerja.adminSekolah-data');
+      })->name('Data');
+      Route::get('tambah', function () {
+        return view('jamKerja.adminSekolah-tambah');
+      })->name('Tambah');
+    });
   });
 });
 

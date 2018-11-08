@@ -37,7 +37,7 @@
   </a>
   <ul class="sidebar-nav sidebar-subnav collapse" id="menuPengaturan">
     <li class="sidebar-subnav-header">Pengaturan</li>
-    <li class=""><a href="/pengaturan-jam-kerja">Jam Kerja</a></li>
+    <li class=""><a href="{!!route('jamKerjaData')!!}">Jam Kerja</a></li>
   </ul>
 </li>
 <li class="">
