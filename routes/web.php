@@ -93,7 +93,11 @@ Route::Group(['middleware' => 'AuthMiddleware'], function(){
     });
   });
   Route::Group(['middleware' => 'AdminSekolahMiddleware'], function(){
-    // For Admin Sekolah
+    Route::group(['prefix' => 'sekolah-saya', 'as' => 'sekolahSaya'], function () {
+      Route::get('', 'SekolahSayaController@info')->name('Info');
+      Route::get('edit', 'SekolahSayaController@editForm')->name('EditForm');
+      Route::post('edit', 'SekolahSayaController@editSubmit')->name('EditSubmit');
+    });
   });
 });
 
