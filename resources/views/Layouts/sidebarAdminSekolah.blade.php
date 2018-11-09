@@ -13,8 +13,8 @@
   </a>
   <ul class="sidebar-nav sidebar-subnav collapse" id="menuDataSekolah">
     <li class="sidebar-subnav-header">Data Sekolah</li>
-    <li class=""><a href="/pegawai-sekolah">Pegawai</a></li>
-    <li class=""><a href="/sekolah-saya">Sekolah</a></li>
+    <li class=""><a href="{!!route('pegawaiSekolahData')!!}">Pegawai</a></li>
+    <li class=""><a href="{!!route('sekolahSayaInfo')!!}">Sekolah</a></li>
   </ul>
 </li>
 <li class="">
@@ -37,7 +37,7 @@
   </a>
   <ul class="sidebar-nav sidebar-subnav collapse" id="menuPengaturan">
     <li class="sidebar-subnav-header">Pengaturan</li>
-    <li class=""><a href="/pengaturan-jam-kerja">Jam Kerja</a></li>
+    <li class=""><a href="{!!route('jamKerjaData')!!}">Jam Kerja</a></li>
   </ul>
 </li>
 <li class="">
