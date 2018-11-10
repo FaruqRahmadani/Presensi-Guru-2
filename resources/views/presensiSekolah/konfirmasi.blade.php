@@ -9,6 +9,7 @@
       <div class="card-body">
         <div class="table-responsive">
           <form action="{!!route('presensiSekolahConfirmSubmit')!!}" method="post">
+            @csrf
             <table class="table table-striped table-bordered tabel-custom my-4 w-100" id="datatable">
               <thead>
                 <tr>
@@ -22,7 +23,6 @@
                   <th>Keterangan</th>
                 </tr>
               </thead>
-              @csrf
               <tbody>
                 @foreach ($dataImport as $valueImport)
                   <tr>
@@ -44,7 +44,7 @@
                       <input type="text" name="data[{{$loop->iteration}}][keterangan]" class="form-control">
                     </td>
                   </tr>
-                  <input type="text" name="data[{{$loop->iteration}}][data]" value="{{encrypt($valueImport)}}">
+                  <input type="text" name="data[{{$loop->iteration}}][data]" value="{{encrypt($valueImport)}}" class="d-none">
                 @endforeach
               </tbody>
             </table>
