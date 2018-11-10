@@ -13,17 +13,6 @@
 
 Route::Group(['middleware' => 'AuthMiddleware'], function(){
   Route::get('', 'HomeController@dashboard')->name('dashboard');
-
-  Route::get('/input-presensi-sekolah', function () {
-    return view('presensi.adminSekolah-tambah');
-  });
-  Route::get('/data-presensi-sekolah', function () {
-    return view('presensi.adminSekolah-data');
-  });
-  Route::get('/info-presensi-sekolah', function () {
-    return view('presensi.adminSekolah-info');
-  });
-
   // Template
   Route::get('/template/chart', function () {
     return view('template.chart');
@@ -124,6 +113,17 @@ Route::Group(['middleware' => 'AuthMiddleware'], function(){
       Route::get('{id}/edit', 'JamKerjaController@editForm')->name('EditForm');
       Route::post('{id}/edit', 'JamKerjaController@editSubmit')->name('EditSubmit');
       Route::get('hapus/{id?}', 'JamKerjaController@hapus')->name('Hapus');
+    });
+    Route::group(['prefix' => 'presensi-sekolah', 'as' => 'presensiSekolah'], function () {
+      Route::get('', function () {
+        return view('presensi.adminSekolah-data');
+      })->name('Data');
+      Route::get('input', function () {
+        return view('presensi.adminSekolah-tambah');
+      })->name('Input');
+      Route::get('/info-presensi-sekolah', function () {
+        return view('presensi.adminSekolah-info');
+      });
     });
   });
 });
