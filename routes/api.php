@@ -18,3 +18,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::get('data/kelurahan/{kecamatanId}', 'ApiController@dataKelurahan');
+Route::get('data/jenjang', 'ApiController@dataJenjang');
+Route::get('data/sekolah', 'ApiController@dataSekolah');
