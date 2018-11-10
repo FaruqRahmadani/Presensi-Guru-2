@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Repositories\KategoriAbsenRepository;
 use App\Repositories\PegawaiRepository;
+use App\Repositories\AbsensiRepository;
 use App\Imports\PresensiImport;
 use Illuminate\Http\Request;
+use Carbon\Carbon;
 use Excel;
 use Auth;
 
@@ -33,14 +35,33 @@ class PresensiSekolahController extends Controller
       else {
         $dataPegawai = $pegawai->where('sidikjari_id', $value["sidikjari_id"])->first();
         if (!$dataPegawai) return $value;
-        $value->put('nama', $dataPegawai->nama);
+        $value->put('pegawai', $dataPegawai);
       }
     })->sortBy('tanggal');
-    return $this->inputConfirm($filtered, new KategoriAbsenRepository);
+    return $this->confirmForm($filtered, new KategoriAbsenRepository);
   }
 
-  public function inputConfirm($dataImport, $kategoriAbsen){
+  public function confirmForm($dataImport, $kategoriAbsen){
     $kategoriAbsen = $kategoriAbsen->all();
     return view('presensiSekolah.konfirmasi', compact('dataImport', 'kategoriAbsen'));
+  }
+
+  public function confirmSubmit(Request $request, PegawaiRepository $pegawai, AbsensiRepository $absensi){
+    $request = collect($request->only('data'))->flatten(1);
+    $dataRequest = $request->transform(function($value, $key){
+      $data = decrypt($value["data"]);
+      array_forget($value, 'data');
+      $value["pegawai_id"] = data_get($data, 'pegawai.id');
+      $value["sidikjari_id"] = data_get($data, 'sidikjari_id');
+      $value["sekolah_id"] = data_get($data, 'pegawai.sekolah_id');
+      $value["tanggal"] = Carbon::parse(data_get($data, 'tanggal'));
+      $value["jam_masuk"] = data_get($data, 'jam_masuk');
+      $value["jam_pulang"] = data_get($data, 'jam_keluar');
+      return $value;
+    });
+    foreach ($dataRequest as $valueRequest) {
+      $absensi->store($valueRequest);
+    }
+    return redirect()->route('presensiSekolahData')->with(['alert' => true, 'tipe' => 'success', 'judul' => 'Berhasil', 'pesan' => 'Data Berhasil Ditambahkan']);
   }
 }

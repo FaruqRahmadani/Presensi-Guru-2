@@ -118,6 +118,7 @@ Route::Group(['middleware' => 'AuthMiddleware'], function(){
       Route::get('', 'PresensiSekolahController@data')->name('Data');
       Route::get('input', 'PresensiSekolahController@inputForm')->name('InputForm');
       Route::post('input', 'PresensiSekolahController@inputSubmit')->name('InputSubmit');
+      Route::post('confirm', 'PresensiSekolahController@confirmSubmit')->name('ConfirmSubmit');
       Route::get('info', 'PresensiSekolahController@info');
     });
   });
