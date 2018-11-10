@@ -116,13 +116,13 @@ Route::Group(['middleware' => 'AuthMiddleware'], function(){
     });
     Route::group(['prefix' => 'presensi-sekolah', 'as' => 'presensiSekolah'], function () {
       Route::get('', function () {
-        return view('presensi.adminSekolah-data');
+        return view('presensiSekolah.data');
       })->name('Data');
       Route::get('input', function () {
-        return view('presensi.adminSekolah-tambah');
+        return view('presensiSekolah.input');
       })->name('Input');
       Route::get('/info-presensi-sekolah', function () {
-        return view('presensi.adminSekolah-info');
+        return view('presensiSekolah.info');
       });
     });
   });
