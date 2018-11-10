@@ -116,7 +116,8 @@ Route::Group(['middleware' => 'AuthMiddleware'], function(){
     });
     Route::group(['prefix' => 'presensi-sekolah', 'as' => 'presensiSekolah'], function () {
       Route::get('', 'PresensiSekolahController@data')->name('Data');
-      Route::get('input', 'PresensiSekolahController@input')->name('Input');
+      Route::get('input', 'PresensiSekolahController@inputForm')->name('InputForm');
+      Route::post('input', 'PresensiSekolahController@inputSubmit')->name('InputSubmit');
       Route::get('info', 'PresensiSekolahController@info');
     });
   });
