@@ -18,19 +18,27 @@
             <tr>
               <th>#</th>
               <th>Tanggal</th>
+              @foreach ($kategoriAbsen as $dataKategoriAbsen)
+                <th><i class="fa fa-circle" style="color:{{$dataKategoriAbsen->kode_warna}}"></i> {{$dataKategoriAbsen->kode}}</th>
+              @endforeach
+              <th><i class="fa fa-circle text-dark"></i> Tanpa Keterangan</th>
               <th>Aksi</th>
             </tr>
           </thead>
           <tbody>
-            @for ($i = 0; $i < 12; $i++)
-            <tr>
-              <td>{{$i+1}}</td>
-              <td>ini Tanggal</td>
-              <td>
-                <a href="/info-presensi-sekolah" class="btn btn-labeled btn-primary btn-xs"><i class="fa fa-info-circle"></i> Info</a>
-              </td>
-            </tr>
-            @endfor
+            @foreach ($absensi as $tanggal=>$dataAbsensi)
+              <tr>
+                <td>{{$loop->iteration}}</td>
+                <td>{{$tanggal}}</td>
+                @foreach ($kategoriAbsen as $dataKategoriAbsen)
+                  <td class="text-center">{{$dataAbsensi->where('kategori_absen_id', $dataKategoriAbsen->id)->count()}}</td>
+                @endforeach
+                <td class="text-center">{{$pegawai->count() - $dataAbsensi->count()}}</td>
+                <td>
+                  <a href="/info-presensi-sekolah" class="btn btn-labeled btn-primary btn-xs"><i class="fa fa-info-circle"></i> Info</a>
+                </td>
+              </tr>
+            @endforeach
           </tbody>
         </table>
       </div>

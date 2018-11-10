@@ -13,8 +13,11 @@ use Auth;
 
 class PresensiSekolahController extends Controller
 {
-  public function data(){
-    return view('presensiSekolah.data');
+  public function data(AbsensiRepository $absensi, KategoriAbsenRepository $kategoriAbsen, PegawaiRepository $pegawai){
+    $kategoriAbsen = $kategoriAbsen->all();
+    $absensi = $absensi->all()->groupBy('tanggal');
+    $pegawai = $pegawai->where('sekolah_id', Auth::User()->sekolah_id);
+    return view('presensiSekolah.data', compact('absensi', 'kategoriAbsen', 'pegawai'));
   }
 
   public function info(){
