@@ -115,15 +115,9 @@ Route::Group(['middleware' => 'AuthMiddleware'], function(){
       Route::get('hapus/{id?}', 'JamKerjaController@hapus')->name('Hapus');
     });
     Route::group(['prefix' => 'presensi-sekolah', 'as' => 'presensiSekolah'], function () {
-      Route::get('', function () {
-        return view('presensiSekolah.data');
-      })->name('Data');
-      Route::get('input', function () {
-        return view('presensiSekolah.input');
-      })->name('Input');
-      Route::get('/info-presensi-sekolah', function () {
-        return view('presensiSekolah.info');
-      });
+      Route::get('', 'PresensiSekolahController@data')->name('Data');
+      Route::get('input', 'PresensiSekolahController@input')->name('Input');
+      Route::get('info', 'PresensiSekolahController@info');
     });
   });
 });
