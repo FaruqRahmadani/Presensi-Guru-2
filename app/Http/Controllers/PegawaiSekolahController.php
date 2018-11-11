@@ -11,7 +11,7 @@ use File;
 class PegawaiSekolahController extends Controller
 {
   public function data(PegawaiRepository $pegawai, SekolahRepository $sekolah){
-    $pegawai = $pegawai->where('sekolah_id', Auth::User()->Sekolah->id);
+    $pegawai = $pegawai->where('sekolah_id', Auth::User()->Sekolah->id)->get();
     $sekolah = $sekolah->get(Auth::User()->Sekolah->id);
     return view('pegawaiSekolah.data', compact('pegawai', 'sekolah'));
   }

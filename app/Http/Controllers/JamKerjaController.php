@@ -11,12 +11,12 @@ class JamKerjaController extends Controller
 {
   public function data(SekolahRepository $sekolah, JamKerjaRepository $jamKerja){
     $sekolah = $sekolah->get(Auth::User()->sekolah_id);
-    $jamKerja = $jamKerja->where('sekolah_id', Auth::User()->sekolah_id)->sortBy('hari');
+    $jamKerja = $jamKerja->where('sekolah_id', Auth::User()->sekolah_id)->sortBy('hari')->get();
     return view('jamKerja.data', compact('jamKerja', 'sekolah'));
   }
 
   public function tambahForm(JamKerjaRepository $jamKerja){
-    $hariPicked = collect($jamKerja->where('sekolah_id', Auth::User()->sekolah_id)->pluck('hari'));
+    $hariPicked = collect($jamKerja->where('sekolah_id', Auth::User()->sekolah_id)->pluck('hari')->get());
     return view('jamKerja.tambah', compact('sekolah', 'hariPicked'));
   }
 
@@ -27,7 +27,7 @@ class JamKerjaController extends Controller
   }
 
   public function editForm(JamKerjaRepository $jamKerja, $id){
-    $hariPicked = collect($jamKerja->where('sekolah_id', Auth::User()->sekolah_id)->pluck('hari'));
+    $hariPicked = collect($jamKerja->where('sekolah_id', Auth::User()->sekolah_id)->pluck('hari')->get());
     $jamKerja = $jamKerja->get($id);
     return view('jamKerja.Edit', compact('jamKerja', 'hariPicked'));
   }

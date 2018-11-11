@@ -26,7 +26,7 @@ abstract class Repository implements RepositoryInterface
   * @return void
   */
   public function where($key, $value){
-    return $this->model::where($key, $value)->get();
+    return $this->model::where($key, $value);
   }
 
   /**
