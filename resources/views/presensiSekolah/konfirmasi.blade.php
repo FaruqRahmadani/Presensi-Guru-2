@@ -48,9 +48,11 @@
                 @endforeach
               </tbody>
             </table>
-            <button type="submit" class="btn btn-labeled btn-info btn">
-              <span class="btn-label"><i class="fa fa-save"></i></span><b>Simpan</b>
-            </button>
+            <center>    
+              <button type="submit" class="btn btn-labeled btn-info btn mt-3">
+                <span class="btn-label"><i class="fa fa-save"></i></span><b>Simpan</b>
+              </button>
+            </center>
           </form>
         </div>
       </div>
