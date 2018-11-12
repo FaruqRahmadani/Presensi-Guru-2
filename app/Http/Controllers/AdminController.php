@@ -11,7 +11,7 @@ use File;
 class AdminController extends Controller
 {
   public function data(UserRepository $user){
-    $user = $user->where('tipe', 1);
+    $user = $user->where('tipe', 1)->get();
     return view('admin.data', compact('user'));
   }
 

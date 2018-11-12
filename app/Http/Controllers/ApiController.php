@@ -10,7 +10,7 @@ use App\Repositories\KelurahanRepository;
 class ApiController extends Controller
 {
   public function dataKelurahan(KelurahanRepository $kelurahan, $kecamatanId){
-    $kelurahan = $kelurahan->where('kecamatan_id', $kecamatanId);
+    $kelurahan = $kelurahan->where('kecamatan_id', $kecamatanId)->get();
     return $kelurahan;
   }
 
