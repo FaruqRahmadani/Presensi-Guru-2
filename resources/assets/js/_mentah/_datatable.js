@@ -18,3 +18,9 @@ $('#datatable').DataTable({
     }
   }
 });
+$("#datatable").ready(function(){
+  datatable = $("#datatable")
+  datatableWidth = datatable.width()
+  parentWidth = datatable.parent().width()
+  if (datatableWidth > parentWidth) datatable.addClass('table-responsive')
+})
