@@ -9,7 +9,7 @@
         </div>
       </div>
       <div class="card-body">
-        <div class="table-responsive">
+        <div class="">
           <table class="table table-striped table-bordered tabel-custom my-4 w-100" id="datatable">
             <thead>
               <tr>
