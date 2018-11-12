@@ -1,18 +1,17 @@
 @extends('layouts.master')
 @section('content-heading')
-<span>Data Pegawai</span>
-<small>{{"{$sekolah->Jenjang->nama} - {$sekolah->nama}"}}</small>
+  <span>Data Pegawai</span>
+  <small>{{"{$sekolah->Jenjang->nama} - {$sekolah->nama}"}}</small>
 @endsection
 @section('content')
-<div class="container-fluid">
-  <div class="card card-default">
-    <div class="card-header">
-      <div class="card-title">
-        <a href="{!!route('pegawaiSekolahTambahForm')!!}" class="btn btn-labeled btn-info btn-md"><span class="btn-label"><i class="fa fa-plus"></i></span><b>Tambah Data</b></a>
+  <div class="container-fluid">
+    <div class="card card-default">
+      <div class="card-header">
+        <div class="card-title">
+          <a href="{!!route('pegawaiSekolahTambahForm')!!}" class="btn btn-labeled btn-info btn-md"><span class="btn-label"><i class="fa fa-plus"></i></span><b>Tambah Data</b></a>
+        </div>
       </div>
-    </div>
-    <div class="card-body">
-      <div class="table-responsive">
+      <div class="card-body">
         <table class="table table-striped table-bordered tabel-custom my-4 w-100" id="datatable">
           <thead>
             <tr>
@@ -58,5 +57,4 @@
       </div>
     </div>
   </div>
-</div>
 @endsection
