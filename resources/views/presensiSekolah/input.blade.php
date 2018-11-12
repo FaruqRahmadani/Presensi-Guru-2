@@ -8,7 +8,7 @@
     <div class="card card-default">
       <div class="card-header">
         <div class="card-title">
-          <a href="" class="btn btn-labeled btn-primary btn-md"><span class="btn-label"><i class="fa fa-copy"></i></span><b>Download Template File Excel Presensi</b></a>
+          <a href="{{asset('assets/TemplatePresensi.xlsx')}}" class="btn btn-labeled btn-primary btn-md"><span class="btn-label"><i class="fa fa-copy"></i></span><b>Download Template File Excel Presensi</b></a>
           <hr>
         </div>
       </div>
