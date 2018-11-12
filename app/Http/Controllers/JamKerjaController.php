@@ -11,7 +11,7 @@ class JamKerjaController extends Controller
 {
   public function data(SekolahRepository $sekolah, JamKerjaRepository $jamKerja){
     $sekolah = $sekolah->get(Auth::User()->sekolah_id);
-    $jamKerja = $jamKerja->where('sekolah_id', Auth::User()->sekolah_id)->sortBy('hari')->get();
+    $jamKerja = $jamKerja->where('sekolah_id', Auth::User()->sekolah_id)->get()->sortBy('hari');
     return view('jamKerja.data', compact('jamKerja', 'sekolah'));
   }
 
