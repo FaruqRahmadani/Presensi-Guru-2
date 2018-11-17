@@ -8,11 +8,11 @@ $(".btn-presensi").click(function(){
     tablePresensiModal.append(
       "<tr>"+
         "<td>"+(index+1)+"</td>"+
-        "<td>"+value.pegawai.nama+"</td>"+
-        "<td>"+value.jam_masuk+"</td>"+
-        "<td>"+value.jam_pulang+"</td>"+
-        "<td><i class='fa fa-circle' style='color:"+value.kategori_absen.kode_warna+"'></i> "+value.kategori_absen.kode+"</td>"+
-        "<td>"+value.keterangan+"</td>"+
+        "<td>"+value.nama+"</td>"+
+        "<td>"+(value.absensi[0]?value.absensi[0].jam_masuk:"-")+"</td>"+
+        "<td>"+(value.absensi[0]?value.absensi[0].jam_pulang:"-")+"</td>"+
+        "<td><i class='fa fa-circle' style='color:"+(value.absensi[0]?value.absensi[0].kategori_absen.kode_warna:"#000000")+"'></i> "+(value.absensi[0]?value.absensi[0].kategori_absen.kode:"Tanpa Keterangan")+"</td>"+
+        "<td>"+(value.absensi[0]?value.absensi[0].keterangan:"-")+"</td>"+
       "</tr>"
     )
   });

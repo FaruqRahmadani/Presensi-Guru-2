@@ -16,7 +16,7 @@ class PresensiSekolahController extends Controller
   public function data(AbsensiRepository $absensi, KategoriAbsenRepository $kategoriAbsen, PegawaiRepository $pegawai){
     $kategoriAbsen = $kategoriAbsen->all();
     $absensi = $absensi->where('sekolah_id', Auth::User()->sekolah_id)->with('Pegawai')->with('KategoriAbsen')->get()->sortByDesc('tanggal')->groupBy('tanggal');
-    $pegawai = $pegawai->where('sekolah_id', Auth::User()->sekolah_id)->get();
+    $pegawai = $pegawai->where('sekolah_id', Auth::User()->sekolah_id);
     return view('presensiSekolah.data', compact('absensi', 'kategoriAbsen', 'pegawai'));
   }
 

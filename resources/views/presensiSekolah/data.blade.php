@@ -35,9 +35,12 @@
                   @endforeach
                   <td class="text-center">{{$pegawai->count() - $dataAbsensi->count()}}</td>
                   <td>
-                    <button class="btn btn-labeled btn-primary btn-xs btn-presensi" data-toggle="modal" data-target="#infoPresensiModal" data-tanggal="{{HDate::formatDate($tanggal)}}" data="{{$dataAbsensi}}"><i class="fa fa-info-circle"></i> Info</button>
+                    <button class="btn btn-labeled btn-primary btn-xs btn-presensi" data-toggle="modal" data-target="#infoPresensiModal" data-tanggal="{{HDate::formatDate($tanggal)}}" data="{{$pegawai->with(['Absensi' => function($query) use ($tanggal){ $query->whereDate('tanggal', $tanggal); $query->with('KategoriAbsen');}])->get()}}"><i class="fa fa-info-circle"></i> Info</button>
                   </td>
                 </tr>
+                {{-- {{dd($pegawai->with(['Absensi' => function($query) use ($tanggal){
+                  $query->whereDate('tanggal', $tanggal);
+                }])->get())}} --}}
               @endforeach
             </tbody>
           </table>
