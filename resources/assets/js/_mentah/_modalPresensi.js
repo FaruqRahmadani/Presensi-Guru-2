@@ -11,7 +11,10 @@ $(".btn-presensi").click(function(){
         "<td>"+(value.nama)+"</td>"+
         "<td>"+(value.last_absensi.jam_masuk||"-")+"</td>"+
         "<td>"+(value.last_absensi.jam_masuk||"-")+"</td>"+
-        "<td><i class='fa fa-circle' style='color:"+(value.last_absensi.kategori_absen.kode_warna||"#000000")+"'></i> "+(value.last_absensi.kategori_absen.kode||"Tanpa Keterangan")+"</td>"+
+        "<td>"+
+          "<i class='fa fa-circle' style='color:"+(value.last_absensi.kategori_absen.kode_warna||"#000000")+"'></i> "+
+          (value.last_absensi.kategori_absen.kode||"Tanpa Keterangan")+
+        "</td>"+
         "<td>"+(value.last_absensi.keterangan||"-")+"</td>"+
       "</tr>"
     )

@@ -88427,7 +88427,7 @@ $(".btn-presensi").click(function () {
   tablePresensiModal.find('tbody>tr').remove().end();
   $("#infoPresensiModalLabel").html(dataTanggal);
   $.each(data, function (index, value) {
-    tablePresensiModal.append("<tr>" + "<td>" + (1 + index) + "</td>" + "<td>" + value.nama + "</td>" + "<td>" + (value.last_absensi.jam_masuk || "-") + "</td>" + "<td>" + (value.last_absensi.jam_masuk || "-") + "</td>" + "<td><i class='fa fa-circle' style='color:" + (value.last_absensi.kategori_absen.kode_warna || "#000000") + "'></i> " + (value.last_absensi.kategori_absen.kode || "Tanpa Keterangan") + "</td>" + "<td>" + (value.last_absensi.keterangan || "-") + "</td>" + "</tr>");
+    tablePresensiModal.append("<tr>" + "<td>" + (1 + index) + "</td>" + "<td>" + value.nama + "</td>" + "<td>" + (value.last_absensi.jam_masuk || "-") + "</td>" + "<td>" + (value.last_absensi.jam_masuk || "-") + "</td>" + "<td>" + "<i class='fa fa-circle' style='color:" + (value.last_absensi.kategori_absen.kode_warna || "#000000") + "'></i> " + (value.last_absensi.kategori_absen.kode || "Tanpa Keterangan") + "</td>" + "<td>" + (value.last_absensi.keterangan || "-") + "</td>" + "</tr>");
   });
 });
 
