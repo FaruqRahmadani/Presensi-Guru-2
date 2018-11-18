@@ -25692,3 +25692,27 @@ fieldset .form-group {
   text-align: center;
 }
 
+.modal-custom .modal-body {
+  overflow-y: auto;
+}
+
+@media (max-width: 768px) {
+  .modal-custom .modal-body {
+    max-height: 300px;
+  }
+}
+
+@media (min-width: 768px) {
+  .modal-custom .modal-body {
+    max-height: 450px;
+  }
+}
+
+.table-fixed tbody tr td:nth-child(3) {
+  text-align: center;
+}
+
+.table-fixed tbody tr td:nth-child(4) {
+  text-align: center;
+}
+

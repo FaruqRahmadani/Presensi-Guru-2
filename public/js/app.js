@@ -29186,7 +29186,7 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(14);
-module.exports = __webpack_require__(64);
+module.exports = __webpack_require__(65);
 
 
 /***/ }),
@@ -29217,8 +29217,8 @@ __webpack_require__(56);
 __webpack_require__(57);
 __webpack_require__(58);
 __webpack_require__(59);
-__webpack_require__(91);
 __webpack_require__(60);
+__webpack_require__(61);
 
 /***/ }),
 /* 15 */
@@ -88224,14 +88224,29 @@ module.exports = function(Chart) {
 
 /***/ }),
 /* 60 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-__webpack_require__(61);
-__webpack_require__(62);
-__webpack_require__(63);
+$(".btn-presensi").click(function () {
+  data = jQuery.parseJSON($(this).attr('data'));
+  dataTanggal = $(this).attr('data-tanggal');
+  tablePresensiModal = $("#tablePresensiModal");
+  tablePresensiModal.find('tbody>tr').remove().end();
+  $("#infoPresensiModalLabel").html(dataTanggal);
+  $.each(data, function (index, value) {
+    tablePresensiModal.append("<tr>" + "<td>" + (index + 1) + "</td>" + "<td>" + value.nama + "</td>" + "<td>" + (value.absensi[0] ? value.absensi[0].jam_masuk : "-") + "</td>" + "<td>" + (value.absensi[0] ? value.absensi[0].jam_pulang : "-") + "</td>" + "<td><i class='fa fa-circle' style='color:" + (value.absensi[0] ? value.absensi[0].kategori_absen.kode_warna : "#000000") + "'></i> " + (value.absensi[0] ? value.absensi[0].kategori_absen.kode : "Tanpa Keterangan") + "</td>" + "<td>" + (value.absensi[0] ? value.absensi[0].keterangan : "-") + "</td>" + "</tr>");
+  });
+});
 
 /***/ }),
 /* 61 */
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(62);
+__webpack_require__(63);
+__webpack_require__(64);
+
+/***/ }),
+/* 62 */
 /***/ (function(module, exports) {
 
 $("#chart-sekolah-jenjang").ready(function () {
@@ -88277,7 +88292,7 @@ $("#chart-sekolah-jenjang").ready(function () {
 });
 
 /***/ }),
-/* 62 */
+/* 63 */
 /***/ (function(module, exports) {
 
 $("#chart-pegawai-jenjang").ready(function () {
@@ -88323,7 +88338,7 @@ $("#chart-pegawai-jenjang").ready(function () {
 });
 
 /***/ }),
-/* 63 */
+/* 64 */
 /***/ (function(module, exports) {
 
 $("#chart-pegawai-sekolah").ready(function () {
@@ -88385,51 +88400,10 @@ $("#chart-pegawai-sekolah").ready(function () {
 });
 
 /***/ }),
-/* 64 */
+/* 65 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 65 */,
-/* 66 */,
-/* 67 */,
-/* 68 */,
-/* 69 */,
-/* 70 */,
-/* 71 */,
-/* 72 */,
-/* 73 */,
-/* 74 */,
-/* 75 */,
-/* 76 */,
-/* 77 */,
-/* 78 */,
-/* 79 */,
-/* 80 */,
-/* 81 */,
-/* 82 */,
-/* 83 */,
-/* 84 */,
-/* 85 */,
-/* 86 */,
-/* 87 */,
-/* 88 */,
-/* 89 */,
-/* 90 */,
-/* 91 */
-/***/ (function(module, exports) {
-
-$(".btn-presensi").click(function () {
-  data = jQuery.parseJSON($(this).attr('data'));
-  dataTanggal = $(this).attr('data-tanggal');
-  tablePresensiModal = $("#tablePresensiModal");
-  tablePresensiModal.find('tbody>tr').remove().end();
-  $("#infoPresensiModalLabel").html(dataTanggal);
-  $.each(data, function (index, value) {
-    tablePresensiModal.append("<tr>" + "<td>" + (index + 1) + "</td>" + "<td>" + value.nama + "</td>" + "<td>" + (value.absensi[0] ? value.absensi[0].jam_masuk : "-") + "</td>" + "<td>" + (value.absensi[0] ? value.absensi[0].jam_pulang : "-") + "</td>" + "<td><i class='fa fa-circle' style='color:" + (value.absensi[0] ? value.absensi[0].kategori_absen.kode_warna : "#000000") + "'></i> " + (value.absensi[0] ? value.absensi[0].kategori_absen.kode : "Tanpa Keterangan") + "</td>" + "<td>" + (value.absensi[0] ? value.absensi[0].keterangan : "-") + "</td>" + "</tr>");
-  });
-});
 
 /***/ })
 /******/ ]);
