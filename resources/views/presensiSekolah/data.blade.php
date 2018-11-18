@@ -50,17 +50,14 @@
   </div>
 @endsection
 @section('content-additional')
-  <div class="modal fade" id="infoPresensiModal" tabindex="-1" role="dialog" aria-labelledby="infoPresensiModalLabel" aria-hidden="true">
+  <div class="modal fade modal-custom" id="infoPresensiModal" tabindex="-1" role="dialog" aria-labelledby="infoPresensiModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg">
       <div class="modal-content">
         <div class="modal-header">
           <h4 class="modal-title" id="infoPresensiModalLabel">Tanggal</h4>
-          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
         </div>
         <div class="modal-body">
-          <table class="table table-striped table-bordered tabel-custom my-4 w-100" id="tablePresensiModal">
+          <table class="table table-fixed table-striped table-bordered tabel-custom my-4 w-100" id="tablePresensiModal">
             <thead>
               <th>No</th>
               <th>Nama Pegawai</th>
@@ -74,7 +71,7 @@
           </table>
         </div>
         <div class="modal-footer">
-          <button class="btn btn-secondary" type="button" data-dismiss="modal">Tutup</button>
+          <button class="btn btn-danger" type="button" data-dismiss="modal"><i class="fa fa-times mr-2"></i> Tutup</button>
         </div>
       </div>
     </div>
