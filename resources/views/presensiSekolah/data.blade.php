@@ -54,7 +54,8 @@
           <h4 class="modal-title" id="infoPresensiModalLabel">Tanggal</h4>
         </div>
         <div class="modal-body">
-          <table class="table table-fixed table-striped table-bordered tabel-custom my-4 w-100" id="tablePresensiModal">
+          <div class="table-responsive">
+            <table class="table table-fixed table-striped table-bordered tabel-custom my-4 w-100" id="tablePresensiModal">
             <thead>
               <th>No</th>
               <th>Nama Pegawai</th>
@@ -66,6 +67,7 @@
             <tbody>
             </tbody>
           </table>
+          </div>
         </div>
         <div class="modal-footer">
           <button class="btn btn-danger" type="button" data-dismiss="modal"><i class="fa fa-times mr-2"></i> Tutup</button>
