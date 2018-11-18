@@ -7,13 +7,13 @@ $(".btn-presensi").click(function(){
   $.each(data, function( index, value ) {
     tablePresensiModal.append(
       "<tr>"+
-        "<td>"+(index+1)+"</td>"+
-        "<td>"+value.nama+"</td>"+
-        "<td>"+(value.absensi[0]?value.absensi[0].jam_masuk:"-")+"</td>"+
-        "<td>"+(value.absensi[0]?value.absensi[0].jam_pulang:"-")+"</td>"+
-        "<td><i class='fa fa-circle' style='color:"+(value.absensi[0]?value.absensi[0].kategori_absen.kode_warna:"#000000")+"'></i> "+(value.absensi[0]?value.absensi[0].kategori_absen.kode:"Tanpa Keterangan")+"</td>"+
-        "<td>"+(value.absensi[0]?value.absensi[0].keterangan:"-")+"</td>"+
+        "<td>"+(1+index)+"</td>"+
+        "<td>"+(value.nama)+"</td>"+
+        "<td>"+(value.last_absensi.jam_masuk||"-")+"</td>"+
+        "<td>"+(value.last_absensi.jam_masuk||"-")+"</td>"+
+        "<td><i class='fa fa-circle' style='color:"+(value.last_absensi.kategori_absen.kode_warna||"#000000")+"'></i> "+(value.last_absensi.kategori_absen.kode||"Tanpa Keterangan")+"</td>"+
+        "<td>"+(value.last_absensi.keterangan||"-")+"</td>"+
       "</tr>"
     )
-  });
+  })
 })
