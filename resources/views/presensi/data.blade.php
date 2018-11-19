@@ -13,17 +13,20 @@
                     <label>Nama Sekolah</label>
                     <select class="form-control select2" name="idSekolah" required>
                       <option value="" hidden>Pilih</option>
+                      @foreach ($sekolah as $dataSekolah)
+                        <option value="{{$dataSekolah->id}}">{{$dataSekolah->nama}}</option>
+                      @endforeach
                     </select>
                   </div>
                   <div class="col-lg-3 mb-3">
                     <label>Tanggal Awal</label>
-                    <input class="form-control" type="date" name="TanggalAwal" value="{{isset($TanggalAwal) ? $TanggalAwal : Carbon\Carbon::now()->format('Y-m-d')}}" required max="{{Carbon\Carbon::now()->addDay()->format('Y-m-d')}}" pattern="[a-zA-Z0-9]+.{0,}" title="Minimal 1 Karakter">
+                    <input class="form-control" type="date" name="TanggalAwal" value="{{now()->format('Y-m-d')}}" max="{{now()->addDay()->format('Y-m-d')}}" required>
                   </div>
                   <div class="col-lg-3 mb-3">
                     <label>Tanggal Akhir</label>
-                    <input class="form-control" type="date" name="TanggalAkhir" value="{{isset($TanggalAkhir) ? $TanggalAkhir : Carbon\Carbon::now()->format('Y-m-d')}}" required max="{{Carbon\Carbon::now()->addDay()->format('Y-m-d')}}" pattern="[a-zA-Z0-9]+.{0,}" title="Minimal 1 Karakter">
+                    <input class="form-control" type="date" name="TanggalAkhir" value="{{now()->format('Y-m-d')}}" max="{{now()->addDay()->format('Y-m-d')}}" required>
                   </div>
-                  <div class="col-lg-3 mb-3">
+                  <div class="col-lg-3 mb-3 text-center">
                     <label class="hidden-md-down">&nbsp;</label>
                     <div class="form-group">
                       <button type="submit" class="btn btn-labeled btn-info btn">
@@ -54,8 +57,6 @@
                   <td>09 Agustus 2018</td>
                   <td>
                     <a href="#" class="btn btn-labeled btn-info btn-xs"><i class="fa fa-edit"></i> Info</a>
-                    <a href="#" class="btn btn-labeled btn-primary btn-xs"><i class="fa fa-edit"></i> Edit</a>
-                    <a href="#" class="btn btn-labeled btn-danger btn-xs"><i class="fa fa-trash"></i> Hapus</a>
                   </td>
                 </tr>
               @endfor
