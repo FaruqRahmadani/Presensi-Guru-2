@@ -29186,7 +29186,7 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(14);
-module.exports = __webpack_require__(64);
+module.exports = __webpack_require__(66);
 
 
 /***/ }),
@@ -88228,8 +88228,8 @@ module.exports = function(Chart) {
 __webpack_require__(61);
 __webpack_require__(62);
 __webpack_require__(63);
-__webpack_require__(92);
-__webpack_require__(93);
+__webpack_require__(64);
+__webpack_require__(65);
 
 /***/ }),
 /* 61 */
@@ -88389,39 +88389,6 @@ $("#chart-pegawai-sekolah").ready(function () {
 /* 64 */
 /***/ (function(module, exports) {
 
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 65 */,
-/* 66 */,
-/* 67 */,
-/* 68 */,
-/* 69 */,
-/* 70 */,
-/* 71 */,
-/* 72 */,
-/* 73 */,
-/* 74 */,
-/* 75 */,
-/* 76 */,
-/* 77 */,
-/* 78 */,
-/* 79 */,
-/* 80 */,
-/* 81 */,
-/* 82 */,
-/* 83 */,
-/* 84 */,
-/* 85 */,
-/* 86 */,
-/* 87 */,
-/* 88 */,
-/* 89 */,
-/* 90 */,
-/* 91 */,
-/* 92 */
-/***/ (function(module, exports) {
-
 // scales: {
 //   xAxes: [{
 //     stacked: true,
@@ -88433,11 +88400,17 @@ $("#chart-pegawai-sekolah").ready(function () {
 // idnya :chart-absensi-pegawai
 
 /***/ }),
-/* 93 */
+/* 65 */
 /***/ (function(module, exports) {
 
 // chart2
 // idnya : chart-kategori-absensi
+
+/***/ }),
+/* 66 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
 
 /***/ })
 /******/ ]);
