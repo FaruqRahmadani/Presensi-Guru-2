@@ -15,7 +15,7 @@ $(".btn-presensi").click(function(){
           "<i class='fa fa-circle' style='color:"+(value.last_absensi.kategori_absen.kode_warna||"#000000")+"'></i> "+
           (value.last_absensi.kategori_absen.kode||"Tanpa Keterangan")+
         "</td>"+
-        "<td style='white-space: normal;'>"+(value.last_absensi.keterangan||"-")+"</td>"+
+        "<td>"+(value.last_absensi.keterangan||"-")+"</td>"+
       "</tr>"
     )
   })
