@@ -52,6 +52,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <h4 class="modal-title" id="infoPresensiModalLabel">Tanggal</h4>
+          <h4 class="modal-title text-left"><i class="fa fa-school mr-3"></i> {{Auth::User()->Sekolah->nama}}</h4>
         </div>
         <div class="modal-body">
           <div class="table-responsive">
