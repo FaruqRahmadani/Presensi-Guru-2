@@ -25,6 +25,16 @@ class Pegawai extends Model
     return $this->belongsTo('App\Sekolah');
   }
 
+  public function Absensi(){
+    return $this->hasMany('App\Absensi');
+  }
+
+  public function LastAbsensi(){
+    return $this->hasOne('App\Absensi')->withDefault([
+      'kategori_absen' => 'nothing here'
+    ]);
+  }
+
   public function getUUIDAttribute(){
     return encrypt($this->id);
   }

@@ -50,4 +50,12 @@ interface RepositoryInterface
   * @return void
   */
   public function delete($id);
+
+  /**
+  * Method to delete a model
+  *
+  * @param string $relations
+  * @return void
+  */
+  public function with($relations);
 }

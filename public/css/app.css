@@ -25499,6 +25499,10 @@ fieldset .form-group {
   }
 }
 
+.no-padding {
+  padding: 0 0 0 0;
+}
+
 .select2 .select2-selection {
   border: 1px solid #dde6e9;
   padding: 0.375rem 0.875rem !important;
@@ -25550,7 +25554,7 @@ fieldset .form-group {
 }
 
 .container {
-  background: #fff;
+  background: #ffffff;
 }
 
 @media (min-width: 768px) {
@@ -25626,7 +25630,7 @@ fieldset .form-group {
 }
 
 .banner-text h2 {
-  color: #fff;
+  color: #ffffff;
   font-weight: 600;
 }
 
@@ -25641,7 +25645,7 @@ fieldset .form-group {
 }
 
 .banner-text p {
-  color: #fff;
+  color: #ffffff;
 }
 
 .table {
@@ -25686,5 +25690,47 @@ fieldset .form-group {
 
 .table tr th {
   text-align: center;
+}
+
+.modal-custom .modal-body {
+  overflow-y: auto;
+}
+
+@media (max-width: 768px) {
+  .modal-custom .modal-body {
+    max-height: 300px;
+  }
+}
+
+@media (min-width: 768px) {
+  .modal-custom .modal-body {
+    max-height: 450px;
+  }
+}
+
+@media (max-width: 768px) {
+  .table-fixed th:last-child {
+    text-align: left;
+  }
+}
+
+.table-fixed tbody tr td:nth-child(3) {
+  text-align: center;
+}
+
+.table-fixed tbody tr td:nth-child(4) {
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .table-fixed tbody td:last-child {
+    white-space: nowrap;
+  }
+}
+
+@media (min-width: 768px) {
+  .table-fixed tbody td:last-child {
+    white-space: normal;
+  }
 }
 
