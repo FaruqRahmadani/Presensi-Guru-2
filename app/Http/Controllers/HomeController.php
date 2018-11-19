@@ -12,11 +12,11 @@ class HomeController extends Controller
     return $authTipe == 1? $this->dashboardSuperAdmin() : $this->dashboardAdminSekolah();
   }
 
-  public function dashboardSuperAdmin(){
+  private function dashboardSuperAdmin(){
     return view('dashboard.superAdmin');
   }
 
-  public function dashboardAdminSekolah(){
+  private function dashboardAdminSekolah(){
     return view('dashboard.adminSekolah');
   }
 }
