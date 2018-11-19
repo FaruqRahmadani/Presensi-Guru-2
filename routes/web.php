@@ -24,10 +24,6 @@ Route::Group(['middleware' => 'AuthMiddleware'], function(){
     return view('template.form');
   });
 
-  Route::get('/data-presensi/data', function () {
-    return view('presensi.data');
-  });
-
   Route::Group(['middleware' => 'SuperAdminMiddleware'], function(){
     Route::group(['prefix' => 'admin', 'as' => 'admin'], function () {
       Route::get('', 'AdminController@data')->name('Data');
@@ -92,6 +88,10 @@ Route::Group(['middleware' => 'AuthMiddleware'], function(){
       Route::post('', 'ProfileController@editSubmit')->name('EditSubmit');
     });
   });
+  Route::group(['prefix' => 'presensi', 'as' => 'presensi'], function () {
+    Route::get('', 'PresensiController@data')->name('Data');
+  });
+
   Route::Group(['middleware' => 'AdminSekolahMiddleware'], function(){
     Route::group(['prefix' => 'pegawai-sekolah', 'as' => 'pegawaiSekolah'], function () {
       Route::get('', 'PegawaiSekolahController@data')->name('Data');
