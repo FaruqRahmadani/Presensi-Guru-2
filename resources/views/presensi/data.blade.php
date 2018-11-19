@@ -5,13 +5,14 @@
     <div class="card card-default">
       <div class="card-header">
         <div class="card-title">
-          <form action="">
+          <form action="{!!route('presensiData')!!}">
+            @csrf
             <div class="row">
               <div class="col-md-12">
                 <div class="form-row">
                   <div class="col-lg-3 mb-3">
                     <label>Nama Sekolah</label>
-                    <select class="form-control select2" name="idSekolah" required>
+                    <select class="form-control select2" name="sekolah_id" required>
                       <option value="" hidden>Pilih</option>
                       @foreach ($sekolah as $dataSekolah)
                         <option value="{{$dataSekolah->id}}">{{$dataSekolah->nama}}</option>
@@ -20,11 +21,11 @@
                   </div>
                   <div class="col-lg-3 mb-3">
                     <label>Tanggal Awal</label>
-                    <input class="form-control" type="date" name="TanggalAwal" value="{{now()->format('Y-m-d')}}" max="{{now()->addDay()->format('Y-m-d')}}" required>
+                    <input class="form-control" type="date" name="tanggal_awal" value="{{now()->format('Y-m-d')}}" max="{{now()->addDay()->format('Y-m-d')}}" required>
                   </div>
                   <div class="col-lg-3 mb-3">
                     <label>Tanggal Akhir</label>
-                    <input class="form-control" type="date" name="TanggalAkhir" value="{{now()->format('Y-m-d')}}" max="{{now()->addDay()->format('Y-m-d')}}" required>
+                    <input class="form-control" type="date" name="tanggal_akhir" value="{{now()->format('Y-m-d')}}" max="{{now()->addDay()->format('Y-m-d')}}" required>
                   </div>
                   <div class="col-lg-3 mb-3 text-center">
                     <label class="hidden-md-down">&nbsp;</label>
@@ -47,6 +48,10 @@
               <tr>
                 <th>#</th>
                 <th>Tanggal</th>
+                @foreach ($kategoriAbsen as $dataKategoriAbsen)
+                  <th><i class="fa fa-circle" style="color:{{$dataKategoriAbsen->kode_warna}}"></i> {{$dataKategoriAbsen->kode}}</th>
+                @endforeach
+                <th><i class="fa fa-circle text-dark"></i> Tanpa Keterangan</th>
                 <th>Aksi</th>
               </tr>
             </thead>
@@ -55,13 +60,49 @@
                 <tr>
                   <td>{{$i+1}}</td>
                   <td>09 Agustus 2018</td>
+                  <td>1</td>
+                  <td>1</td>
+                  <td>1</td>
+                  <td>1</td>
+                  <td>1</td>
                   <td>
-                    <a href="#" class="btn btn-labeled btn-info btn-xs"><i class="fa fa-edit"></i> Info</a>
+                    <button class="btn btn-labeled btn-info btn-xs"><i class="fa fa-edit" data-toggle="modal" data-target="#infoPresensiModal"></i> Info</button>
                   </td>
                 </tr>
               @endfor
             </tbody>
           </table>
+        </div>
+      </div>
+    </div>
+  </div>
+@endsection
+@section('content-additional')
+  <div class="modal fade modal-custom" id="infoPresensiModal" tabindex="-1" role="dialog" aria-labelledby="infoPresensiModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title" id="infoPresensiModalLabel">Tanggal</h4>
+          {{-- <h4 class="modal-title text-left"><i class="fa fa-school mr-3"></i> {{Auth::User()->Sekolah->nama}}</h4> --}}
+        </div>
+        <div class="modal-body">
+          <div class="table-responsive">
+            <table class="table table-fixed table-striped table-bordered tabel-custom my-4 w-100" id="tablePresensiModal">
+            <thead>
+              <th>No</th>
+              <th>Nama Pegawai</th>
+              <th>Jam Masuk</th>
+              <th>Jam Keluar</th>
+              <th>Kategori Presensi</th>
+              <th>Keterangan</th>
+            </thead>
+            <tbody>
+            </tbody>
+          </table>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-danger" type="button" data-dismiss="modal"><i class="fa fa-times mr-2"></i> Tutup</button>
         </div>
       </div>
     </div>
