@@ -3,7 +3,7 @@ $(".btn-presensi").click(function(){
   dataTanggal = $(this).attr('data-tanggal')
   tablePresensiModal = $("#tablePresensiModal")
   tablePresensiModal.find('tbody>tr').remove().end()
-  $("#infoPresensiModalLabel").html(dataTanggal)
+  $("#infoPresensiModalLabel").html("Data Absensi Pada : "+dataTanggal)
   $.each(data, function( index, value ) {
     tablePresensiModal.append(
       "<tr>"+
