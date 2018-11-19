@@ -1,0 +1,42 @@
+.modal-custom {
+  .modal-body {
+    @media (max-width: $breakpoint-md) {
+      max-height: 300px;
+    }
+
+    @media (min-width: $breakpoint-md) {
+      max-height: 450px;
+    }
+
+    overflow-y: auto;
+  }
+}
+
+.table-fixed {
+  @media (max-width: $breakpoint-md) {
+      th:last-child {
+        text-align: left;
+      }
+    }
+  tbody {
+    tr td:nth-child(3) {
+      text-align: center;
+    }
+
+    tr td:nth-child(4) {
+      text-align: center;
+    }
+
+    @media (max-width: $breakpoint-md) {
+      td:last-child {
+        white-space: nowrap;
+      }
+    }
+
+    @media (min-width: $breakpoint-md) {
+      td:last-child {
+        white-space: normal;
+      }
+    }
+  }
+}

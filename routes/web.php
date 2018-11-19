@@ -13,7 +13,6 @@
 
 Route::Group(['middleware' => 'AuthMiddleware'], function(){
   Route::get('', 'HomeController@dashboard')->name('dashboard');
-
   // Template
   Route::get('/template/chart', function () {
     return view('template.chart');
@@ -114,6 +113,13 @@ Route::Group(['middleware' => 'AuthMiddleware'], function(){
       Route::get('{id}/edit', 'JamKerjaController@editForm')->name('EditForm');
       Route::post('{id}/edit', 'JamKerjaController@editSubmit')->name('EditSubmit');
       Route::get('hapus/{id?}', 'JamKerjaController@hapus')->name('Hapus');
+    });
+    Route::group(['prefix' => 'presensi-sekolah', 'as' => 'presensiSekolah'], function () {
+      Route::get('', 'PresensiSekolahController@data')->name('Data');
+      Route::get('input', 'PresensiSekolahController@inputForm')->name('InputForm');
+      Route::post('input', 'PresensiSekolahController@inputSubmit')->name('InputSubmit');
+      Route::post('confirm', 'PresensiSekolahController@confirmSubmit')->name('ConfirmSubmit');
+      Route::get('info', 'PresensiSekolahController@info');
     });
   });
 });
