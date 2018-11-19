@@ -88228,8 +88228,8 @@ module.exports = function(Chart) {
 __webpack_require__(61);
 __webpack_require__(62);
 __webpack_require__(63);
-__webpack_require__(91);
 __webpack_require__(92);
+__webpack_require__(93);
 
 /***/ }),
 /* 61 */
@@ -88418,7 +88418,8 @@ $("#chart-pegawai-sekolah").ready(function () {
 /* 88 */,
 /* 89 */,
 /* 90 */,
-/* 91 */
+/* 91 */,
+/* 92 */
 /***/ (function(module, exports) {
 
 // scales: {
@@ -88432,7 +88433,7 @@ $("#chart-pegawai-sekolah").ready(function () {
 // idnya :chart-absensi-pegawai
 
 /***/ }),
-/* 92 */
+/* 93 */
 /***/ (function(module, exports) {
 
 // chart2
