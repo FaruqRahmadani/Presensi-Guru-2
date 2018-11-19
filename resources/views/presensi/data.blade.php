@@ -5,7 +5,7 @@
     <div class="card card-default">
       <div class="card-header">
         <div class="card-title">
-          <form action="{!!route('presensiData')!!}">
+          <form action="{!!route('presensiData')!!}" method="post">
             @csrf
             <div class="row">
               <div class="col-md-12">
@@ -15,17 +15,17 @@
                     <select class="form-control select2" name="sekolah_id" required>
                       <option value="" hidden>Pilih</option>
                       @foreach ($sekolah as $dataSekolah)
-                        <option value="{{$dataSekolah->id}}">{{$dataSekolah->nama}}</option>
+                        <option value="{{$dataSekolah->id}}" @if ($request->sekolah_id == $dataSekolah->id) selected @endif>{{$dataSekolah->nama}}</option>
                       @endforeach
                     </select>
                   </div>
                   <div class="col-lg-3 mb-3">
                     <label>Tanggal Awal</label>
-                    <input class="form-control" type="date" name="tanggal_awal" value="{{now()->format('Y-m-d')}}" max="{{now()->addDay()->format('Y-m-d')}}" required>
+                    <input class="form-control" type="date" name="tanggal_awal" value="{{$request->tanggal_awal??now()->format('Y-m-d')}}" max="{{now()->addDay()->format('Y-m-d')}}" required>
                   </div>
                   <div class="col-lg-3 mb-3">
                     <label>Tanggal Akhir</label>
-                    <input class="form-control" type="date" name="tanggal_akhir" value="{{now()->format('Y-m-d')}}" max="{{now()->addDay()->format('Y-m-d')}}" required>
+                    <input class="form-control" type="date" name="tanggal_akhir" value="{{$request->tanggal_akhir??now()->format('Y-m-d')}}" max="{{now()->addDay()->format('Y-m-d')}}" required>
                   </div>
                   <div class="col-lg-3 mb-3 text-center">
                     <label class="hidden-md-down">&nbsp;</label>
@@ -56,20 +56,19 @@
               </tr>
             </thead>
             <tbody>
-              @for ($i = 0; $i < 3; $i++)
+              @foreach ($absensi as $tanggal=>$dataAbsensi)
                 <tr>
-                  <td>{{$i+1}}</td>
-                  <td>09 Agustus 2018</td>
-                  <td>1</td>
-                  <td>1</td>
-                  <td>1</td>
-                  <td>1</td>
-                  <td>1</td>
+                  <td>{{$loop->iteration}}</td>
+                  <td>{{HDate::formatDate($tanggal)}}</td>
+                  @foreach ($kategoriAbsen as $dataKategoriAbsen)
+                    <td class="text-center">{{$dataAbsensi->where('kategori_absen_id', $dataKategoriAbsen->id)->count()}}</td>
+                  @endforeach
+                  <td class="text-center">{{$pegawai->count() - $dataAbsensi->count()}}</td>
                   <td>
                     <button class="btn btn-labeled btn-info btn-xs"><i class="fa fa-edit" data-toggle="modal" data-target="#infoPresensiModal"></i> Info</button>
                   </td>
                 </tr>
-              @endfor
+              @endforeach
             </tbody>
           </table>
         </div>

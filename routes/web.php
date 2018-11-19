@@ -90,6 +90,7 @@ Route::Group(['middleware' => 'AuthMiddleware'], function(){
   });
   Route::group(['prefix' => 'presensi', 'as' => 'presensi'], function () {
     Route::get('', 'PresensiController@data')->name('Data');
+    Route::post('', 'PresensiController@data')->name('DataFiltered');
   });
 
   Route::Group(['middleware' => 'AdminSekolahMiddleware'], function(){
