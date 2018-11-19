@@ -1,3 +1,5 @@
 require('./_chartJenjangPie')
 require('./_chartJenjangBar')
 require('./_chartSekolah')
+require('./_chartStatistikAbsensiStack')
+require('./_chartStatistikKategoriDonat')
