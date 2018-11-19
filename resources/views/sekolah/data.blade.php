@@ -33,7 +33,7 @@
                 <td>{{$dataSekolah->npsn}}</td>
                 <td>{{$dataSekolah->nss}}</td>
                 <td>{{$dataSekolah->nama}}</td>
-                <td>{{$dataSekolah->NamaKepsek}}</td>
+                <td>{{$dataSekolah->KepalaSekolah->nama}}</td>
                 <td>{{$dataSekolah->Jenjang->nama}}</td>
                 <td>{{$dataSekolah->Status->nama}}</td>
                 <td>{{$dataSekolah->Kecamatan->nama}}</td>

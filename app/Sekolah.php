@@ -11,7 +11,9 @@ class Sekolah extends Model
   protected $appends = ['CountPegawai'];
 
   public function KepalaSekolah(){
-    return $this->belongsTo('App\Pegawai', 'pegawai_id');
+    return $this->belongsTo('App\Pegawai', 'pegawai_id')->withDefault([
+      'nama' => 'Belum Diisi'
+    ]);
   }
 
   public function Jenjang(){
@@ -32,10 +34,6 @@ class Sekolah extends Model
 
   public function Pegawai(){
     return $this->hasMany('App\Pegawai');
-  }
-
-  public function getNamaKepsekAttribute(){
-    return $this->KepalaSekolah->nama??"Belum Diisi";
   }
 
   public function getUUIDAttribute(){
