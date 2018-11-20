@@ -13,9 +13,6 @@
 
 Route::Group(['middleware' => 'AuthMiddleware'], function(){
   Route::get('', 'HomeController@dashboard')->name('dashboard');
-  Route::get('/laporan-rekap-presensi', function () {
-    return view('rekapPresensi.adminSekolah-data');
-  });
   // Template
   Route::get('/template/chart', function () {
     return view('template.chart');
@@ -123,6 +120,10 @@ Route::Group(['middleware' => 'AuthMiddleware'], function(){
       Route::post('input', 'PresensiSekolahController@inputSubmit')->name('InputSubmit');
       Route::post('confirm', 'PresensiSekolahController@confirmSubmit')->name('ConfirmSubmit');
       Route::get('info', 'PresensiSekolahController@info');
+    });
+
+    Route::group(['prefix' => 'laporan', 'as' => 'laporan'], function () {
+      Route::get('rekap', 'RekapPresensiController@data')->name('Rekap');
     });
   });
 });
