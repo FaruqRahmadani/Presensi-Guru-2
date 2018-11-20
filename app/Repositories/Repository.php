@@ -26,7 +26,7 @@ abstract class Repository implements RepositoryInterface
   * @return void
   */
   public function where($key, $value){
-    return $this->model::where($key, $value)->get();
+    return $this->model::where($key, $value);
   }
 
   /**
@@ -91,5 +91,16 @@ abstract class Repository implements RepositoryInterface
     }
     $model = $this->get($id);
     $model->delete();
+  }
+
+  /**
+  * Method to get relation of model
+  *
+  * @param string $relations
+  * @return void
+  */
+  public function with($relations)
+  {
+    return $this->model::with($relations);
   }
 }

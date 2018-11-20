@@ -211,6 +211,7 @@ return [
     'View' => Illuminate\Support\Facades\View::class,
     'HCrypt' => App\Helpers\CryptHelper::class,
     'HDate' => App\Helpers\DateHelper::class,
+    'HPresensi' => App\Helpers\PresensiHelper::class,
   ],
 
 ];

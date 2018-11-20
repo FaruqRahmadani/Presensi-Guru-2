@@ -94,12 +94,9 @@
             <li class="nav-heading ">
               <span>Menu Navigasi</span>
             </li>
-            {{-- menu Admin --}}
             @if(Auth::user()->tipe == '1')
               @include('Layouts.sidebarAdmin')
-            @endif
-            {{-- menu adminSekolah --}}
-            @if(Auth::user()->tipe == '2')
+            @elseif(Auth::user()->tipe == '2')
               @include('Layouts.sidebarAdminSekolah')
             @endif
             <!-- Dihapus Saat sudah kelar semua-->
@@ -139,13 +136,14 @@
       <span>&copy; 2018 - Dinas Pendidikan <strong>Kab. Banjar</strong></span>
     </footer>
   </div>
+  @yield('content-additional')
   <script src="{{ asset('js/app.js') }}"></script>
   @if (session('alert'))
-     <script>notif('{{session('tipe')}}', '{{session('judul')}}', '{{session('pesan')}}')</script>
-    @endif
-    @if ($errors->count())
-      <script>notif('error', 'Ada Kesalahan', '{{$errors->first()}}')</script>
-    @endif
+    <script>notif('{{session('tipe')}}', '{{session('judul')}}', '{{session('pesan')}}')</script>
+  @endif
+  @if ($errors->count())
+    <script>notif('error', 'Ada Kesalahan', '{{$errors->first()}}')</script>
+  @endif
   @yield('js-content')
 </body>
 </html>
