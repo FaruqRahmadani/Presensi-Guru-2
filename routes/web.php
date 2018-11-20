@@ -122,7 +122,7 @@ Route::group(['middleware' => 'AuthMiddleware'], function(){
       Route::get('info', 'PresensiSekolahController@info');
     });
     Route::group(['prefix' => 'laporan', 'as' => 'laporan'], function () {
-      Route::get('rekap', 'RekapPresensiController@data')->name('Rekap');
+      Route::match(['get', 'post'], 'rekap', 'RekapPresensiController@data')->name('Rekap');
     });
   });
 });

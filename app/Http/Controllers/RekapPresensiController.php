@@ -19,7 +19,7 @@ class RekapPresensiController extends Controller
     $periode = $absensi->map(function ($item, $key) {
       return Carbon::Parse($item->tanggal)->firstOfMonth();
     })->unique();
-    $selectedPeriode = $request->periode??$periode->max();
+    $selectedPeriode = Carbon::parse($request->periode)??$periode->max();
     $pegawai = $this->getAbsensiPegawaiData($selectedPeriode);
     return view('rekapPresensi.data', compact('kategoriAbsen', 'periode', 'pegawai', 'selectedPeriode'));
   }

@@ -8,30 +8,33 @@
     <div class="card card-default">
       <div class="card-header">
         <div class="card-title">
+          <form action="{!!route('laporanRekap')!!}" method="post">
           <div class="form-row align-items-center">
-            <div class="col-lg-4">
-              <label class="sr-only" for="inlineFormInput">Name</label>
-              <div class="mb-2">
-                <select class="form-control select2" name="periode" required>
-                  @foreach ($periode as $dataPeriode)
-                    <option value="{{$dataPeriode}}">{{HDate::formatPeriode($dataPeriode)}}</option>
-                  @endforeach
-                </select>
+              @csrf
+              <div class="col-lg-4">
+                <label class="sr-only" for="inlineFormInput">Name</label>
+                <div class="mb-2">
+                  <select class="form-control select2" name="periode" required>
+                    @foreach ($periode as $dataPeriode)
+                      <option value="{{$dataPeriode}}">{{HDate::formatPeriode($dataPeriode)}}</option>
+                    @endforeach
+                  </select>
+                </div>
               </div>
-            </div>
-            <div class="col-lg-4">
-              <button type="submit" class="btn btn-labeled btn-info btn mb-2">
-                <span class="btn-label"><i class="fa fa-filter"></i>
-                </span><b>Filter</b>
-              </button>
-            </div>
+              <div class="col-lg-4">
+                <button type="submit" class="btn btn-labeled btn-info btn mb-2">
+                  <span class="btn-label"><i class="fa fa-filter"></i>
+                  </span><b>Filter</b>
+                </button>
+              </div>
             <div class="col-lg-4 text-right">
-              <button class="btn btn-labeled btn-success btn">
+              <a href="#" class="btn btn-labeled btn-success btn">
                 <span class="btn-label"><i class="fa fa-print"></i>
                 </span><b>Cetak</b>
-              </button>
+              </a>
             </div>
           </div>
+        </form>
         </div>
       </div>
       <div class="card-body">
