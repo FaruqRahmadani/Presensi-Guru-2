@@ -31,6 +31,12 @@ class DateHelper
     return "{$Tanggal} {$Bulan} {$Tahun}";
   }
 
+  public static function formatPeriode($date){
+    $Bulan = HDate::formatMonth(Carbon::Parse($date)->format('m'));
+    $Tahun = Carbon::Parse($date)->format('Y');
+    return "{$Bulan} {$Tahun}";
+  }
+
   public static function now(){
     return Carbon::now()->format('Y-m-d');
   }

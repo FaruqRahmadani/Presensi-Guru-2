@@ -11,7 +11,7 @@
 |
 */
 
-Route::Group(['middleware' => 'AuthMiddleware'], function(){
+Route::group(['middleware' => 'AuthMiddleware'], function(){
   Route::get('', 'HomeController@dashboard')->name('dashboard');
   // Template
   Route::get('/template/chart', function () {
@@ -28,7 +28,7 @@ Route::Group(['middleware' => 'AuthMiddleware'], function(){
     return view('presensi.data');
   });
 
-  Route::Group(['middleware' => 'SuperAdminMiddleware'], function(){
+  Route::group(['middleware' => 'SuperAdminMiddleware'], function(){
     Route::group(['prefix' => 'admin', 'as' => 'admin'], function () {
       Route::get('', 'AdminController@data')->name('Data');
       Route::get('tambah', 'AdminController@tambahForm')->name('TambahForm');
@@ -92,7 +92,7 @@ Route::Group(['middleware' => 'AuthMiddleware'], function(){
       Route::post('', 'ProfileController@editSubmit')->name('EditSubmit');
     });
   });
-  Route::Group(['middleware' => 'AdminSekolahMiddleware'], function(){
+  Route::group(['middleware' => 'AdminSekolahMiddleware'], function(){
     Route::group(['prefix' => 'pegawai-sekolah', 'as' => 'pegawaiSekolah'], function () {
       Route::get('', 'PegawaiSekolahController@data')->name('Data');
       Route::get('tambah', 'PegawaiSekolahController@tambahForm')->name('TambahForm');
@@ -121,7 +121,6 @@ Route::Group(['middleware' => 'AuthMiddleware'], function(){
       Route::post('confirm', 'PresensiSekolahController@confirmSubmit')->name('ConfirmSubmit');
       Route::get('info', 'PresensiSekolahController@info');
     });
-
     Route::group(['prefix' => 'laporan', 'as' => 'laporan'], function () {
       Route::get('rekap', 'RekapPresensiController@data')->name('Rekap');
     });
