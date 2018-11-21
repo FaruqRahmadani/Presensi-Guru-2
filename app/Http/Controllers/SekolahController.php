@@ -33,7 +33,7 @@ class SekolahController extends Controller
     $jenjang = $jenjang->all();
     $status = $status->all();
     $kecamatan = $kecamatan->all();
-    $kelurahan = $kelurahan->where('kecamatan_id' ,$sekolah->kecamatan_id);
+    $kelurahan = $kelurahan->where('kecamatan_id' ,$sekolah->kecamatan_id)->get();
     return view('sekolah.edit', compact('sekolah', 'jenjang', 'status', 'kecamatan', 'kelurahan'));
   }
 

@@ -12,7 +12,7 @@ use File;
 class AdminSekolahController extends Controller
 {
   public function data(UserRepository $user){
-    $user = $user->where('tipe', 2);
+    $user = $user->where('tipe', 2)->get();
     return view('adminSekolah.data', compact('user'));
   }
 

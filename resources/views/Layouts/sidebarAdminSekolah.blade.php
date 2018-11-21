@@ -13,8 +13,8 @@
   </a>
   <ul class="sidebar-nav sidebar-subnav collapse" id="menuDataSekolah">
     <li class="sidebar-subnav-header">Data Sekolah</li>
-    <li class=""><a href="/pegawai-sekolah">Pegawai</a></li>
-    <li class=""><a href="/sekolah-saya">Sekolah</a></li>
+    <li class=""><a href="{!!route('pegawaiSekolahData')!!}">Pegawai</a></li>
+    <li class=""><a href="{!!route('sekolahSayaInfo')!!}">Sekolah</a></li>
   </ul>
 </li>
 <li class="">
@@ -25,8 +25,8 @@
   </a>
   <ul class="sidebar-nav sidebar-subnav collapse" id="menuDataPresensi">
     <li class="sidebar-subnav-header">Data Presensi</li>
-    <li class=""><a href="/input-presensi-sekolah">Input Presensi</a></li>
-    <li class=""><a href="/data-presensi-sekolah">Data Presensi</a></li>
+    <li class=""><a href="{!!route('presensiSekolahInputForm')!!}">Input Presensi</a></li>
+    <li class=""><a href="{!!route('presensiSekolahData')!!}">Data Presensi</a></li>
   </ul>
 </li>
 <li class="">
@@ -37,7 +37,7 @@
   </a>
   <ul class="sidebar-nav sidebar-subnav collapse" id="menuPengaturan">
     <li class="sidebar-subnav-header">Pengaturan</li>
-    <li class=""><a href="/pengaturan-jam-kerja">Jam Kerja</a></li>
+    <li class=""><a href="{!!route('jamKerjaData')!!}">Jam Kerja</a></li>
   </ul>
 </li>
 <li class="">
@@ -48,6 +48,6 @@
   </a>
   <ul class="sidebar-nav sidebar-subnav collapse" id="menuLaporan">
     <li class="sidebar-subnav-header">Laporan</li>
-    <li class=""><a href="/laporan-rekap-presensi">Rekap Presensi</a></li>
+    <li class=""><a href="{!!route('laporanRekap')!!}">Rekap Presensi</a></li>
   </ul>
 </li>
