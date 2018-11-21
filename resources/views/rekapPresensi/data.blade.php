@@ -16,7 +16,7 @@
                 <div class="mb-2">
                   <select class="form-control select2" name="periode" required>
                     @foreach ($periode as $dataPeriode)
-                      <option value="{{$dataPeriode}}">{{HDate::formatPeriode($dataPeriode)}}</option>
+                      <option value="{{$dataPeriode}}" @if ($dataPeriode==$selectedPeriode) selected @endif>{{HDate::formatPeriode($dataPeriode)}}</option>
                     @endforeach
                   </select>
                 </div>
