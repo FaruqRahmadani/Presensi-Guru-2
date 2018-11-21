@@ -3,13 +3,40 @@
   <head>
     <meta charset="utf-8">
     <title>Rekap Presensi {{Auth::User()->Sekolah->nama}} Periode {{HDate::formatPeriode($periode)}}</title>
+    <style>
+      .table-title {
+        text-align: center;
+      }
+      .center {
+        text-align: center;
+      }
+      .title-nama {
+        min-width: 300px;
+      }
+      td {
+        padding: 5px;
+      }
+      .table-striped tr:nth-child(even) {
+          background-color: #f2f2f2;
+      }
+    </style>
   </head>
   <body>
-    Sekolah : {{Auth::User()->Sekolah->nama}} <br>
-    Periode : {{HDate::formatPeriode($periode)}}
-    <table class="table w-100">
+    <table width="100%">
+      <tr>
+        <td width="15%">Sekolah</td>
+        <td>: <strong>{{Auth::User()->Sekolah->nama}}</strong></td>
+      </tr>
+      <tr>
+        <td width="15%">Periode</td>
+        <td>: {{HDate::formatPeriode($periode)}}</td>
+      </tr>
+    </table>
+    <hr>
+    <br>
+    <table class="table-striped" width="100%" border="0.5" cellspacing="0">
       <thead>
-        <tr>
+        <tr class="table-title">
           <th>#</th>
           <th>NIP</th>
           <th>Nama Pegawai</th>
@@ -28,13 +55,13 @@
       <tbody>
         @foreach ($pegawai as $dataPegawai)
           <tr>
-            <td>{{$loop->iteration}}</td>
-            <td class="text-center">{{$dataPegawai->nip}}</td>
-            <td>{{$dataPegawai->nama}}</td>
+            <td class="center">{{$loop->iteration}}</td>
+            <td class="center">{{$dataPegawai->nip}}</td>
+            <td style="padding-left: 5px; width: 170px;">{{$dataPegawai->nama}}</td>
             @foreach ($kategoriAbsen as $dataKategoriAbsen)
-              <td class="text-center">{{$dataPegawai->Absensi->where('kategori_absen_id', $dataKategoriAbsen->id)->count()}}</td>
+              <td class="center">{{$dataPegawai->Absensi->where('kategori_absen_id', $dataKategoriAbsen->id)->count()}}</td>
             @endforeach
-            <td>{{$periode->daysInMonth - $dataPegawai->Absensi->count()}}</td>
+            <td class="center">{{$periode->daysInMonth - $dataPegawai->Absensi->count()}}</td>
           </tr>
         @endforeach
       </tbody>
