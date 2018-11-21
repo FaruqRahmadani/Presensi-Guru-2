@@ -70,13 +70,11 @@
         <th>NIP</th>
         <th>Nama Pegawai</th>
         @foreach ($kategoriAbsen as $dataKategoriAbsen)
-        <th>
-          <i class="fa fa-circle" style="color: {{$dataKategoriAbsen->kode_warna}}"></i>
+        <th style="border-bottom: 8px solid {{$dataKategoriAbsen->kode_warna}};">
           {{$dataKategoriAbsen->kode}}
         </th>
         @endforeach
-        <th>
-          <i class="fa fa-circle" style="color: #000000"></i>
+        <th style="border-bottom: 8px solid #000;">
           Tanpa Keterangan
         </th>
       </tr>
