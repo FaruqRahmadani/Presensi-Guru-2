@@ -24,11 +24,7 @@ Route::group(['middleware' => 'AuthMiddleware'], function(){
     return view('template.form');
   });
 
-  Route::get('/data-presensi/data', function () {
-    return view('presensi.data');
-  });
-
-  Route::group(['middleware' => 'SuperAdminMiddleware'], function(){
+  Route::Group(['middleware' => 'SuperAdminMiddleware'], function(){
     Route::group(['prefix' => 'admin', 'as' => 'admin'], function () {
       Route::get('', 'AdminController@data')->name('Data');
       Route::get('tambah', 'AdminController@tambahForm')->name('TambahForm');
@@ -92,7 +88,12 @@ Route::group(['middleware' => 'AuthMiddleware'], function(){
       Route::post('', 'ProfileController@editSubmit')->name('EditSubmit');
     });
   });
-  Route::group(['middleware' => 'AdminSekolahMiddleware'], function(){
+  Route::group(['prefix' => 'presensi', 'as' => 'presensi'], function () {
+    Route::get('', 'PresensiController@data')->name('Data');
+    Route::post('', 'PresensiController@data')->name('DataFiltered');
+  });
+
+  Route::Group(['middleware' => 'AdminSekolahMiddleware'], function(){
     Route::group(['prefix' => 'pegawai-sekolah', 'as' => 'pegawaiSekolah'], function () {
       Route::get('', 'PegawaiSekolahController@data')->name('Data');
       Route::get('tambah', 'PegawaiSekolahController@tambahForm')->name('TambahForm');
