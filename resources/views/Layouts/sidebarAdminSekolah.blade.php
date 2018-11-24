@@ -48,6 +48,6 @@
   </a>
   <ul class="sidebar-nav sidebar-subnav collapse" id="menuLaporan">
     <li class="sidebar-subnav-header">Laporan</li>
-    <li class=""><a href="/laporan-rekap-presensi">Rekap Presensi</a></li>
+    <li class=""><a href="{!!route('laporanRekap')!!}">Rekap Presensi</a></li>
   </ul>
 </li>

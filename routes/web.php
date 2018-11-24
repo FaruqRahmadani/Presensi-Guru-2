@@ -11,7 +11,7 @@
 |
 */
 
-Route::Group(['middleware' => 'AuthMiddleware'], function(){
+Route::group(['middleware' => 'AuthMiddleware'], function(){
   Route::get('', 'HomeController@dashboard')->name('dashboard');
   // Template
   Route::get('/template/chart', function () {
@@ -121,6 +121,12 @@ Route::Group(['middleware' => 'AuthMiddleware'], function(){
       Route::post('input', 'PresensiSekolahController@inputSubmit')->name('InputSubmit');
       Route::post('confirm', 'PresensiSekolahController@confirmSubmit')->name('ConfirmSubmit');
       Route::get('info', 'PresensiSekolahController@info');
+    });
+    Route::group(['prefix' => 'laporan', 'as' => 'laporan'], function () {
+      Route::group(['prefix' => 'rekap', 'as' => 'Rekap'], function () {
+        Route::match(['get', 'post'], '', 'RekapPresensiController@data');
+        Route::post('cetak', 'RekapPresensiController@cetak')->name('Cetak');
+      });
     });
   });
 });
