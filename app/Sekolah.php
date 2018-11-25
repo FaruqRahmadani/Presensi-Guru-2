@@ -34,6 +34,10 @@ class Sekolah extends Model
     return $this->hasMany('App\Pegawai');
   }
 
+  public function Absensi(){
+    return $this->hasMany('App\Absensi');
+  }
+
   public function getNamaKepsekAttribute(){
     return $this->KepalaSekolah->nama??"Belum Diisi";
   }

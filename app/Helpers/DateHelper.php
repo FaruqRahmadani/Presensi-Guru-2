@@ -48,4 +48,11 @@ class DateHelper
     if (!$index) return $hari;
     return $hari[$index];
   }
+
+  public static function isLessOrEqualDate($date1, $date2){
+    $date1 = Carbon::parse($date1)->startOfDay();
+    $date2 = Carbon::parse($date2)->startOfDay();
+    if ($date1 <= $date2) return true;
+    return false;
+  }
 }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Repositories\SekolahRepository;
 use Auth;
 
 class HomeController extends Controller
@@ -17,6 +18,8 @@ class HomeController extends Controller
   }
 
   private function dashboardAdminSekolah(){
-    return view('dashboard.adminSekolah');
+    $sekolah = new SekolahRepository;
+    $sekolah = $sekolah->where('id', Auth::User()->sekolah_id)->first();
+    return view('dashboard.adminSekolah', compact('sekolah'));
   }
 }
