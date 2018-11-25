@@ -32,15 +32,15 @@
   </ul>
 </li>
 <li class="">
-  <a href="/data-presensi/data" title="Data Presensi">
-    <div class="float-right mr-2"><em class="]"></em>&nbsp;</div>
+  <a href="{!!route('presensiData')!!}" title="Data Presensi">
+    <div class="float-right mr-2"><em class=""></em>&nbsp;</div>
     <em class="icon-book-open"></em>
     <span>Data Presensi</span>
   </a>
 </li>
 <li class="">
   <a href="{!!route('adminData')!!}" title="Data Admin">
-    <div class="float-right mr-2"><em class="]"></em>&nbsp;</div>
+    <div class="float-right mr-2"><em class=""></em>&nbsp;</div>
     <em class="icon-people"></em>
     <span>Data Admin</span>
   </a>

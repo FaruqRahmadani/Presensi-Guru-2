@@ -29217,6 +29217,7 @@ __webpack_require__(56);
 __webpack_require__(57);
 __webpack_require__(58);
 __webpack_require__(59);
+__webpack_require__(60);
 __webpack_require__(61);
 
 /***/ }),
@@ -88222,7 +88223,21 @@ module.exports = function(Chart) {
 })(window, document, window.jQuery);
 
 /***/ }),
-/* 60 */,
+/* 60 */
+/***/ (function(module, exports) {
+
+$(".btn-presensi").click(function () {
+  data = jQuery.parseJSON($(this).attr('data'));
+  dataTanggal = $(this).attr('data-tanggal');
+  tablePresensiModal = $("#tablePresensiModal");
+  tablePresensiModal.find('tbody>tr').remove().end();
+  $("#infoPresensiModalLabel").html("Data Absensi Pada : " + dataTanggal);
+  $.each(data, function (index, value) {
+    tablePresensiModal.append("<tr>" + "<td>" + (1 + index) + "</td>" + "<td>" + value.nama + "</td>" + "<td>" + (value.last_absensi.jam_masuk || "-") + "</td>" + "<td>" + (value.last_absensi.jam_masuk || "-") + "</td>" + "<td>" + "<i class='fa fa-circle' style='color:" + (value.last_absensi.kategori_absen.kode_warna || "#000000") + "'></i> " + (value.last_absensi.kategori_absen.kode || "Tanpa Keterangan") + "</td>" + "<td>" + (value.last_absensi.keterangan || "-") + "</td>" + "</tr>");
+  });
+});
+
+/***/ }),
 /* 61 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -88424,9 +88439,10 @@ $("#chart-pegawai-sekolah").ready(function () {
 /***/ (function(module, exports) {
 
 // chart2
-// idnya : chart-kategori-absensi
-$("#chart-kategori-absensi").ready(function () {
-  if (!$("#chart-kategori-absensi").length) return;
+// idnya : statistikPresensi
+$("#statistikPresensi").ready(function () {
+  if (!$("#statistikPresensi").length) return;
+  var id = $("#statistikPresensi").attr('data');
 
   function acakWarna(index) {
     var kodeWarna = ['#23B7E7', '#FFB88C', '#007bff', '#6610f2', '#7266ba', '#f532e5', '#dc3545', '#fd7e14', '#fad732', '#37bc9b', '#20c997', '#17a2b8', '#6c757d', '#343a40', '#5d9cec', '#27c24c', '#23b7e5', '#ff902b', '#FEB58A', '#f05050', '#131e26', '#8bb8f1', '#2f80e7', '#43d967', '#1e983b', '#51c6ea', '#1797be', '#ffab5e', '#f77600', '#f47f7f', '#ec2121', '#58ceb1', '#2b957a', '#f763eb', '#e90bd6', '#9289ca', '#564aa3', '#243948', '#020304', '#fbe164', '#f3ca06', '#5d9cec', '#27c24c', '#23b7e5', '#ff902b', '#f05050', '#3a3f51'];
@@ -88434,7 +88450,7 @@ $("#chart-kategori-absensi").ready(function () {
     return kodeWarna[index];
   }
 
-  var pieData = {
+  var doughnutData = {
     labels: [],
     datasets: [{
       data: [],
@@ -88442,29 +88458,29 @@ $("#chart-kategori-absensi").ready(function () {
       pointStyle: 'dash'
     }]
   };
-  var pieOptions = {
+  var doughnutOptions = {
     legend: {
       display: true,
       position: 'bottom'
     }
   };
-  var piectx = document.getElementById('chart-kategori-absensi').getContext('2d');
-  var pieChart = new Chart(piectx, {
-    data: pieData,
+  var doughnutctx = document.getElementById('statistikPresensi').getContext('2d');
+  var doughnutChart = new Chart(doughnutctx, {
+    data: doughnutData,
     type: 'doughnut',
-    options: pieOptions
+    options: doughnutOptions
   });
 
   axios({
     method: 'get',
-    url: '/api/data/jenjang'
+    url: 'data/statistik-presensi/' + id
   }).then(function (response) {
     $.each(response.data, function (index, value) {
-      pieData.labels.push(value.nama);
-      pieData.datasets[0].data.push(value.CountSekolah);
-      pieData.datasets[0].backgroundColor.push(acakWarna(index));
+      doughnutData.labels.push(value.nama);
+      doughnutData.datasets[0].data.push(value.CountSekolah);
+      doughnutData.datasets[0].backgroundColor.push(acakWarna(index));
     });
-    pieChart.update();
+    doughnutChart.update();
   });
 });
 

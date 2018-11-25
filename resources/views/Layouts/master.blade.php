@@ -136,6 +136,7 @@
       <span>&copy; 2018 - Dinas Pendidikan <strong>Kab. Banjar</strong></span>
     </footer>
   </div>
+  @yield('content-additional')
   <script src="{{ asset('js/app.js') }}"></script>
   @if (session('alert'))
     <script>notif('{{session('tipe')}}', '{{session('judul')}}', '{{session('pesan')}}')</script>
