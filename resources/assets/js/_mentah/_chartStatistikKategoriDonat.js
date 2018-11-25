@@ -1,7 +1,8 @@
 // chart2
-// idnya : chart-kategori-absensi
-$("#chart-kategori-absensi").ready(function () {
-  if (!$("#chart-kategori-absensi").length) return;
+// idnya : statistikPresensi
+$("#statistikPresensi").ready(function () {
+  if (!$("#statistikPresensi").length) return;
+  id = $("#statistikPresensi").attr('data')
 
   function acakWarna(index) {
     var kodeWarna = [
@@ -11,7 +12,7 @@ $("#chart-kategori-absensi").ready(function () {
     return kodeWarna[index]
   }
 
-  var pieData = {
+  var doughnutData = {
     labels: [],
     datasets: [{
       data: [],
@@ -19,28 +20,30 @@ $("#chart-kategori-absensi").ready(function () {
       pointStyle: 'dash'
     }]
   }
-  var pieOptions = {
+  var doughnutOptions = {
     legend: {
       display: true,
       position: 'bottom'
     }
   }
-  var piectx = document.getElementById('chart-kategori-absensi').getContext('2d')
-  var pieChart = new Chart(piectx, {
-    data: pieData,
+  var doughnutctx = document.getElementById('statistikPresensi').getContext('2d')
+  var doughnutChart = new Chart(doughnutctx, {
+    data: doughnutData,
     type: 'doughnut',
-    options: pieOptions
+    options: doughnutOptions
   })
 
   axios({
     method: 'get',
-    url: '/api/data/jenjang',
+    url: 'api/data/statistik-presensi/'+id,
   }).then((response) => {
+    iteration = 0
     $.each(response.data, function (index, value) {
-      pieData.labels.push(value.nama)
-      pieData.datasets[0].data.push(value.CountSekolah)
-      pieData.datasets[0].backgroundColor.push(acakWarna(index))
+      doughnutData.labels.push(index)
+      doughnutData.datasets[0].data.push(value)
+      doughnutData.datasets[0].backgroundColor.push(acakWarna(iteration))
+      iteration+=1
     })
-    pieChart.update()
+    doughnutChart.update()
   })
 })

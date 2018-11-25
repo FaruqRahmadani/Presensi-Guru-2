@@ -63,11 +63,23 @@
 			</div>
 			<div class="card card-default">
 				<div class="card-header">
-					<div class="card-title">Statistik Kategori Abesnsi</div>
+					<div class="card-title">
+						<div class="d-flex align-items-center">
+							<div class="px-3">
+								<div class="d-flex align-items-right flex-wrap">
+									<i class="fa fa-chart-pie fa-4x text-info"></i>
+								</div>
+							</div>
+							<div class="px-3">
+								<h3 class="m-0">Statistik Presensi</h3>
+							</div>
+						</div>
+					</div>
 				</div>
+				<hr>
 				<div class="card-body">
 					<div>
-						<canvas id="chart-kategori-absensi"></canvas>
+						<canvas id="statistikPresensi" data="{{Auth::User()->sekolah_id}}"></canvas>
 					</div>
 				</div>
 			</div>
