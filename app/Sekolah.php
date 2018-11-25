@@ -36,6 +36,10 @@ class Sekolah extends Model
     return $this->hasMany('App\Pegawai');
   }
 
+  public function Absensi(){
+    return $this->hasMany('App\Absensi');
+  }
+
   public function getUUIDAttribute(){
     return encrypt($this->id);
   }

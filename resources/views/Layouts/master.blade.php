@@ -15,7 +15,7 @@
     <header class="topnavbar-wrapper">
       <nav class="navbar topnavbar">
         <div class="navbar-header">
-          <a class="navbar-brand" href="#/">
+          <a class="navbar-brand" href="{!!route('dashboard')!!}">
             <div class="brand-logo">
               <img class="img-fluid" src="{{ asset('img/logo/lg1.png') }}" alt="App Logo">
             </div>
