@@ -65,13 +65,8 @@
 			<div class="list-group mb-3">
 				<div class="list-group-item">
 					<div class="d-flex align-items-center py-3">
-						<div class="w-50 px-3">
-							<h3 class="m-0">Statistik Presensi</h3>
-						</div>
-						<div class="w-50 px-3 text-center">
-							<div class="d-flex align-items-center flex-wrap justify-content-center">
-								<i class="fa fa-chart-pie fa-4x text-primary"></i>
-							</div>
+						<div class="w-100 px-3">
+							<h3 class="m-0" align="center"><i class="fa fa-chart-pie text-primary mr-4"></i> Statistik Presensi</h3>
 						</div>
 					</div>
 					<hr class="w-100 mr-0">
