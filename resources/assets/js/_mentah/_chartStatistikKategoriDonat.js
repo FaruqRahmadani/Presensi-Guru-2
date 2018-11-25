@@ -22,7 +22,7 @@ $("#chart-kategori-absensi").ready(function () {
   var pieOptions = {
     legend: {
       display: true,
-      position: 'bottom',
+      position: 'bottom'
     }
   }
   var piectx = document.getElementById('chart-kategori-absensi').getContext('2d')
