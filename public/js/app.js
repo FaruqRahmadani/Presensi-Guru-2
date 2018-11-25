@@ -88228,7 +88228,7 @@ module.exports = function(Chart) {
 __webpack_require__(61);
 __webpack_require__(62);
 __webpack_require__(63);
-__webpack_require__(64);
+// require('./_chartStatistikAbsensiStack')
 __webpack_require__(65);
 
 /***/ }),
@@ -88386,67 +88386,7 @@ $("#chart-pegawai-sekolah").ready(function () {
 });
 
 /***/ }),
-/* 64 */
-/***/ (function(module, exports) {
-
-$("#chart-absensi-pegawai").ready(function () {
-  if (!$("#chart-absensi-pegawai").length) return;
-  function acakWarna(index) {
-    var kodeWarna = ['#23B7E7', '#FFB88C', '#007bff', '#6610f2', '#7266ba', '#f532e5', '#dc3545', '#fd7e14', '#fad732', '#37bc9b', '#20c997', '#17a2b8', '#6c757d', '#343a40', '#5d9cec', '#27c24c', '#23b7e5', '#ff902b', '#FEB58A', '#f05050', '#131e26', '#8bb8f1', '#2f80e7', '#43d967', '#1e983b', '#51c6ea', '#1797be', '#ffab5e', '#f77600', '#f47f7f', '#ec2121', '#58ceb1', '#2b957a', '#f763eb', '#e90bd6', '#9289ca', '#564aa3', '#243948', '#020304', '#fbe164', '#f3ca06', '#5d9cec', '#27c24c', '#23b7e5', '#ff902b', '#f05050', '#3a3f51'];
-    if (index > kodeWarna.length) index = index % kodeWarna.length;
-    return kodeWarna[index];
-  }
-
-  var barData = {
-    labels: [],
-    datasets: [{
-      backgroundColor: [],
-      borderColor: '#23b7e5',
-      data: []
-    }]
-  };
-
-  var barOptions = {
-    legend: {
-      display: false
-    },
-    scales: {
-      xAxes: [{
-        ticks: {
-          display: false
-        }
-      }]
-    },
-    layout: {
-      padding: {
-        left: 0,
-        right: 0,
-        top: 0,
-        bottom: 20
-      }
-    }
-  };
-  var barctx = document.getElementById('chart-absensi-pegawai').getContext('2d');
-  var barChart = new Chart(barctx, {
-    data: barData,
-    type: 'bar',
-    options: barOptions
-  });
-
-  axios({
-    method: 'get',
-    url: '/api/data/sekolah'
-  }).then(function (response) {
-    $.each(response.data, function (index, value) {
-      barData.labels.push(value.nama);
-      barData.datasets[0].data.push(value.CountPegawai);
-      barData.datasets[0].backgroundColor.push(acakWarna(index));
-    });
-    barChart.update();
-  });
-});
-
-/***/ }),
+/* 64 */,
 /* 65 */
 /***/ (function(module, exports) {
 
@@ -88454,6 +88394,7 @@ $("#chart-absensi-pegawai").ready(function () {
 // idnya : chart-kategori-absensi
 $("#chart-kategori-absensi").ready(function () {
   if (!$("#chart-kategori-absensi").length) return;
+
   function acakWarna(index) {
     var kodeWarna = ['#23B7E7', '#FFB88C', '#007bff', '#6610f2', '#7266ba', '#f532e5', '#dc3545', '#fd7e14', '#fad732', '#37bc9b', '#20c997', '#17a2b8', '#6c757d', '#343a40', '#5d9cec', '#27c24c', '#23b7e5', '#ff902b', '#FEB58A', '#f05050', '#131e26', '#8bb8f1', '#2f80e7', '#43d967', '#1e983b', '#51c6ea', '#1797be', '#ffab5e', '#f77600', '#f47f7f', '#ec2121', '#58ceb1', '#2b957a', '#f763eb', '#e90bd6', '#9289ca', '#564aa3', '#243948', '#020304', '#fbe164', '#f3ca06', '#5d9cec', '#27c24c', '#23b7e5', '#ff902b', '#f05050', '#3a3f51'];
     if (index > kodeWarna.length) index = index % kodeWarna.length;
@@ -88471,7 +88412,7 @@ $("#chart-kategori-absensi").ready(function () {
   var pieOptions = {
     legend: {
       display: true,
-      position: 'left'
+      position: 'bottom'
     }
   };
   var piectx = document.getElementById('chart-kategori-absensi').getContext('2d');
