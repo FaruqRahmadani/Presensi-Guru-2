@@ -21,3 +21,4 @@ Route::get('data/kelurahan/{kecamatanId}', 'ApiController@dataKelurahan');
 Route::get('data/jenjang', 'ApiController@dataJenjang');
 Route::get('data/sekolah', 'ApiController@dataSekolah');
 Route::get('data/statistik-presensi/{idSekolah}', 'ApiController@dataStatistikPresensi');
+Route::get('data/statistik-presensi/pegawai/{id}', 'ApiController@dataStatistikPresensiPegawai');
