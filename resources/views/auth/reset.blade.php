@@ -21,6 +21,7 @@
                     <button class="btn btn-primary float-right" type="submit">Reset</button>
                   </div>
                 </div>
+                <a href="/login"><i class="fa fa-chevron-circle-left"></i> Kembali ke halaman login</a>
               </form>
             </div>
           </div>
