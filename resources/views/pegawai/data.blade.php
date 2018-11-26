@@ -48,12 +48,9 @@
               <td>{{$dataPegawai->Sekolah->nama}}</td>
               <td align="center">{{$dataPegawai->sidikjari_id}}</td>
               <td>
-                <button class="btn btn-labeled btn-success btn-xs" data-toggle="modal" data-target="#infoStatistikModal"><i
-                    class="fa fa-chart-pie"></i> Info</button>
-                <a href="{!!route('pegawaiEditForm', ['id' => $dataPegawai->UUID])!!}" class="btn btn-labeled btn-primary btn-xs"><i
-                    class="fa fa-edit"></i> Edit</a>
-                <button data-url="{!!route('pegawaiHapus')!!}" data="{{$dataPegawai->UUID}}" class="btn btn-labeled btn-danger btn-xs btn-delete"><i
-                    class="fa fa-trash"></i> Hapus</button>
+                <button class="btn btn-labeled btn-success btn-xs btn-statistik-pegawai" data="{{$dataPegawai->id}}" data-toggle="modal" data-target="#infoStatistikModal"><i class="fa fa-chart-pie"></i> Info</button>
+                <a href="{!!route('pegawaiEditForm', ['id' => $dataPegawai->UUID])!!}" class="btn btn-labeled btn-primary btn-xs"><i class="fa fa-edit"></i> Edit</a>
+                <button data-url="{!!route('pegawaiHapus')!!}" data="{{$dataPegawai->UUID}}" class="btn btn-labeled btn-danger btn-xs btn-delete"><i class="fa fa-trash"></i> Hapus</button>
               </td>
             </tr>
             @endforeach
@@ -73,7 +70,7 @@
         <h4 class="modal-title "><i class="fa fa-chart-pie mr-2"></i>Statistik Pegawai</h4>
       </div>
       <div class="modal-body">
-        <div class="text-center">
+        <div class="text-center" id="dataPegawai">
           <div class="inline">
             <img class="rounded-circle thumb32 mr-3" src="{{ asset('img/pegawai/default.png') }}" alt="">
           </div>
@@ -83,7 +80,7 @@
         </div>
         <br>
         <div>
-          <canvas id="chartStatistikPegawaiSU"></canvas>
+          <canvas id="statistikPresensiPegawai"></canvas>
         </div>
       </div>
       <div class="modal-footer">

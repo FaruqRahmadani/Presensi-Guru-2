@@ -88507,6 +88507,7 @@ $("#datatable").on("click", ".btn-statistik-pegawai", function () {
     }
   };
   doughnutctx = document.getElementById('statistikPresensiPegawai').getContext('2d');
+  if (typeof doughnutChart !== "undefined") doughnutChart.destroy();
   doughnutChart = new Chart(doughnutctx, {
     data: doughnutData,
     type: 'doughnut',
@@ -88523,7 +88524,6 @@ $("#datatable").on("click", ".btn-statistik-pegawai", function () {
       doughnutData.datasets[0].data.push(value.jumlah);
       doughnutData.datasets[0].backgroundColor.push(value.kode_warna);
     });
-    doughnutChart.update();
   });
 });
 
