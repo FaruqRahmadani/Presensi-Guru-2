@@ -3,12 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Repositories\KategoriAbsenRepository;
 use App\Repositories\KelurahanRepository;
 use App\Repositories\JenjangRepository;
 use App\Repositories\SekolahRepository;
 use App\Repositories\AbsensiRepository;
 use App\Repositories\PegawaiRepository;
-use App\Repositories\KategoriAbsenRepository;
 use Auth;
 
 class ApiController extends Controller
