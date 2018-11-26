@@ -83,7 +83,7 @@
         </div>
         <br>
         <div>
-          <canvas id="statistikPresensiPegawai" data="{{Auth::User()->sekolah_id}}"></canvas>
+          <canvas id="chartStatistikPegawaiSU"></canvas>
         </div>
       </div>
       <div class="modal-footer">
