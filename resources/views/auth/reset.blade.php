@@ -28,7 +28,7 @@
             <div class="col-12">
               <div class="card-body bg-gray-light">
                 <p class="mb-0">
-                  Jika anda lupa pasword pada akun anda, kami akan mengirimkan e-mail untuk mengganti password anda
+                  Jika anda lupa password pada akun anda, kami akan mengirimkan e-mail untuk mengganti password anda
                   <br>
                   <br>
                   <strong>Tidak Bisa Log-in ?</strong>
