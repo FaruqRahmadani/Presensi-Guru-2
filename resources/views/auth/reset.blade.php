@@ -9,8 +9,8 @@
         <form method="POST" action="" class="login-form">
           @csrf
           <div class="form-group">
-            <label for="username">Username/Password</label>
-            <input type="text" id="username" name="username" placeholder="username/password" class="form-control" value="{{ old('username') }}" required autofocus>
+            <label for="username">Username/E-mail</label>
+            <input type="text" id="username" name="username" placeholder="username/email" class="form-control" value="{{ old('username') }}" required autofocus>
           </div>
           <div class="form-check">
             <div class="form-group">
