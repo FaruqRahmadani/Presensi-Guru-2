@@ -139,6 +139,7 @@ Route::group(['namespace' => 'Auth'], function () {
   Route::group(['prefix' => 'reset-password', 'as' => 'resetPassword'], function () {
     Route::get('', 'ResetPasswordController@form')->name('Form');
     Route::post('', 'ResetPasswordController@submit')->name('Submit');
+    Route::get('{token}', 'ResetPasswordController@setPassword')->name('SetPassword');
   });
   Route::get('logout', 'LoginController@logout')->name('logout');
 });
