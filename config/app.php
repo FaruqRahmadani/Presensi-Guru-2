@@ -13,7 +13,7 @@ return [
   |
   */
 
-  'name' => env('APP_NAME', 'Laravel'),
+  'name' => 'Aplikasi Presensi Dinas Pendidikan Kab. Banjar',
 
   /*
   |--------------------------------------------------------------------------
