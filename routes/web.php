@@ -132,8 +132,13 @@ Route::group(['middleware' => 'AuthMiddleware'], function(){
 });
 
 Route::group(['namespace' => 'Auth'], function () {
-  Route::get('login', 'LoginController@showLoginForm')->name('login');
-  Route::post('login', 'LoginController@login');
+  Route::group(['prefix' => 'login'], function () {
+    Route::get('', 'LoginController@showLoginForm')->name('login');
+    Route::post('', 'LoginController@login');
+  });
+  Route::group(['prefix' => 'reset-password', 'as' => 'resetPassword'], function () {
+    Route::get('', 'ResetPasswordController@form')->name('Form');
+    Route::post('', 'ResetPasswordController@submit')->name('Submit');
+  });
   Route::get('logout', 'LoginController@logout')->name('logout');
-  Route::get('reset-password', 'ResetPasswordController@form')->name('resetPassword');
 });
