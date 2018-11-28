@@ -21,11 +21,11 @@ class ResetPasswordController extends Controller
     $expDate = encrypt(now()->addHours(6));
     $userId = encrypt($user->id);
     $token = substr(str_shuffle("$userId$expDate"), 0, 255);
-    // $resetPassword = $user->PasswordReset()->create([
-    //   'token' => $token,
-    //   'email' => $user->email,
-    //   'user_id' => $user->id,
-    // ]);
+    $resetPassword = $user->PasswordReset()->create([
+      'token' => $token,
+      'email' => $user->email,
+      'user_id' => $user->id,
+    ]);
     Mail::to($user->email)->send(new ResetPassword($user));
   }
 
