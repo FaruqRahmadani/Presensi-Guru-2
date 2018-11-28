@@ -22,7 +22,7 @@
             </div>
           </div>
         </form>
-        <div class="link-text"><a href="/reset-password"><i class="fa fa-question-circle"></i>&nbsp; Lupa password</a></div>
+        <div class="link-text"><a href="{!!route('resetPassword')!!}"><i class="fa fa-question-circle"></i>&nbsp; Lupa password</a></div>
       </div>
       <div class="col-md-8 banner-sec">
         <div class="banner-text">

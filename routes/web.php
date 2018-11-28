@@ -131,10 +131,9 @@ Route::group(['middleware' => 'AuthMiddleware'], function(){
   });
 });
 
-Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
-Route::post('login', 'Auth\LoginController@login');
-Route::get('logout', 'Auth\LoginController@logout')->name('logout');
-
-Route::get('/reset-password', function () {
-    return view('auth.reset');
-  });
+Route::group(['namespace' => 'Auth'], function () {
+  Route::get('login', 'LoginController@showLoginForm')->name('login');
+  Route::post('login', 'LoginController@login');
+  Route::get('logout', 'LoginController@logout')->name('logout');
+  Route::get('reset-password', 'ResetPasswordController@form')->name('resetPassword');
+});
