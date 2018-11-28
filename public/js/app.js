@@ -88245,6 +88245,8 @@ __webpack_require__(62);
 __webpack_require__(63);
 __webpack_require__(64);
 __webpack_require__(65);
+__webpack_require__(93);
+// require('./_chartStatistikPegawaiDonatSU')
 
 /***/ }),
 /* 62 */
@@ -88457,6 +88459,73 @@ $("#statistikPresensi").ready(function () {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 67 */,
+/* 68 */,
+/* 69 */,
+/* 70 */,
+/* 71 */,
+/* 72 */,
+/* 73 */,
+/* 74 */,
+/* 75 */,
+/* 76 */,
+/* 77 */,
+/* 78 */,
+/* 79 */,
+/* 80 */,
+/* 81 */,
+/* 82 */,
+/* 83 */,
+/* 84 */,
+/* 85 */,
+/* 86 */,
+/* 87 */,
+/* 88 */,
+/* 89 */,
+/* 90 */,
+/* 91 */,
+/* 92 */,
+/* 93 */
+/***/ (function(module, exports) {
+
+$("#datatable").on("click", ".btn-statistik-pegawai", function () {
+  id = $(this).attr("data");
+  doughnutData = {
+    labels: [],
+    datasets: [{
+      data: [],
+      backgroundColor: [],
+      pointStyle: 'dash'
+    }]
+  };
+  doughnutOptions = {
+    legend: {
+      display: true,
+      position: 'right'
+    }
+  };
+  doughnutctx = document.getElementById('statistikPresensiPegawai').getContext('2d');
+  if (typeof doughnutChart !== "undefined") doughnutChart.destroy();
+  doughnutChart = new Chart(doughnutctx, {
+    data: doughnutData,
+    type: 'doughnut',
+    options: doughnutOptions
+  });
+  axios({
+    method: 'get',
+    url: 'api/data/statistik-presensi/pegawai/' + id
+  }).then(function (response) {
+    $("#dataPegawai").find("img").attr("src", response.data.pegawai.foto);
+    $("#dataPegawai").find("strong").html(response.data.pegawai.nama);
+    $.each(response.data.statistik, function (index, value) {
+      doughnutData.labels.push(index);
+      doughnutData.datasets[0].data.push(value.jumlah);
+      doughnutData.datasets[0].backgroundColor.push(value.kode_warna);
+    });
+  });
+});
 
 /***/ })
 /******/ ]);
