@@ -58,6 +58,10 @@ class User extends Authenticatable
     return $this->hasMany('App\PasswordReset');
   }
 
+  public function getLastPasswordResetAttribute(){
+    return $this->PasswordReset->last();
+  }
+
   public function getIsSuperAdminAttribute(){
     if ($this->tipe == 1) return true;
     return false;
