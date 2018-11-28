@@ -16,7 +16,7 @@ class ResetPasswordController extends Controller
 
   public function submit(Request $request, UserRepository $user){
     $user = $user->where('username', $request->input)->orWhere('email', $request->input)->first();
-    if (!$user) dd('stop, you must validate !!!');
+    if (!$user) return redirect()->back()->with(['alert' => true, 'tipe' => 'error', 'judul' => 'Error', 'pesan' => 'Username / E-Mail Tidak Ditemukan']);
     Mail::to($user->email)->send(new ResetPassword($user));
   }
 }
