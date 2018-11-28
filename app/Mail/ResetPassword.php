@@ -6,6 +6,7 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
+use App\User;
 class ResetPassword extends Mailable
 {
   use Queueable, SerializesModels;
@@ -27,7 +28,7 @@ class ResetPassword extends Mailable
   */
   public function build()
   {
-    $user = $this->user;
+    $user = User::findOrFail($this->user->id);
     return $this->view('mail.resetPassword', compact('user'));
   }
 }
