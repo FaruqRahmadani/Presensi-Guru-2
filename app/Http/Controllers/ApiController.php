@@ -3,9 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Repositories\KategoriAbsenRepository;
 use App\Repositories\KelurahanRepository;
 use App\Repositories\JenjangRepository;
 use App\Repositories\SekolahRepository;
+use App\Repositories\AbsensiRepository;
+use App\Repositories\PegawaiRepository;
 use Auth;
 
 class ApiController extends Controller
@@ -32,5 +35,17 @@ class ApiController extends Controller
     $tanpaKeterangan = ($dataSekolah->Absensi->groupBy("tanggal")->count() * $dataSekolah->Pegawai->count())- $statistik->sum();
     $statistik->put('Tanpa Keterangan', $tanpaKeterangan);
     return $statistik;
+  }
+
+  public function dataStatistikPresensiPegawai($id, AbsensiRepository $absensi, PegawaiRepository $pegawai, KategoriAbsenRepository $kategoriAbsen){
+    $dataPegawai = $pegawai->with(['Absensi.KategoriAbsen:id,kode,kode_warna'])->findOrFail($id);
+    $statistik = $kategoriAbsen->all()->mapWithKeys(function ($item) use ($dataPegawai){
+      return [$item['kode'] => ['jumlah' => $dataPegawai->Absensi->where('kategori_absen_id', $item->id)->count(), 'kode_warna' => $item['kode_warna']]];
+    });
+    $tanpaKeterangan = $absensi->where('sekolah_id', $dataPegawai->sekolah_id)->get()->groupBy('tanggal')->count() - $statistik->sum('jumlah');
+    $statistik->put('Tanpa Keterangan', ['jumlah' => $tanpaKeterangan, 'kode_warna' => '#000000']);
+    $data['pegawai'] = $dataPegawai;
+    $data['statistik'] = $statistik;
+    return $data;
   }
 }
