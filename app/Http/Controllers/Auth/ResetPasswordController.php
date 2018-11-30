@@ -18,7 +18,7 @@ class ResetPasswordController extends Controller
   public function submit(Request $request, UserRepository $user){
     $user = $user->where('username', $request->input)->orWhere('email', $request->input)->first();
     if (!$user) return redirect()->back()->with(['alert' => true, 'tipe' => 'error', 'judul' => 'Error', 'pesan' => 'Username / E-Mail Tidak Ditemukan']);
-    if ($user->PasswordReset->count() && ($user->LastPasswordReset->created_at->addMinutes(10) < now())) return redirect()->back()->with(['alert' => true, 'tipe' => 'warning', 'judul' => 'Warning', 'pesan' => 'Anda Baru Saja Meminta Alamat Ganti Password, Tunggu Hingga 10 menit dan coba lagi']);
+    if ($user->PasswordReset->count() && ($user->LastPasswordReset->created_at->addMinutes(10) > now())) return redirect()->back()->with(['alert' => true, 'tipe' => 'warning', 'judul' => 'Warning', 'pesan' => 'Anda Baru Saja Meminta Alamat Ganti Password, Tunggu Hingga 10 menit dan coba lagi']);
     $userNama = encrypt($user->nama);
     $userId = encrypt($user->id);
     $token = substr(str_shuffle("$userId$userNama"), 0, 255);
@@ -33,6 +33,7 @@ class ResetPasswordController extends Controller
   public function setPassword($token, PasswordResetRepository $passwordReset){
     $passwordReset = $passwordReset->where('token', $token)->first();
     if ((!$passwordReset->status) || ($passwordReset->created_at->addHours(6) < now())) return redirect()->route('login')->with(['alert' => true, 'tipe' => 'error', 'judul' => 'Error', 'pesan' => 'Alamat Link Ganti Password Expired']);
-    return "halaman input password";
+    $user = $passwordReset->User;
+    return view('auth.setPassword', compact('user'));
   }
 }
