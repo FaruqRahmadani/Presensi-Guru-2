@@ -131,10 +131,16 @@ Route::group(['middleware' => 'AuthMiddleware'], function(){
   });
 });
 
-Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
-Route::post('login', 'Auth\LoginController@login');
-Route::get('logout', 'Auth\LoginController@logout')->name('logout');
-
-Route::get('/reset-password', function () {
-    return view('auth.reset');
+Route::group(['namespace' => 'Auth'], function () {
+  Route::group(['prefix' => 'login'], function () {
+    Route::get('', 'LoginController@showLoginForm')->name('login');
+    Route::post('', 'LoginController@login');
   });
+  Route::group(['prefix' => 'reset-password', 'as' => 'resetPassword'], function () {
+    Route::get('', 'ResetPasswordController@form')->name('Form');
+    Route::post('', 'ResetPasswordController@submit')->name('Submit');
+    Route::get('{token}', 'ResetPasswordController@setPasswordForm')->name('SetForm');
+    Route::post('{token}', 'ResetPasswordController@setPasswordSubmit')->name('SetSubmit');
+  });
+  Route::get('logout', 'LoginController@logout')->name('logout');
+});

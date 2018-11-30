@@ -8,11 +8,25 @@
           <div class="portlet-handler ui-sortable-handle mb-4">
             <div class="row mb-5">
               <div class="col-12">
-                <form method="POST" action="{!!route('resetPasswordSubmit')!!}" class="login-form">
+                <form method="POST" action="{!!route('resetPasswordSetSubmit', ['token' => $token])!!}" class="login-form">
                   @csrf
                   <div class="form-group">
-                    <label for="username">Username/E-mail</label>
-                    <input type="text" name="input" placeholder="Username / E-mail" class="form-control" required autofocus>
+                    <label>Nama</label>
+                    <input type="text" class="form-control" value="{{$user->nama}}" disabled>
+                  </div>
+                  @if ($user->tipe == 2)
+                    <div class="form-group">
+                      <label>Sekolah</label>
+                      <input type="text" class="form-control" value="{{$user->Sekolah->nama}}" disabled>
+                    </div>
+                  @endif
+                  <div class="form-group">
+                    <label>Password Baru</label>
+                    <input type="password" name="password" placeholder="Password Baru" class="form-control" required autofocus pattern=".{5,}" title="Minimal 6 Karakter">
+                  </div>
+                  <div class="form-group">
+                    <label>Konfirmasi Password Baru</label>
+                    <input type="password" name="password_confirmation" placeholder="Konfirmasi Password Baru" class="form-control" required pattern=".{5,}" title="Minimal 6 Karakter">
                   </div>
                   <div class="form-check">
                     <div class="form-group">
@@ -23,22 +37,7 @@
                 </form>
               </div>
             </div>
-            <div class="row row-flush">
-              <div class="col-12">
-                <div class="card-body bg-gray-light">
-                  <p class="mb-0">
-                    Jika anda lupa password pada akun anda, kami akan mengirimkan e-mail untuk mengganti password anda
-                    <br>
-                    <br>
-                    <strong>Tidak Bisa Log-in ?</strong>
-                    <br>
-                    Jika anda mengalami kesulitan untuk log-in silahkan hubungi admin Dinas Pendidikan Kabupaten Banjar.
-                  </p>
-                </div>
-              </div>
-            </div>
           </div>
-
         </div>
         <div class="col-md-8 banner-sec">
           <div class="banner-text">
