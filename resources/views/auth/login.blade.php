@@ -17,16 +17,12 @@
             <input type="password" id="password" name="password" placeholder="password" class="form-control" required>
           </div>
           <div class="form-check">
-            <label for="remember" class="form-check-label">
-              <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-              Ingatkan Saya
-            </label>
             <div class="form-group">
               <button class="btn btn-primary float-right" type="submit">Login</button>
             </div>
           </div>
         </form>
-        <div class="link-text"><a href="#"><i class="fa fa-question-circle"></i>&nbsp; Lupa password</a></div>
+        <div class="link-text"><a href="{!!route('resetPasswordForm')!!}"><i class="fa fa-question-circle"></i>&nbsp; Lupa password</a></div>
       </div>
       <div class="col-md-8 banner-sec">
         <div class="banner-text">
