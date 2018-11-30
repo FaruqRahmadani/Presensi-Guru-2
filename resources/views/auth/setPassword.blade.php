@@ -22,11 +22,11 @@
                   @endif
                   <div class="form-group">
                     <label>Password Baru</label>
-                    <input type="password" name="password" placeholder="Password Baru" class="form-control" required autofocus>
+                    <input type="password" name="password" placeholder="Password Baru" class="form-control" required autofocus pattern=".{5,}" title="Minimal 6 Karakter">
                   </div>
                   <div class="form-group">
                     <label>Konfirmasi Password Baru</label>
-                    <input type="password" name="password_confirmation" placeholder="Konfirmasi Password Baru" class="form-control" required>
+                    <input type="password" name="password_confirmation" placeholder="Konfirmasi Password Baru" class="form-control" required pattern=".{5,}" title="Minimal 6 Karakter">
                   </div>
                   <div class="form-check">
                     <div class="form-group">
