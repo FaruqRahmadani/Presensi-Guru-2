@@ -28,6 +28,7 @@ class ResetPasswordController extends Controller
       'user_id' => $user->id,
     ]);
     Mail::to($user->email)->send(new ResetPassword($user));
+    return redirect()->route('login')->with(['alert' => true, 'tipe' => 'success', 'judul' => 'Berhasil', 'pesan' => "Alamat Ganti Password Telah Dikirimkan Ke Email $user->email"]);
   }
 
   public function setPasswordForm($token, PasswordResetRepository $passwordReset){
