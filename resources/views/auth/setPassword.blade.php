@@ -8,7 +8,7 @@
           <div class="portlet-handler ui-sortable-handle mb-4">
             <div class="row mb-5">
               <div class="col-12">
-                <form method="POST" action="{!!route('resetPasswordSubmit')!!}" class="login-form">
+                <form method="POST" action="{!!route('resetPasswordSetSubmit', ['token' => $token])!!}" class="login-form">
                   @csrf
                   <div class="form-group">
                     <label>Nama</label>

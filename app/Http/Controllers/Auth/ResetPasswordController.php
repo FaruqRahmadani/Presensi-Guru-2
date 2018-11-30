@@ -30,10 +30,20 @@ class ResetPasswordController extends Controller
     Mail::to($user->email)->send(new ResetPassword($user));
   }
 
-  public function setPassword($token, PasswordResetRepository $passwordReset){
+  public function setPasswordForm($token, PasswordResetRepository $passwordReset){
     $passwordReset = $passwordReset->where('token', $token)->first();
     if ((!$passwordReset->status) || ($passwordReset->created_at->addHours(6) < now())) return redirect()->route('login')->with(['alert' => true, 'tipe' => 'error', 'judul' => 'Error', 'pesan' => 'Alamat Link Ganti Password Expired']);
     $user = $passwordReset->User;
-    return view('auth.setPassword', compact('user'));
+    return view('auth.setPassword', compact('user', 'token'));
+  }
+
+  public function setPasswordSubmit($token, Request $request, PasswordResetRepository $passwordReset, UserRepository $user){
+    $this->validate($request, [
+      'password' => 'confirmed',
+    ]);
+    $passwordReset = $passwordReset->where('token', $token);
+    $user->update($passwordReset->first()->User->id, $request->all());
+    $apa = $passwordReset->update(['status' => 0]);
+    return redirect()->route('login')->with(['alert' => true, 'tipe' => 'success', 'judul' => 'Berhasil', 'pesan' => 'Password Telah Diganti, Silahkan Login']);
   }
 }
