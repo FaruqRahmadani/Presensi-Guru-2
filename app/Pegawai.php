@@ -24,7 +24,7 @@ class Pegawai extends Model
   public function Sekolah(){
     return $this->belongsTo('App\Sekolah')->withDefault([
       'kategori_absen' => ' '
-    ]);;
+    ]);
   }
 
   public function Absensi(){
