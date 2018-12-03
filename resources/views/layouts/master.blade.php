@@ -95,9 +95,9 @@
               <span>Menu Navigasi</span>
             </li>
             @if(Auth::user()->tipe == '1')
-              @include('Layouts.sidebarAdmin')
+              @include('layouts.sidebarAdmin')
             @elseif(Auth::user()->tipe == '2')
-              @include('Layouts.sidebarAdminSekolah')
+              @include('layouts.sidebarAdminSekolah')
             @endif
             <!-- Dihapus Saat sudah kelar semua-->
             <li class="nav-heading ">
