@@ -10,7 +10,7 @@
       <div class="card-title">
         <div class="row">
           <div class="col-md-12">
-            <form action="{!!route('laporanRekap')!!}" method="post" target="_blank">
+            <form action="{!!route('laporanRekap')!!}" method="post">
               <div class="form-row">
                 @csrf
                 <div class="col-lg-4">

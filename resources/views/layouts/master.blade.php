@@ -95,28 +95,10 @@
               <span>Menu Navigasi</span>
             </li>
             @if(Auth::user()->tipe == '1')
-              @include('Layouts.sidebarAdmin')
+              @include('layouts.sidebarAdmin')
             @elseif(Auth::user()->tipe == '2')
-              @include('Layouts.sidebarAdminSekolah')
+              @include('layouts.sidebarAdminSekolah')
             @endif
-            <!-- Dihapus Saat sudah kelar semua-->
-            <li class="nav-heading ">
-              <span>Template Page</span>
-            </li>
-            <li class="">
-              <a href="#menu_template" title="Template" data-toggle="collapse">
-                <div class="float-right mr-2 ml-2"><em class="fa fa-angle-down"></em></div>
-                <em class="icon-layers"></em>
-                <span>Halaman Template</span>
-              </a>
-              <ul class="sidebar-nav sidebar-subnav collapse" id="menu_template">
-                <li class="sidebar-subnav-header">Halaman Template</li>
-                <li class=""><a href="/template/data"><span>Data Table</span></a></li>
-                <li class=""><a href="/template/form"><span>Form</span></a></li>
-                <li class=""><a href="/template/chart"><span>Moris Chart</span></a></li>
-              </ul>
-            </li>
-            <!-- batas untuk dihapus Saat sudah kelar semua-->
           </ul>
         </nav>
       </div>

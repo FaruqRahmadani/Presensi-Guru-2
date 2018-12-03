@@ -29186,7 +29186,7 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(14);
-module.exports = __webpack_require__(66);
+module.exports = __webpack_require__(67);
 
 
 /***/ }),
@@ -88245,7 +88245,7 @@ __webpack_require__(62);
 __webpack_require__(63);
 __webpack_require__(64);
 __webpack_require__(65);
-__webpack_require__(93);
+__webpack_require__(66);
 // require('./_chartStatistikPegawaiDonatSU')
 
 /***/ }),
@@ -88458,38 +88458,6 @@ $("#statistikPresensi").ready(function () {
 /* 66 */
 /***/ (function(module, exports) {
 
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 67 */,
-/* 68 */,
-/* 69 */,
-/* 70 */,
-/* 71 */,
-/* 72 */,
-/* 73 */,
-/* 74 */,
-/* 75 */,
-/* 76 */,
-/* 77 */,
-/* 78 */,
-/* 79 */,
-/* 80 */,
-/* 81 */,
-/* 82 */,
-/* 83 */,
-/* 84 */,
-/* 85 */,
-/* 86 */,
-/* 87 */,
-/* 88 */,
-/* 89 */,
-/* 90 */,
-/* 91 */,
-/* 92 */,
-/* 93 */
-/***/ (function(module, exports) {
-
 $("#datatable").on("click", ".btn-statistik-pegawai", function () {
   id = $(this).attr("data");
   doughnutData = {
@@ -88526,6 +88494,12 @@ $("#datatable").on("click", ".btn-statistik-pegawai", function () {
     });
   });
 });
+
+/***/ }),
+/* 67 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
 
 /***/ })
 /******/ ]);
