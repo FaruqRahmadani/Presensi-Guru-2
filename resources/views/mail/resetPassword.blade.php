@@ -18,7 +18,7 @@
   }
   @media only screen and (min-width:540px) {
     table {
-      width: 70%;
+      width: 80%;
     } 
   }
   table {
@@ -60,6 +60,11 @@
   .btn-primary:focus, .btn-primary.focus {
     box-shadow: 0 0 0 0.2rem rgba(93, 156, 236, 0.5); 
   }
+  .logo-box-supreme {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 </style>
 <body>
   <table border="0" cellpadding="0" cellspacing="0" align="center">
@@ -89,10 +94,10 @@
       </td>
     </tr>
     <tr>
-      <td>
-        <p>
-          &copy; 2018 - Dinas Pendidikan <strong>Kab. Banjar</strong>
-        </p>
+      <td  width="100%" style="padding-top:50px; align:center;">
+        <div class="logo-box-supreme">
+          <img src="{{ asset('img/logo/lg2.png') }}"  alt="logo" style="margin-right:5px">&copy; 2018 - Dinas Pendidikan &nbsp;<strong> Kab. Banjar</strong>
+        </div>
       </td>
     </tr>
   </table>  
