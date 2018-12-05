@@ -44,7 +44,7 @@
             <a class="nav-link dropdown-toggle dropdown-toggle-nocaret" href="#" data-toggle="dropdown">
               <em class="icon-user"></em> {{Auth::User()->nama}}
             </a>
-            <div class="dropdown-menu dropdown-menu-right animated flipInX">
+            <div class="dropdown-menu dropdown-menu-right animated bounceInRight">
               <div class="dropdown-item">
                 <div class="list-group">
                   <div class="list-group-item list-group-item-action">
