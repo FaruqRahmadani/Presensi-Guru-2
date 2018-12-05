@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-
 <head>
   <meta charset="utf-8">
   <title></title>
@@ -69,14 +68,28 @@
 <body>
   <table border="0" cellpadding="0" cellspacing="0" align="center">
     <tr>
-      <td>
+      <td width="15%" style="vertical-align: middle;">
+        <img height="70px" src="{{ asset('img/logo/logo-banjar.png') }}"  alt="logo" style="margin-right:5px">
+      </td>
+      <td style="vertical-align: middle;">
+        <span style="font-size: 12pt; font-weight: bold;">PEMERINTAH KABUPATEN BANJAR</span><br>
+        <span style="font-size: 14pt; font-weight: bold;">DINAS PENDIDIKAN</span><br>
+        <span style="font-size: 10pt;">Jalan Sekumpul Ujung Desa Bincau Nomor 7 Telepon (0511) 4721720 Martapura</span><br>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2"><hr></td>
+    </tr>
+    <tr>
+      <td colspan="2">
         <h2>
-          Halo, {{$user->nama}}
+          Halo,
+          {{-- Halo, {{$user->nama}} --}}
         </h2>
       </td>
     </tr>
     <tr>
-      <td align='center' style='padding:5px;'>
+      <td colspan="2" align='center' style='padding:5px;'>
         <table>
           <tr>
             <td align="center" style="background:#fff; padding:30px 37px;-webkit-border-radius: 10px; -moz-border-radius: 10px; border-radius: 10px; border: 1px solid #cfdbe2; border-top-width: 3px;">
@@ -84,7 +97,8 @@
                 Anda baru saja mengirimkan permintaan untuk reset password. Jika anda merasa tidak meminta reset password, abaikan email ini.<br>
                 Untuk mereset password, silahkan klik link dibawah ini.
               </p>
-              <a href="{!!route('resetPasswordSetForm', ['token' => $user->LastPasswordReset->token])!!}" class="btn btn-app btn-lg btn-primary">Ganti Password</a>
+              <a href="#" class="btn btn-app btn-lg btn-primary">Ganti Password</a>
+              {{-- <a href="{!!route('resetPasswordSetForm', ['token' => $user->LastPasswordReset->token])!!}" class="btn btn-app btn-lg btn-primary">Ganti Password</a> --}}
               <p style="margin-top: 40px;">
                 Alamat tersebut hanya aktif untuk 6 jam dari permintaan ganti password. Ulangi proses ganti password jika alamat sudah tidak bisa digunakan.
               </p>
@@ -94,13 +108,10 @@
       </td>
     </tr>
     <tr>
-      <td  width="100%" style="padding-top:50px; align:center;">
-        <div class="logo-box-supreme">
-          <img src="{{ asset('img/logo/lg2.png') }}"  alt="logo" style="margin-right:5px">&copy; 2018 - Dinas Pendidikan &nbsp;<strong> Kab. Banjar</strong>
-        </div>
+      <td colspan="2" width="100%" style="align:center; padding-top:50px;">
+       &copy; 2018 - Dinas Pendidikan &nbsp;<strong> Kab. Banjar</strong>
       </td>
     </tr>
   </table>  
 </body>
-
 </html>
