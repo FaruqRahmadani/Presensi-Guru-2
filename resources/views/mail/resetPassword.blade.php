@@ -18,7 +18,7 @@
   @media only screen and (min-width:540px) {
     table {
       width: 80%;
-    } 
+    }
   }
   table {
     text-align: center;
@@ -35,7 +35,7 @@
     font-size: 1rem;
     line-height: 1.52857;
     border-radius: 0.25rem;
-    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out; 
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   }
   .btn-app {
     border-radius: 3px;
@@ -44,20 +44,20 @@
     outline: none !important;
     transition: all 0.1s;
     text-decoration: none;
-    padding: 0.625rem 1.25rem; 
+    padding: 0.625rem 1.25rem;
   }
   .btn-primary {
     color: #fff;
     background-color: #5d9cec;
-    border-color: #5d9cec; 
+    border-color: #5d9cec;
   }
   .btn-primary:hover {
     color: #fff;
     background-color: #3b87e8;
-    border-color: #2f80e7; 
+    border-color: #2f80e7;
   }
   .btn-primary:focus, .btn-primary.focus {
-    box-shadow: 0 0 0 0.2rem rgba(93, 156, 236, 0.5); 
+    box-shadow: 0 0 0 0.2rem rgba(93, 156, 236, 0.5);
   }
   .logo-box-supreme {
     display: flex;
@@ -83,8 +83,7 @@
     <tr>
       <td colspan="2">
         <h2>
-          Halo,
-          {{-- Halo, {{$user->nama}} --}}
+          Halo, {{$user->nama}}
         </h2>
       </td>
     </tr>
@@ -97,8 +96,7 @@
                 Anda baru saja mengirimkan permintaan untuk reset password. Jika anda merasa tidak meminta reset password, abaikan email ini.<br>
                 Untuk mereset password, silahkan klik link dibawah ini.
               </p>
-              <a href="#" class="btn btn-app btn-lg btn-primary">Ganti Password</a>
-              {{-- <a href="{!!route('resetPasswordSetForm', ['token' => $user->LastPasswordReset->token])!!}" class="btn btn-app btn-lg btn-primary">Ganti Password</a> --}}
+              <a href="{!!route('resetPasswordSetForm', ['token' => $user->LastPasswordReset->token])!!}" class="btn btn-app btn-lg btn-primary">Ganti Password</a>
               <p style="margin-top: 40px;">
                 Alamat tersebut hanya aktif untuk 6 jam dari permintaan ganti password. Ulangi proses ganti password jika alamat sudah tidak bisa digunakan.
               </p>
@@ -112,6 +110,6 @@
        &copy; 2018 - Dinas Pendidikan &nbsp;<strong> Kab. Banjar</strong>
       </td>
     </tr>
-  </table>  
+  </table>
 </body>
 </html>
